@@ -27,8 +27,12 @@ Measures the **strength and direction** of linear relationship between variables
 - **+1**: Perfect positive linear relationship
 - **-1**: Perfect negative linear relationship
 - **0**: No linear relationship
-
-Important: Only captures **linear** relationships, not non-linear ones.
+---
+card_id: Pp0xCBFf
+---
+What is a key limitation of the **Pearson correlation coefficient**?
+---
+Only captures **linear** relationships. Can be zero or near-zero even when strong non-linear relationships exist (e.g., quadratic, exponential).
 ---
 card_id: 2CskO98D
 ---
@@ -122,14 +126,21 @@ Use a more complex model, add more features, or reduce regularization.
 ---
 card_id: 96nV20bO
 ---
-How do CNNs achieve **translation invariance**?
+How do **convolutional layers** contribute to translation invariance?
 ---
-**Three key mechanisms**:
-1. **Convolutional layers**: Same filters (kernels) applied across the entire image
-2. **Pooling layers**: Downsampling creates tolerance to small spatial shifts
-3. **Hierarchical architecture**: Learns features from local patterns to global structure
-
-The combination allows recognition independent of position.
+Same filters (kernels) are applied across the entire image through **parameter sharing**. A filter that detects an edge at one location can detect it anywhere, making detection position-independent.
+---
+card_id: LN4bCVK5
+---
+How do **pooling layers** contribute to translation invariance?
+---
+Downsampling creates tolerance to small spatial shifts. By summarizing regions (e.g., taking max or average), pooling makes the representation robust to minor position changes.
+---
+card_id: Y1vuPj96
+---
+How does **hierarchical architecture** contribute to translation invariance in CNNs?
+---
+Learns features progressively from local patterns (edges, textures) to global structure (shapes, objects). This multi-level abstraction builds position-independent representations at each layer.
 ---
 card_id: AY8mz6zj
 ---
@@ -155,13 +166,21 @@ This is the sweet spot we aim for when tuning model complexity.
 ---
 card_id: Ap2G6Y1Z
 ---
-Why is **batch normalization** beneficial?
+How does **batch normalization** enable faster training?
 ---
-**Benefits**:
-- **Faster training** (allows higher learning rates without diverging)
-- **Reduces sensitivity to initialization** (network less dependent on careful weight initialization)
-- **Acts as regularization** (slight noise from batch statistics reduces overfitting)
-- **Reduces internal covariate shift** (stabilizes distribution of layer inputs)
+Allows use of **higher learning rates** without diverging. By normalizing layer inputs, it prevents gradients from becoming too large or too small, enabling more aggressive optimization.
+---
+card_id: w2knuDZX
+---
+How does **batch normalization** act as regularization?
+---
+Slight noise from using different batch statistics during training (each mini-batch has slightly different mean/variance) adds randomness that reduces overfitting, similar to dropout.
+---
+card_id: 1iXPivNz
+---
+How does **batch normalization** reduce sensitivity to initialization?
+---
+Makes the network less dependent on careful weight initialization. By normalizing layer inputs, even poor initial weights can be quickly adjusted during training.
 ---
 card_id: BMdy0vzZ
 ---
@@ -219,19 +238,21 @@ card_id: E5FTs0pm
 ---
 When would you use the **ReLU** activation function?
 ---
-$$\text{ReLU}(x) = \max(0, x)$$
-
-**Use for**:
-- **Default choice for hidden layers** in modern deep networks
-- When you want fast training (computationally efficient)
-- When avoiding vanishing gradients is important
-
-**Advantages**:
-- Simple threshold operation (fast computation)
-- Gradient is either 0 or 1 (avoids vanishing gradient)
-- Sparse activation (many neurons output 0)
-
-**Drawback**: "Dying ReLU" problem - neurons can get stuck outputting 0.
+**Default choice for hidden layers** in modern deep networks because it enables fast training, avoids vanishing gradients, and provides computational efficiency.
+---
+card_id: otpBB2Jm
+---
+What are the **advantages** of the ReLU activation function?
+---
+- **Fast computation**: Simple threshold operation $\max(0, x)$
+- **Avoids vanishing gradients**: Gradient is either 0 or 1
+- **Sparse activation**: Many neurons output 0, creating efficient representations
+---
+card_id: pqrWuW8t
+---
+What is the **"dying ReLU" problem**?
+---
+A drawback of ReLU where neurons can get stuck always outputting 0 (when input is always negative). Once "dead", these neurons stop learning because their gradient is always zero.
 ---
 card_id: FbTVAB1c
 ---
@@ -243,6 +264,7 @@ $$\sigma = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2}$$
 - $N$: population size
 - $x_i$: individual value
 - $\mu$: population mean
+---
 card_id: GXeoR8nY
 ---
 How does **sample size** affect **standard error**?
@@ -255,6 +277,7 @@ How does **sample size** affect **standard error**?
 - Confidence intervals narrow
 
 **Doubling sample size** reduces SE by factor of $\sqrt{2} \approx 1.41$ (not by factor of 2).
+---
 card_id: IEXXk7CH
 ---
 What does **standard error** measure?
@@ -296,15 +319,27 @@ card_id: JEhEaCg0
 ---
 You have a dataset with **1% positive class**. A model predicts all negative and achieves **99% accuracy**. What's the problem?
 ---
-**Problem**: **Accuracy is misleading with imbalanced classes**. The model learned nothing - it's just exploiting class imbalance.
+**Accuracy is misleading with imbalanced classes**. The model learned nothing - it's just exploiting class imbalance by always predicting the majority class.
+---
+card_id: 5zcoLyjx
+---
+What metrics should you use instead of accuracy for **imbalanced datasets**?
+---
+- **Precision/Recall** for the minority class
+- **F1 score** (harmonic mean of precision and recall)
+- **AUC-ROC** or **AUC-PR** curves
+- **Confusion matrix** (reveals class-specific performance)
 
-**Better metrics**:
-- **Precision/Recall** for positive class
-- **F1 score** (will be 0 here since recall = 0)
-- **AUC-ROC** or **AUC-PR**
-- **Confusion matrix** (reveals 0 true positives)
-
-**Solutions**: Resampling, class weights, or cost-sensitive learning.
+These reveal whether the model actually learns to detect the minority class.
+---
+card_id: IXlVHAM3
+---
+What are solutions for training models on **imbalanced datasets**?
+---
+- **Resampling**: Oversample minority class or undersample majority class
+- **Class weights**: Penalize minority class errors more heavily
+- **Cost-sensitive learning**: Assign different misclassification costs
+- **Synthetic data**: Generate synthetic minority examples (e.g., SMOTE)
 ---
 card_id: KG5Xunz3
 ---
@@ -361,21 +396,31 @@ What is the formula for **RMSE** (root mean squared error)?
 ---
 $$\text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2} = \sqrt{\text{MSE}}$$
 
-**RMSE** is the square root of MSE, bringing the error metric back to the **same units as the target variable**.
-
-- More interpretable than MSE
-- Penalizes large errors more than MAE
-- Sensitive to outliers
+Square root of MSE, bringing the error metric back to the **same units as the target variable** (more interpretable than MSE).
+---
+card_id: u9dIC0m7
+---
+How does **RMSE** compare to **MAE** in terms of error sensitivity?
+---
+RMSE penalizes large errors more heavily than MAE due to the squaring operation. Also more sensitive to outliers than MAE.
 ---
 card_id: NLMXEux6
 ---
-What are common causes of **data leakage**?
+What is **preprocessing leakage** in machine learning?
 ---
-**Common causes**:
-- Using test data in preprocessing (e.g., scaling/normalizing with full dataset statistics)
-- Features that contain future information (temporal leakage)
-- Duplicates or near-duplicates across train/test splits
-- Target leakage (features derived from the target variable)
+Using test data in preprocessing steps like scaling or normalization (e.g., computing mean/std from full dataset). This leaks information from test set into training, causing overly optimistic performance estimates.
+---
+card_id: iff4M53K
+---
+What is **temporal leakage** in machine learning?
+---
+Features that contain information from the future that wouldn't be available at prediction time. For example, using tomorrow's stock price to predict today's price, or using event outcomes in the features.
+---
+card_id: RroKKXiM
+---
+What is **target leakage** in machine learning?
+---
+When features are derived from or contain information about the target variable. For example, using "total treatment cost" to predict "disease diagnosis" when the cost was calculated after diagnosis.
 ---
 card_id: NnZdkxpc
 ---
@@ -387,15 +432,33 @@ Example: A spam filter that rarely marks legitimate emails as spam, but also mis
 ---
 card_id: O5CAOzaV
 ---
-What are solutions for a model with **5% training error** and **40% validation error**?
+A model has **5% training error** and **40% validation error**. What's the problem?
 ---
-**Solutions to reduce overfitting**:
-1. Get more training data
-2. Reduce model complexity (fewer layers/parameters)
-3. Increase regularization (L1/L2, dropout)
-4. Apply early stopping
-5. Use data augmentation
-6. Feature selection (remove irrelevant features)
+**High variance / overfitting** - large gap between training and validation error indicates the model memorizes training data but doesn't generalize well.
+---
+card_id: BjC2X90B
+---
+How can **more training data** help reduce overfitting?
+---
+More diverse examples make it harder for the model to memorize individual cases. Forces the model to learn general patterns rather than specific training examples.
+---
+card_id: I94brlLK
+---
+How can **reducing model complexity** help with overfitting?
+---
+Fewer parameters (layers, neurons, features) limit the model's capacity to memorize. Simpler models are forced to learn only the most important patterns, improving generalization.
+---
+card_id: XPmZv2Tq
+---
+How does **early stopping** prevent overfitting?
+---
+Stop training when validation error starts increasing, even if training error is still decreasing. This catches the model before it starts memorizing training data.
+---
+card_id: 8fkbFdoB
+---
+How does **data augmentation** reduce overfitting?
+---
+Creates modified versions of training examples (e.g., rotated, flipped, or cropped images). This artificially increases dataset size and diversity, making it harder to memorize.
 ---
 card_id: OOPt9KXD
 ---
@@ -443,7 +506,6 @@ card_id: RlsAv1wC
 What is **low variance** in a model?
 ---
 The model is stable; predictions don't change much with different data.
-
 ---
 card_id: SSEMZoNl
 ---
@@ -473,13 +535,21 @@ Choose **L2 (Ridge)** when:
 ---
 card_id: UyutiyAf
 ---
-How do you prevent **data leakage**?
+How do you prevent **preprocessing leakage**?
 ---
-**Prevention strategies**:
-- Fit preprocessors (scalers, encoders) on **training data only**, then transform test data
-- Ensure strict temporal ordering for time-series data
-- Remove duplicates before splitting
-- Carefully audit features for information that wouldn't be available at prediction time
+Fit preprocessors (scalers, encoders, imputers) on **training data only**, then apply the fitted transformation to test data. Never compute statistics from the combined train+test set.
+---
+card_id: zx2SiYw4
+---
+How do you prevent **temporal leakage** in time-series problems?
+---
+Ensure strict temporal ordering - training data must be from earlier time periods than test data. Carefully audit features to ensure they don't contain information from the future.
+---
+card_id: wEgsRGQn
+---
+Why should you remove duplicates **before** splitting train/test sets?
+---
+Duplicates across train/test splits cause data leakage - the model sees nearly identical examples in both training and testing, leading to overly optimistic performance estimates that won't generalize.
 ---
 card_id: VJfaVUwg
 ---
@@ -503,6 +573,7 @@ $$R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{\sum(y_i - \hat{y}_i)^2}{\sum(
 - **Range**: 0 to 1 (can be negative for bad models)
 - **R² = 1**: Perfect predictions
 - **R² = 0**: Model no better than predicting the mean
+---
 card_id: X03z1kIe
 ---
 What is the **total error decomposition** formula?
@@ -597,14 +668,13 @@ What is **L1 regularization** (Lasso) and what's its formula?
 ---
 $$\text{Loss} = \text{Original Loss} + \lambda \sum_{i=1}^{n} |w_i|$$
 
-**L1 regularization** adds the **sum of absolute values** of weights to the loss.
-
-**Effect**:
-- Drives some weights to **exactly zero** (feature selection)
-- Creates sparse models
-- Useful when you have many irrelevant features
-
-$\lambda$ controls regularization strength.
+**L1 regularization** adds the **sum of absolute values** of weights to the loss. $\lambda$ controls regularization strength.
+---
+card_id: jcGg9U6M
+---
+What is the key effect of **L1 regularization** on model weights?
+---
+Drives some weights to **exactly zero**, performing automatic **feature selection** and creating **sparse models**. Useful when you have many irrelevant features.
 ---
 card_id: aK8uoMDN
 ---
@@ -631,13 +701,21 @@ card_id: axqKSiqY
 ---
 When would you use the **tanh** activation function?
 ---
+**Hidden layers** when you need zero-centered outputs (range -1 to 1). Better than sigmoid for hidden layers because zero-centering helps with gradient flow.
+---
+card_id: NiVGVF0v
+---
+What is the **tanh** activation function formula?
+---
 $$\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}$$
 
-**Use for**:
-- **Hidden layers** when you need zero-centered outputs (range -1 to 1)
-- Better than sigmoid for hidden layers (zero-centered helps with gradient flow)
-
-**Drawback**: Still suffers from vanishing gradient problem in very deep networks
+Outputs values in range **-1 to 1** (zero-centered, unlike sigmoid).
+---
+card_id: IBx0F6J0
+---
+What is the **drawback** of the tanh activation function?
+---
+Still suffers from the **vanishing gradient problem** in very deep networks, similar to sigmoid (gradients become very small for large positive or negative inputs).
 ---
 card_id: b2hMhrnz
 ---
@@ -777,6 +855,7 @@ What happens when you **increase** the regularization parameter **λ**?
 - Moves toward underfitting
 
 Stronger penalty on large weights forces simpler models.
+---
 card_id: mdlIumeg
 ---
 Why can **accuracy** be misleading?
@@ -818,14 +897,19 @@ card_id: pfiGwlny
 ---
 What do **convolutional layers** do in a neural network?
 ---
-**Convolutional layers** apply learned filters (kernels) that slide across the input, detecting local patterns (edges, textures, shapes).
-
-**Key properties**:
-- **Parameter sharing**: Same filter applied everywhere (fewer parameters)
-- **Local connectivity**: Each neuron connects to small region
-- **Translation invariance**: Detects features regardless of position
-
-Fundamental building block of CNNs for image/spatial data.
+Apply learned filters (kernels) that slide across the input, detecting local patterns like edges, textures, and shapes. Fundamental building block of CNNs for image and spatial data.
+---
+card_id: ZF2WFN9M
+---
+What is **parameter sharing** in convolutional layers?
+---
+The same filter is applied across all positions in the input. This dramatically reduces parameters compared to fully connected layers, while enabling position-independent feature detection.
+---
+card_id: NptxfSGz
+---
+What is **local connectivity** in convolutional layers?
+---
+Each neuron connects only to a small region of the input (receptive field) rather than the entire input. This captures local patterns efficiently and reduces computational cost.
 ---
 card_id: qHMwoyDJ
 ---
@@ -851,14 +935,24 @@ In the dartboard analogy for machine learning, what does **bias** represent?
 **Bias** represents systematic aiming error - arrows consistently miss the center in the same direction.
 
 Just like a model with high bias systematically misses the true function, arrows with bias consistently miss the bullseye in one direction.
+---
 card_id: rA8ttBZx
 ---
-How does **dropout** help prevent overfitting?
+How does **dropout** prevent **co-adaptation** of neurons?
 ---
-- Prevents **co-adaptation** of neurons (neurons can't rely on specific other neurons always being present)
-- Forces **redundancy** (multiple neurons learn to detect same features)
-- Acts like **ensemble learning** (training many different subnetworks)
-- Adds noise that acts as regularization
+By randomly dropping neurons, dropout prevents neurons from relying on specific other neurons always being present. Forces each neuron to learn robust features independently.
+---
+card_id: RiLlpkrC
+---
+How does **dropout** create an ensemble learning effect?
+---
+Each training iteration uses a different random subset of neurons, effectively training many different subnetworks. At test time, using all neurons approximates averaging these subnetworks' predictions.
+---
+card_id: QodC4mNG
+---
+Why does **dropout** force redundancy in neural networks?
+---
+Since any neuron might be dropped, multiple neurons must learn to detect the same important features. This redundancy makes the network more robust and less likely to overfit to specific neuron combinations.
 ---
 card_id: rEopJVIo
 ---
@@ -890,19 +984,26 @@ $$\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$$
 - $n$: number of samples
 - $y_i$: true value for sample $i$
 - $\hat{y}_i$: predicted value for sample $i$
-
 ---
 card_id: t5IIfe3T
 ---
 When would you use the **sigmoid** activation function?
 ---
+**Output layer** for **binary classification** - it outputs probabilities between 0 and 1 that can be directly interpreted as class probabilities.
+---
+card_id: dBiU2RDW
+---
+What is the **sigmoid** activation function formula?
+---
 $$\sigma(x) = \frac{1}{1 + e^{-x}}$$
 
-**Use for**:
-- **Output layer** for **binary classification** (outputs probability between 0 and 1)
-- When you need outputs interpretable as probabilities
-
-**Drawback**: Suffers from vanishing gradients (not recommended for hidden layers in deep networks)
+Outputs values between **0 and 1**, making it suitable for probability interpretation.
+---
+card_id: xZvfKOc7
+---
+What is the **drawback** of using sigmoid in hidden layers?
+---
+Suffers from **vanishing gradients** - gradients become very small for large positive or negative inputs, slowing or stopping learning in deep networks. Not recommended for hidden layers.
 ---
 card_id: tEJfmjf2
 ---
@@ -943,7 +1044,7 @@ When is **MSE/RMSE** preferred as a loss metric?
 MSE penalizes large errors more: $(y - \hat{y})^2$
 card_id: w7D9cEtd
 ---
-What is an **ROC curve**?
+card_id: 13oEsC1R
 ---
 **Receiver Operating Characteristic** curve plots **True Positive Rate (Recall)** vs **False Positive Rate** at various classification thresholds.
 
@@ -954,7 +1055,7 @@ Used to evaluate classifier performance across all thresholds, not just one.
 ---
 card_id: xWWonwAo
 ---
-What is the formula for **covariance**?
+card_id: hjBlPGTS
 ---
 $$\text{Cov}(X, Y) = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})$$
 
@@ -967,7 +1068,7 @@ Units depend on variable units, making interpretation difficult.
 ---
 card_id: xuuStnWd
 ---
-Given **TP=80, FP=20, FN=10, TN=90**, calculate **precision**.
+card_id: QnyWocTB
 ---
 $$\text{Precision} = \frac{TP}{TP + FP} = \frac{80}{80 + 20} = \frac{80}{100} = 0.80$$
 
@@ -977,7 +1078,7 @@ $$\text{Precision} = \frac{TP}{TP + FP} = \frac{80}{80 + 20} = \frac{80}{100} = 
 ---
 card_id: ySAR0P02
 ---
-What is the **z-score** formula?
+card_id: DdUECcaP
 ---
 $$z = \frac{x - \mu}{\sigma}$$
 
@@ -988,22 +1089,21 @@ $$z = \frac{x - \mu}{\sigma}$$
 ---
 card_id: yV1SYyxc
 ---
-What is **L2 regularization** (Ridge) and what's its formula?
+card_id: baDI67kc
 ---
 $$\text{Loss} = \text{Original Loss} + \lambda \sum_{i=1}^{n} w_i^2$$
 
-**L2 regularization** adds the **sum of squared weights** to the loss.
-
-**Effect**:
-- Shrinks all weights toward zero (but rarely to exactly zero)
-- Prevents any single feature from dominating
-- Smoother, more stable models
-
-$\lambda$ controls regularization strength.
+**L2 regularization** adds the **sum of squared weights** to the loss. $\lambda$ controls regularization strength.
+---
+card_id: null
+---
+card_id: W72hr7v4
+---
+Shrinks all weights toward zero (but rarely to exactly zero), preventing any single feature from dominating. Creates **smoother, more stable models** with **dense** representations (all features retained).
 ---
 card_id: yW732NiA
 ---
-When is **MAE** (Mean Absolute Error) preferred as a loss metric?
+card_id: ysEU2dxf
 ---
 **MAE** is preferred when:
 - **Outliers** are present (MAE is less sensitive to outliers)
@@ -1014,7 +1114,7 @@ MAE treats all errors with equal weight: $|y - \hat{y}|$
 ---
 card_id: zRfgfrmz
 ---
-When should you use **stratified sampling**?
+card_id: Ly433CHk
 ---
 **Use when**:
 - **Imbalanced classes** (e.g., 95% negative, 5% positive)
@@ -1024,11 +1124,3 @@ When should you use **stratified sampling**?
 Prevents situations where a class might be missing from validation/test sets.
 ---
 card_id: zv0IX1rL
----
-Given **TP=80, FP=20, FN=10, TN=90**, calculate **recall**.
----
-$$\text{Recall} = \frac{TP}{TP + FN} = \frac{80}{80 + 10} = \frac{80}{90} \approx 0.889$$
-
-**Recall ≈ 0.89** (or 89%)
-
-The model found 89% of all actual positive cases.

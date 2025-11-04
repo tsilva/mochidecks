@@ -1,46 +1,43 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Instructions for Claude Code when working with this flashcard deck repository for [mochi-mochi](https://github.com/tsilva/mochi-mochi).
 
-## Repository Purpose
+## File Format
 
-This is a content repository that stores flashcard decks for use with the [mochi-mochi](https://github.com/tsilva/mochi-mochi) application. It contains markdown-formatted flashcard decks, not application code.
-
-## Deck File Format
-
-Each deck is stored as a `.md` file with naming pattern: `{topic}-{id}.md`
+Deck files: `{topic}-{id}.md`
 
 Card structure:
 ```markdown
 ---
 card_id: unique_id
 ---
-Question content (supports markdown, LaTeX with $$...$$, code blocks)
+Question (markdown, LaTeX with $$...$$, code blocks)
 ---
-Answer content (supports markdown, LaTeX with $$...$$, code blocks)
+Answer (markdown, LaTeX with $$...$$, code blocks)
 ---
 ```
 
-## Deck Curation Principles
+## Formatting Rules
 
-When curating deck files, maintain these quality standards:
+- **Card IDs** - unique alphanumeric format (e.g., "00TVK0st", "2CskO98D")
+  - **IMPORTANT**: When creating NEW cards, ALWAYS use `card_id: null` - never generate or make up card IDs
+  - The mochi-mochi application will automatically generate proper IDs when importing
+  - Only existing cards should have alphanumeric IDs
+- **Delimiters** - triple dashes `---` separate card_id, question, and answer
+- **Markdown** - GitHub-flavored markdown supported
+- **LaTeX** - wrap math in `$$...$$`
+- **No tables in answers** - use lists or other formatting instead
 
-- **No duplicates** - each card should be unique within and across decks
-- **Minimize redundancies** - avoid repetitive cards unless they serve a learning purpose (e.g., asking the same concept in different ways)
-- **Concise questions** - questions should be clear and to the point
-- **Concise answers** - answers should be focused and avoid unnecessary elaboration
-- **Atomic cards** - each card should focus on a single question and single answer; avoid multi-part questions or answers when possible
+## Curation Principles
 
-## Key Guidelines
+**Quality standards:**
+- **Atomic** - one question, one answer per card; no multi-part questions/answers
+- **Concise** - clear, focused questions and answers; use bullet lists instead of paragraphs when answers contain multiple facts
+- **Unique** - no duplicate cards within or across decks
 
-- **Card IDs must be unique** within and across decks - use the existing alphanumeric format (e.g., "00TVK0st", "2CskO98D")
-- **Preserve markdown formatting** - cards use GitHub-flavored markdown
-- **LaTeX math** is wrapped in `$$...$$` for equations
-- **No tables in answers** - markdown tables are not allowed in answer sections; use lists or other formatting instead
-- **Triple dashes `---`** are structural delimiters between card_id, question, and answer sections
-- When adding cards, follow the existing formatting patterns precisely
-- The repository is designed for content management, not software development - there are no build, test, or lint commands
-
-## Relationship to mochi-mochi
-
-This repository is a companion to the [mochi-mochi](https://github.com/tsilva/mochi-mochi) application. The deck files here are imported and consumed by that application for flashcard study sessions.
+**Removing redundancies:**
+- DO remove: identical questions or near-identical content with no learning variation
+- DON'T merge: different questions about the same concept ("What is X?" vs. "When to use X?" vs. "Advantages of X?")
+- Each distinct question gets its own card, even if related
+- When in doubt, keep cards separate
+- Delete rather than merge if cards test different things
