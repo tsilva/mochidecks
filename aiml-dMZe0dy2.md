@@ -71,7 +71,9 @@ card_id: 4RyDdLRL
 ---
 What does the **bias-variance tradeoff** describe?
 ---
-The **bias–variance tradeoff** is the balance between two sources of error in machine learning: **bias**, from overly simple models that underfit, and **variance**, from overly complex models that overfit. Increasing complexity lowers bias but raises variance, and simplifying does the opposite. The goal is to find the balance that minimizes both and achieves the lowest error on unseen data.
+The balance between two sources of error: **bias** (underfitting from overly simple models) and **variance** (overfitting from overly complex models).
+
+Increasing complexity lowers bias but raises variance, and vice versa. The goal is finding the sweet spot that minimizes total error on unseen data.
 ---
 card_id: 6JnCbrfd
 ---
@@ -202,12 +204,6 @@ The **F1 score** is the harmonic mean of **precision** and **recall**. It answer
 - $TP$: true positives
 - $FP$: false positives
 - $FN$: false negatives
----
-card_id: DkB0dz3z
----
-What is **high variance** in a ML model?
----
-The model's predictions change a lot across different training sets; it **overfits** noise.
 ---
 card_id: DtODRtgY
 ---
@@ -427,12 +423,6 @@ Examples:
 - Fraud detection (missing fraud can be very costly)
 - Fire alarm systems (better to have false alarms than miss a real fire)
 ---
-card_id: OV0hu8Xm
----
-What is **high bias** in a model?
----
-The model makes systematic errors, with average predictions far from the true function; it **underfits**.
----
 card_id: PcfSpiot
 ---
 Why is the **coefficient of variation** useful?
@@ -471,11 +461,12 @@ The model is stable; predictions don't change much with different data.
 ---
 card_id: Rwx7adiz
 ---
--|
+What are the four components of a **confusion matrix**?
 ---
---|
-| **Actual Positive** | TP (True Positive) | FN (False Negative) |
-| **Actual Negative** | FP (False Positive) | TN (True Negative) |
+|                     | **Predicted Positive** | **Predicted Negative** |
+|---------------------|------------------------|------------------------|
+| **Actual Positive** | TP (True Positive)     | FN (False Negative)    |
+| **Actual Negative** | FP (False Positive)    | TN (True Negative)     |
 
 All classification metrics (precision, recall, F1, accuracy) are derived from these four values.
 ---
@@ -688,15 +679,6 @@ What is **bias** in machine learning?
 ---
 The measure of how far the model's average predictions are from the true underlying function.
 ---
-card_id: bITVyVUe
----
-What is the formula for **recall**?
----
-$$\text{Recall} = \frac{TP}{TP + FN}$$
-
-- $TP$: true positives
-- $FN$: false negatives
----
 card_id: bOTPjqHx
 ---
 What is the **cross-entropy** formula for binary classification?
@@ -888,15 +870,6 @@ What do **convolutional layers** do in a neural network?
 
 Fundamental building block of CNNs for image/spatial data.
 ---
-card_id: qEbglbIQ
----
-What is the formula for **precision**?
----
-$$\text{Precision} = \frac{TP}{TP + FP}$$
-
-- $TP$: true positives
-- $FP$: false positives
----
 card_id: qHMwoyDJ
 ---
 What is the **mean absolute error (MAE)** formula?
@@ -962,16 +935,6 @@ $$r = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y}$$
 - $\sigma_X$, $\sigma_Y$: standard deviations of X and Y
 
 Unlike covariance, it's **normalized** to range from -1 to +1.
----
-card_id: rlkybVLQ
----
-What is the formula for **F1 score**?
----
-$$F_1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}} = \frac{2TP}{2TP + FP + FN}$$
-
-- $TP$: true positives
-- $FP$: false positives
-- $FN$: false negatives
 ---
 card_id: sXQ5x8Ri
 ---
