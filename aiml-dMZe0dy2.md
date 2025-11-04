@@ -458,17 +458,7 @@ card_id: RlsAv1wC
 What is **low variance** in a model?
 ---
 The model is stable; predictions don't change much with different data.
----
-card_id: Rwx7adiz
----
-What are the four components of a **confusion matrix**?
----
-|                     | **Predicted Positive** | **Predicted Negative** |
-|---------------------|------------------------|------------------------|
-| **Actual Positive** | TP (True Positive)     | FN (False Negative)    |
-| **Actual Negative** | FP (False Positive)    | TN (True Negative)     |
 
-All classification metrics (precision, recall, F1, accuracy) are derived from these four values.
 ---
 card_id: SSEMZoNl
 ---
@@ -946,15 +936,7 @@ $$\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$$
 - $n$: number of samples
 - $y_i$: true value for sample $i$
 - $\hat{y}_i$: predicted value for sample $i$
----
-card_id: t0zOT0jZ
----
-What is a **confusion matrix**?
----
-A table showing the performance of a classification model:
 
-|                | Predicted Positive | Predicted Negative |
-|
 ---
 card_id: t5IIfe3T
 ---
