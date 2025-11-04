@@ -723,7 +723,7 @@ What is **bias** in machine learning?
 ---
 The measure of how far the model's average predictions are from the true underlying function.
 ---
-card_id: null
+card_id: VpK7Xt6p
 ---
 What is the **bias formula** in machine learning?
 ---
