@@ -38,6 +38,7 @@ Answer (markdown, LaTeX with $$...$$, code blocks)
 - **Atomic** - one question, one answer per card; no multi-part questions/answers
 - **Concise** - clear, focused questions and answers; use bullet lists instead of paragraphs when answers contain multiple facts
 - **Unique** - no duplicate cards within or across decks
+- **Unambiguous** - questions must have a single, clear interpretation with no ambiguity about what is being asked
 
 **Removing redundancies:**
 - DO remove: identical questions or near-identical content with no learning variation
