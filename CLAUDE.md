@@ -36,6 +36,7 @@ When curating deck files, maintain these quality standards:
 - **Card IDs must be unique** within and across decks - use the existing alphanumeric format (e.g., "00TVK0st", "2CskO98D")
 - **Preserve markdown formatting** - cards use GitHub-flavored markdown
 - **LaTeX math** is wrapped in `$$...$$` for equations
+- **No tables in answers** - markdown tables are not allowed in answer sections; use lists or other formatting instead
 - **Triple dashes `---`** are structural delimiters between card_id, question, and answer sections
 - When adding cards, follow the existing formatting patterns precisely
 - The repository is designed for content management, not software development - there are no build, test, or lint commands
