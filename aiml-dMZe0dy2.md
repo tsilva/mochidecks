@@ -1138,3 +1138,732 @@ When should you use **stratified sampling**?
 - Rare categories that might be missed in random splits
 
 Prevents situations where a class might be missing from validation/test sets.
+---
+card_id: MHu0Xv79
+---
+What is **overfitting**?
+---
+**Overfitting** occurs when a model learns the training data too well, including noise and random fluctuations, rather than just the underlying patterns.
+
+**Characteristics**:
+- High performance on training data
+- Poor performance on new/test data
+- Model has memorized rather than learned general patterns
+---
+card_id: kbW0MgoN
+---
+What is **underfitting**?
+---
+**Underfitting** occurs when a model is too simple to capture the underlying patterns in the data.
+
+**Characteristics**:
+- Poor performance on both training and test data
+- Model lacks the capacity to represent the true relationship
+- Systematic errors due to oversimplification
+---
+card_id: o6esIpT3
+---
+What is **regularization** in machine learning?
+---
+**Regularization** adds a penalty term to the loss function to constrain model complexity and prevent overfitting.
+
+**Purpose**: Discourage the model from fitting noise by penalizing large or complex parameter values.
+
+**Common types**: L1 (Lasso), L2 (Ridge), dropout, early stopping, data augmentation.
+---
+card_id: KlEA3qfZ
+---
+What is a **confusion matrix**?
+---
+A **confusion matrix** is a table showing the four possible outcomes of binary classification:
+
+- **True Positive (TP)**: Correctly predicted positive
+- **False Positive (FP)**: Incorrectly predicted positive (Type I error)
+- **True Negative (TN)**: Correctly predicted negative
+- **False Negative (FN)**: Incorrectly predicted negative (Type II error)
+
+Shows where the model is making errors and what types of errors.
+---
+card_id: yLulG0eu
+---
+What is a **True Positive (TP)**?
+---
+A case where the model **correctly predicted the positive class**.
+
+**Example**: Model predicts "has disease" and the patient actually has the disease.
+---
+card_id: awlbwGll
+---
+What is a **False Positive (FP)**?
+---
+A case where the model **incorrectly predicted positive** when it was actually negative.
+
+**Example**: Model predicts "has disease" but the patient is healthy (Type I error).
+
+Also called a **false alarm**.
+---
+card_id: 54gRuV3l
+---
+What is a **True Negative (TN)**?
+---
+A case where the model **correctly predicted the negative class**.
+
+**Example**: Model predicts "no disease" and the patient is indeed healthy.
+---
+card_id: 0pPYcDB3
+---
+What is a **False Negative (FN)**?
+---
+A case where the model **incorrectly predicted negative** when it was actually positive.
+
+**Example**: Model predicts "no disease" but the patient actually has the disease (Type II error).
+
+Also called a **miss**.
+---
+card_id: llct1zZ3
+---
+What is the **False Positive Rate** formula?
+---
+$$\text{FPR} = \frac{FP}{FP + TN} = \frac{FP}{\text{Total Actual Negatives}}$$
+
+**False Positive Rate** measures the fraction of actual negatives that were incorrectly predicted as positive.
+
+- $FP$: false positives
+- $TN$: true negatives
+
+Used as the x-axis in ROC curves.
+---
+card_id: dA69gJE7
+---
+What does **Shannon entropy** measure about a distribution?
+---
+**Entropy measures uncertainty or randomness** in a distribution.
+
+**High entropy**: Distribution is spread out, uncertain (e.g., uniform distribution - all outcomes equally likely)
+
+**Low entropy**: Distribution is concentrated, predictable (e.g., one outcome has probability ≈ 1)
+
+**Zero entropy**: Completely certain (one outcome has probability = 1)
+---
+card_id: I10LiBvY
+---
+Why does the **F1 score** use the **harmonic mean** instead of arithmetic mean?
+---
+The **harmonic mean penalizes extreme imbalances** between precision and recall.
+
+**Example**: If precision = 1.0 and recall = 0.1:
+- Arithmetic mean: (1.0 + 0.1) / 2 = 0.55 (misleadingly high)
+- Harmonic mean: 2 × (1.0 × 0.1) / (1.0 + 0.1) ≈ 0.18 (correctly low)
+
+The harmonic mean is always ≤ arithmetic mean, and only equals it when values are identical.
+---
+card_id: kwcpMBRY
+---
+What is the **vanishing gradient problem**?
+---
+**Vanishing gradients** occur when gradients become extremely small during backpropagation, making weights update very slowly or stop learning entirely.
+
+**Common causes**:
+- Activation functions like sigmoid/tanh that saturate (outputs flat for large inputs)
+- Very deep networks where gradients multiply through many layers
+
+**Consequence**: Lower layers in deep networks learn very slowly or not at all.
+---
+card_id: zQXVOCyB
+---
+What is the difference between **population** and **sample**?
+---
+**Population**: The complete set of all items/observations you're interested in studying (often impossible to measure fully).
+
+**Sample**: A subset of the population actually observed/measured.
+
+**Example**:
+- Population: All voters in a country
+- Sample: 1,000 voters surveyed
+
+We use sample statistics to **estimate** population parameters.
+---
+card_id: 4PojHsim
+---
+What is an **outlier**?
+---
+An **outlier** is a data point that differs significantly from other observations - unusually high or low compared to the rest of the data.
+
+**Causes**:
+- Natural variation (legitimate extreme values)
+- Measurement errors
+- Data entry errors
+
+**Impact**: Can strongly influence statistics like mean and variance, but not median.
+---
+card_id: OfGtTf7D
+---
+What is **generalization** in machine learning?
+---
+**Generalization** is the model's ability to perform well on new, unseen data - not just the training data.
+
+**Good generalization**: Model learns underlying patterns that transfer to new examples
+
+**Poor generalization**: Model memorizes training data (overfitting) and fails on new data
+
+The ultimate goal of machine learning is good generalization.
+---
+card_id: 2GhxVoqI
+---
+What is the difference between **parameters** and **hyperparameters**?
+---
+**Parameters**: Learned by the model during training (e.g., weights, biases in neural networks).
+
+**Hyperparameters**: Set before training and control the learning process (e.g., learning rate, number of layers, regularization strength λ, number of trees in random forest).
+
+**Parameters** are optimized automatically; **hyperparameters** are tuned manually or via search.
+---
+card_id: n5F6zJ00
+---
+What is a **mini-batch** in training?
+---
+A **mini-batch** is a small subset of the training data used to compute one gradient update during training.
+
+**Typical sizes**: 32, 64, 128, 256 samples
+
+**Advantages**:
+- Faster than processing full dataset per update
+- More stable than single-example updates
+- Enables efficient parallel computation on GPUs
+---
+card_id: q2OQkYy4
+---
+What is the relationship between **cross-entropy**, **entropy**, and **KL divergence**?
+---
+$$H(p, q) = H(p) + D_{KL}(p \| q)$$
+
+**Cross-entropy** = **Shannon entropy** + **KL divergence**
+
+where:
+- $H(p, q)$: cross-entropy between true distribution $p$ and predicted distribution $q$
+- $H(p)$: entropy of true distribution (constant during training)
+- $D_{KL}(p \| q)$: KL divergence measuring distribution mismatch
+
+**Minimizing cross-entropy** ≡ **minimizing KL divergence** (since $H(p)$ is constant).
+---
+card_id: OY9wn6JJ
+---
+What is **multicollinearity**?
+---
+**Multicollinearity** occurs when predictor variables are highly correlated with each other.
+
+**Problems**:
+- Makes it hard to determine individual feature importance
+- Causes unstable coefficient estimates (small data changes → large coefficient changes)
+- Inflates variance of coefficient estimates
+
+**L2 regularization helps** by distributing weights across correlated features rather than putting all weight on one.
+---
+card_id: QE3CgMAI
+---
+What is **ensemble learning**?
+---
+**Ensemble learning** combines predictions from multiple models to make better predictions than any single model.
+
+**Key idea**: Different models make different errors; averaging reduces overall error.
+
+**Common methods**:
+- Bagging (e.g., Random Forest)
+- Boosting (e.g., XGBoost, AdaBoost)
+- Stacking
+
+Dropout creates an implicit ensemble by training many subnetworks.
+---
+card_id: tLzMaETx
+---
+What is a **receptive field** in convolutional networks?
+---
+The **receptive field** is the region of the input that affects a particular neuron's activation.
+
+**In CNNs**:
+- Early layers: Small receptive fields (local patterns like edges)
+- Deeper layers: Larger receptive fields (global patterns like shapes/objects)
+
+**Receptive field grows** as you stack more convolutional layers, allowing neurons to "see" larger portions of the input.
+---
+card_id: zU2gnz2Z
+---
+What is the **softmax** activation function?
+---
+$$\text{softmax}(x_i) = \frac{e^{x_i}}{\sum_{j=1}^{n} e^{x_j}}$$
+
+**Softmax** converts a vector of values into a probability distribution.
+
+**Properties**:
+- Outputs sum to 1
+- All outputs between 0 and 1
+- Emphasizes the largest value
+
+**Use**: Output layer for **multi-class classification** (3+ classes).
+---
+card_id: QydEx1Yk
+---
+What is the **Leaky ReLU** activation function?
+---
+$$\text{Leaky ReLU}(x) = \begin{cases} x & \text{if } x > 0 \\ \alpha x & \text{if } x \leq 0 \end{cases}$$
+
+where $\alpha$ is a small constant (e.g., 0.01).
+
+**Leaky ReLU** allows a small negative slope instead of zero for negative inputs.
+
+**Advantage**: Solves the dying ReLU problem - neurons can still learn even when inputs are negative.
+---
+card_id: IkstoadS
+---
+What is an **epoch** in training?
+---
+An **epoch** is one complete pass through the entire training dataset.
+
+**Training typically uses multiple epochs**:
+- Epoch 1: Model sees all training examples once
+- Epoch 2: Model sees all training examples again
+- etc.
+
+**Why multiple epochs?** Model needs to see examples multiple times to learn patterns effectively. Number of epochs is a hyperparameter.
+---
+card_id: jTjjyJkj
+---
+What is **backpropagation**?
+---
+**Backpropagation** is the algorithm used to compute gradients of the loss function with respect to model parameters.
+
+**How it works**:
+1. Forward pass: Compute predictions and loss
+2. Backward pass: Compute gradients by applying chain rule backward through layers
+3. Update weights using gradients
+
+Enables efficient training of deep neural networks.
+---
+card_id: U8da8SZi
+---
+What is **gradient descent**?
+---
+**Gradient descent** is an optimization algorithm that iteratively adjusts parameters to minimize the loss function.
+
+**Update rule**: $w_{new} = w_{old} - \alpha \nabla L(w)$
+
+where:
+- $\alpha$: learning rate
+- $\nabla L(w)$: gradient of loss with respect to weights
+
+**Variants**: Batch GD, Stochastic GD (SGD), Mini-batch GD.
+---
+card_id: vqpUWcWe
+---
+What is **learning rate** in gradient descent?
+---
+**Learning rate** ($\alpha$) controls the step size when updating parameters during optimization.
+
+**Too high**: Training is unstable, may overshoot minimum, may diverge
+
+**Too low**: Training is very slow, may get stuck in local minima
+
+**Common values**: 0.001, 0.01, 0.1
+
+Often the most important hyperparameter to tune.
+---
+card_id: BbAmc3iV
+---
+What is **batch gradient descent**?
+---
+**Batch gradient descent** computes the gradient using the **entire training dataset** before making one parameter update.
+
+**Advantages**: Stable, smooth convergence
+
+**Disadvantages**: Very slow for large datasets, requires all data in memory
+
+**Update frequency**: Once per epoch.
+---
+card_id: H1xqU7vY
+---
+What is **stochastic gradient descent (SGD)**?
+---
+**Stochastic gradient descent** computes the gradient using **one random training example** at a time.
+
+**Advantages**: Fast updates, can escape local minima due to noise
+
+**Disadvantages**: Noisy updates, erratic convergence path
+
+**Update frequency**: Once per training example.
+---
+card_id: acNElkYI
+---
+What is **mini-batch gradient descent**?
+---
+**Mini-batch gradient descent** computes the gradient using a **small batch** of training examples (e.g., 32, 64, 128).
+
+**Advantages**:
+- Faster than batch GD
+- More stable than SGD
+- Efficient GPU utilization
+
+**Best of both worlds** - most commonly used in practice.
+---
+card_id: UI9T8OSk
+---
+When does **Shannon entropy** equal zero?
+---
+Entropy equals **zero** when the distribution is **deterministic** - one outcome has probability 1, all others have probability 0.
+
+**Example**: If $p(x_1) = 1$ and $p(x_i) = 0$ for all other $i$:
+$$H(X) = -1 \cdot \log_2(1) = 0$$
+
+**Interpretation**: No uncertainty - you know exactly what will happen.
+---
+card_id: NfsaxG5y
+---
+What is a **Type I error**?
+---
+**Type I error** (false positive) occurs when you reject a true null hypothesis - incorrectly detecting an effect that doesn't exist.
+
+**Example**: A medical test says a healthy patient has a disease.
+
+**Symbol**: Often denoted by $\alpha$ (significance level).
+---
+card_id: krF3IVXZ
+---
+What is a **Type II error**?
+---
+**Type II error** (false negative) occurs when you fail to reject a false null hypothesis - missing an effect that does exist.
+
+**Example**: A medical test says a sick patient is healthy.
+
+**Symbol**: Often denoted by $\beta$. Power = $1 - \beta$.
+---
+card_id: O6dyoh2N
+---
+What is a **loss function**?
+---
+A **loss function** (or cost function) quantifies how wrong the model's predictions are compared to the true values.
+
+**Purpose**: Provides a single numerical value to minimize during training.
+
+**Examples**:
+- Mean Squared Error (MSE) for regression
+- Cross-entropy for classification
+- Mean Absolute Error (MAE) for regression
+---
+card_id: y8PrSSwI
+---
+What is an **activation function**?
+---
+An **activation function** introduces non-linearity into neural networks by transforming a neuron's weighted input.
+
+**Why needed?** Without activation functions, even deep networks would only learn linear relationships.
+
+**Common examples**: ReLU, sigmoid, tanh, softmax, Leaky ReLU.
+---
+card_id: 0Q7OpQ43
+---
+What is an **optimizer** in machine learning?
+---
+An **optimizer** is an algorithm that adjusts model parameters to minimize the loss function.
+
+**Common optimizers**:
+- SGD (Stochastic Gradient Descent)
+- Adam (Adaptive Moment Estimation)
+- RMSprop
+- AdaGrad
+
+Each has different strategies for computing and applying parameter updates.
+---
+card_id: e8KGqe0r
+---
+What is a **forward pass** in neural networks?
+---
+**Forward pass** is the process of computing predictions by passing input data through the network layers sequentially.
+
+**Steps**:
+1. Input enters the first layer
+2. Each layer applies weights, biases, and activation functions
+3. Output emerges from final layer
+
+Also called **forward propagation**.
+---
+card_id: IbNlwYoW
+---
+What is the **chain rule** in backpropagation?
+---
+The **chain rule** from calculus allows computing gradients through composed functions.
+
+**For neural networks**:
+$$\frac{\partial L}{\partial w_1} = \frac{\partial L}{\partial y} \cdot \frac{\partial y}{\partial z} \cdot \frac{\partial z}{\partial w_1}$$
+
+Enables computing gradients by multiplying partial derivatives backward through layers.
+---
+card_id: bFIJbsU5
+---
+What is **average pooling**?
+---
+**Average pooling** downsamples by taking the **average value** within each pooling window.
+
+**Example**: A 2×2 average pooling takes the mean of 4 values.
+
+**Comparison to max pooling**: Average pooling preserves overall intensity, while max pooling preserves strongest features.
+---
+card_id: KER0dp8z
+---
+What is **bagging** in ensemble learning?
+---
+**Bagging** (Bootstrap Aggregating) trains multiple models on different random subsets of training data, then averages their predictions.
+
+**How it works**:
+1. Create bootstrap samples (random sampling with replacement)
+2. Train one model on each sample
+3. Average predictions (regression) or vote (classification)
+
+**Example**: Random Forest uses bagging with decision trees.
+
+**Benefit**: Reduces variance by averaging diverse models.
+---
+card_id: gbTk1KMQ
+---
+What is **boosting** in ensemble learning?
+---
+**Boosting** trains models sequentially, where each new model focuses on correcting errors made by previous models.
+
+**How it works**:
+1. Train initial model on data
+2. Identify misclassified examples
+3. Give more weight to those examples
+4. Train next model focusing on hard cases
+5. Combine all models with weighted voting
+
+**Examples**: AdaBoost, XGBoost, Gradient Boosting.
+
+**Benefit**: Reduces both bias and variance by building strong learners from weak ones.
+---
+card_id: C0EWjq3B
+---
+What is the difference between **bagging** and **boosting**?
+---
+**Bagging**: Models trained **in parallel** on independent samples, reduces **variance**
+
+**Boosting**: Models trained **sequentially** where later models correct earlier mistakes, reduces **bias** and **variance**
+
+**Bagging example**: Random Forest
+**Boosting example**: XGBoost, AdaBoost
+
+Bagging is more robust to overfitting; boosting can achieve higher accuracy but may overfit if not careful.
+---
+card_id: yiJaLVoL
+---
+What is **feature engineering**?
+---
+**Feature engineering** is the process of creating, transforming, or selecting features to improve model performance.
+
+**Examples**:
+- Creating interaction terms (e.g., $x_1 \times x_2$)
+- Polynomial features (e.g., $x^2$, $x^3$)
+- Domain-specific features (e.g., extracting day-of-week from timestamps)
+- Normalization/scaling
+- Encoding categorical variables
+
+Often has bigger impact than choice of algorithm.
+---
+card_id: BTfmEblr
+---
+What is **one-hot encoding**?
+---
+**One-hot encoding** converts categorical variables into binary vectors where only one element is 1 and the rest are 0.
+
+**Example**: For colors {red, green, blue}:
+- Red → [1, 0, 0]
+- Green → [0, 1, 0]
+- Blue → [0, 0, 1]
+
+**Use**: Allows machine learning models to work with categorical data.
+---
+card_id: Akrf5AmB
+---
+What is **model capacity**?
+---
+**Model capacity** refers to the model's ability to fit a variety of functions - its flexibility and complexity.
+
+**High capacity**: Many parameters, can fit complex patterns (risk overfitting)
+
+**Low capacity**: Few parameters, limited flexibility (risk underfitting)
+
+**Examples**:
+- Low capacity: Linear regression
+- High capacity: Deep neural network with many layers
+---
+card_id: w8C2e3CL
+---
+What is the **training set**?
+---
+The **training set** is the portion of data used to train the model - to learn parameters (weights, biases) by minimizing the loss function.
+
+**Typical split**: 60-80% of total data
+
+The model sees and learns from this data directly.
+---
+card_id: Cwdj2N2S
+---
+What is the **validation set**?
+---
+The **validation set** is data used to tune hyperparameters and make model selection decisions during development.
+
+**Typical split**: 10-20% of total data
+
+**Used for**: Choosing learning rate, regularization strength, model architecture, early stopping.
+
+**Key**: Can be used repeatedly during development.
+---
+card_id: YRMA3HJw
+---
+What is the **test set**?
+---
+The **test set** is data held out for final evaluation only - never used during training or model selection.
+
+**Typical split**: 10-20% of total data
+
+**Used once**: After all development is complete, to get an unbiased performance estimate.
+
+**Critical**: Must not be used for any training decisions or you'll overfit to it.
+---
+card_id: TuGtEtRP
+---
+What is a **neural network layer**?
+---
+A **layer** is a collection of neurons that process inputs together and produce outputs.
+
+**Types**:
+- **Input layer**: Receives raw features
+- **Hidden layers**: Intermediate transformations
+- **Output layer**: Final predictions
+
+Each layer typically applies: linear transformation (weights + biases) → activation function.
+---
+card_id: VhOD3ekT
+---
+What is the **exploding gradient problem**?
+---
+**Exploding gradients** occur when gradients become extremely large during backpropagation, causing unstable training.
+
+**Causes**:
+- Deep networks with poor initialization
+- Weights that amplify signals through layers
+- Certain activation functions
+
+**Consequences**:
+- Weights update too drastically
+- Training diverges (loss becomes NaN)
+- Model fails to converge
+
+**Solutions**: Gradient clipping, proper initialization, batch normalization.
+---
+card_id: PnHbz8zJ
+---
+What is **gradient clipping**?
+---
+**Gradient clipping** limits the magnitude of gradients during training to prevent exploding gradients.
+
+**Methods**:
+- **Clip by value**: Cap gradients at threshold (e.g., [-5, 5])
+- **Clip by norm**: Scale gradient vector if its norm exceeds threshold
+
+**When to use**: Recurrent neural networks, very deep networks, when you observe exploding gradients.
+---
+card_id: p8NVrN3o
+---
+What are **weights** in neural networks?
+---
+**Weights** are learnable parameters that determine the strength of connections between neurons.
+
+**Role**: Transform inputs through multiplication: $z = w_1x_1 + w_2x_2 + ... + b$
+
+**Learning**: Adjusted during training via gradient descent to minimize loss.
+
+Each connection between neurons has its own weight.
+---
+card_id: N4D5F4C9
+---
+What is **bias** (the parameter) in neural networks?
+---
+**Bias** is a learnable parameter added to the weighted sum before the activation function.
+
+$$y = f(w_1x_1 + w_2x_2 + ... + w_nx_n + b)$$
+
+**Purpose**: Allows the activation function to shift left or right, increasing model flexibility.
+
+**Example**: Without bias, a neuron with ReLU would always output 0 when all inputs are 0.
+---
+card_id: 7i0phiJv
+---
+What is the difference between **bias** (the parameter) and **bias** (the error)?
+---
+**Bias (parameter)**: A learnable value added to weighted sums in neural networks (notation: $b$).
+
+**Bias (error)**: The systematic error when a model's average predictions miss the true function - a measure of underfitting.
+
+Same word, completely different meanings - context determines which one is meant.
+---
+card_id: nPBdbFwA
+---
+What is **feature scaling**?
+---
+**Feature scaling** transforms features to similar ranges to improve training performance.
+
+**Common methods**:
+- **Normalization**: Scale to [0, 1] → $x' = \frac{x - x_{min}}{x_{max} - x_{min}}$
+- **Standardization**: Scale to mean=0, std=1 → $x' = \frac{x - \mu}{\sigma}$
+
+**Why needed**: Features with large ranges can dominate gradient updates and slow convergence.
+---
+card_id: ZDwcXyr0
+---
+What is **normalization** in feature scaling?
+---
+**Normalization** (Min-Max scaling) scales features to a fixed range, typically [0, 1].
+
+$$x' = \frac{x - x_{min}}{x_{max} - x_{min}}$$
+
+**Use when**: You need bounded values (e.g., for neural networks with sigmoid/tanh).
+
+**Disadvantage**: Sensitive to outliers (they determine min/max).
+---
+card_id: Lj7tR0qb
+---
+What is **standardization** in feature scaling?
+---
+**Standardization** (Z-score normalization) transforms features to have mean=0 and standard deviation=1.
+
+$$x' = \frac{x - \mu}{\sigma}$$
+
+where $\mu$ is mean and $\sigma$ is standard deviation.
+
+**Use when**: Features have different units or scales, and you want to preserve outlier information.
+
+**Advantage**: Less sensitive to outliers than normalization.
+---
+card_id: 9pCunREq
+---
+What is a **decision boundary**?
+---
+A **decision boundary** is the surface that separates different classes in the feature space.
+
+**Examples**:
+- Linear classifier: Straight line (2D), plane (3D), hyperplane (higher dimensions)
+- Non-linear classifier: Curved boundaries
+
+**Model complexity determines boundary shape**: Simple models create simple boundaries, complex models create intricate boundaries.
+---
+card_id: kpCPzJdm
+---
+What is a **hyperplane**?
+---
+A **hyperplane** is a flat (linear) subspace that divides a higher-dimensional space.
+
+**Dimensions**:
+- 1D space: Point
+- 2D space: Line
+- 3D space: Plane
+- N-D space: Hyperplane (N-1 dimensions)
+
+**Use in ML**: Linear classifiers (like SVM) create hyperplane decision boundaries.
