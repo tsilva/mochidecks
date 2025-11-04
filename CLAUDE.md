@@ -23,6 +23,10 @@ Answer (markdown, LaTeX with $$...$$, code blocks)
   - **IMPORTANT**: When creating NEW cards, ALWAYS use `card_id: null` - never generate or make up card IDs
   - The mochi-mochi application will automatically generate proper IDs when importing
   - Only existing cards should have alphanumeric IDs
+  - **When fixing malformed cards**: If you need to WRITE or RECONSTRUCT a question or answer (not just edit existing text), treat it as a NEW card and set `card_id: null`
+    - Example: If a card has an answer but no question, and you write a question for it → `card_id: null`
+    - Example: If you're just fixing a typo in an existing question → keep the existing card_id
+  - **Rule of thumb**: If the card content exists and is readable, keep the ID. If you're creating content that wasn't there before, use `null`.
 - **Delimiters** - triple dashes `---` separate card_id, question, and answer
 - **Markdown** - GitHub-flavored markdown supported
 - **LaTeX** - wrap math in `$$...$$`

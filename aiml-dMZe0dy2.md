@@ -1042,9 +1042,10 @@ When is **MSE/RMSE** preferred as a loss metric?
 - You want to penalize variance more heavily
 
 MSE penalizes large errors more: $(y - \hat{y})^2$
-card_id: w7D9cEtd
 ---
-card_id: 13oEsC1R
+card_id: uOGEawx7
+---
+What is the **ROC curve**?
 ---
 **Receiver Operating Characteristic** curve plots **True Positive Rate (Recall)** vs **False Positive Rate** at various classification thresholds.
 
@@ -1053,9 +1054,9 @@ card_id: 13oEsC1R
 
 Used to evaluate classifier performance across all thresholds, not just one.
 ---
-card_id: xWWonwAo
+card_id: BKxniY3t
 ---
-card_id: hjBlPGTS
+What is the formula for **covariance**?
 ---
 $$\text{Cov}(X, Y) = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})$$
 
@@ -1066,9 +1067,9 @@ $$\text{Cov}(X, Y) = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})
 
 Units depend on variable units, making interpretation difficult.
 ---
-card_id: xuuStnWd
+card_id: mSSyzDUL
 ---
-card_id: QnyWocTB
+Given **80 true positives (TP)** and **20 false positives (FP)**, calculate **precision**.
 ---
 $$\text{Precision} = \frac{TP}{TP + FP} = \frac{80}{80 + 20} = \frac{80}{100} = 0.80$$
 
@@ -1076,9 +1077,9 @@ $$\text{Precision} = \frac{TP}{TP + FP} = \frac{80}{80 + 20} = \frac{80}{100} = 
 
 80% of positive predictions were correct.
 ---
-card_id: ySAR0P02
+card_id: jYsXth6g
 ---
-card_id: DdUECcaP
+What is the formula for **z-score**?
 ---
 $$z = \frac{x - \mu}{\sigma}$$
 
@@ -1087,23 +1088,23 @@ $$z = \frac{x - \mu}{\sigma}$$
 - $\mu$: mean
 - $\sigma$: standard deviation
 ---
-card_id: yV1SYyxc
+card_id: ANSlMJb3
 ---
-card_id: baDI67kc
+What is **L2 regularization** (Ridge) and what's its formula?
 ---
 $$\text{Loss} = \text{Original Loss} + \lambda \sum_{i=1}^{n} w_i^2$$
 
 **L2 regularization** adds the **sum of squared weights** to the loss. $\lambda$ controls regularization strength.
 ---
-card_id: null
+card_id: cuvmcyiq
 ---
-card_id: W72hr7v4
+What is the key effect of **L2 regularization** on model weights?
 ---
 Shrinks all weights toward zero (but rarely to exactly zero), preventing any single feature from dominating. Creates **smoother, more stable models** with **dense** representations (all features retained).
 ---
-card_id: yW732NiA
+card_id: 8lJAA6bT
 ---
-card_id: ysEU2dxf
+When is **MAE** preferred as a loss metric?
 ---
 **MAE** is preferred when:
 - **Outliers** are present (MAE is less sensitive to outliers)
@@ -1112,9 +1113,9 @@ card_id: ysEU2dxf
 
 MAE treats all errors with equal weight: $|y - \hat{y}|$
 ---
-card_id: zRfgfrmz
+card_id: aLII3Y0k
 ---
-card_id: Ly433CHk
+When should you use **stratified sampling**?
 ---
 **Use when**:
 - **Imbalanced classes** (e.g., 95% negative, 5% positive)
@@ -1122,5 +1123,3 @@ card_id: Ly433CHk
 - Rare categories that might be missed in random splits
 
 Prevents situations where a class might be missing from validation/test sets.
----
-card_id: zv0IX1rL
