@@ -278,14 +278,6 @@ How does **sample size** affect **standard error**?
 
 **Doubling sample size** reduces SE by factor of $\sqrt{2} \approx 1.41$ (not by factor of 2).
 ---
-card_id: IEXXk7CH
----
-What does **standard error** measure?
----
-**Standard error** measures the **uncertainty of the sample mean** as an estimate of the population mean.
-
-It describes estimation uncertainty. SE = $\frac{SD}{\sqrt{n}}$, so it decreases as sample size increases.
----
 card_id: IjY7uZyN
 ---
 Why does **cross-entropy** use logarithms like **Shannon entropy**?
@@ -357,7 +349,7 @@ Each training iteration uses a different random subset of neurons, creating many
 ---
 card_id: KfXgBQCx
 ---
-What is the advantage of using **max pooling** layers?
+What are the advantages of using **max pooling** layers?
 ---
 Reduces parameters, helps avoid overfitting, helps with translation invariance.
 ---
