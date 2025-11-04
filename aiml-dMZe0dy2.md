@@ -226,7 +226,12 @@ $$\text{ReLU}(x) = \max(0, x)$$
 - When you want fast training (computationally efficient)
 - When avoiding vanishing gradients is important
 
-Most widely used activation for hidden layers in CNNs and feedforward networks.
+**Advantages**:
+- Simple threshold operation (fast computation)
+- Gradient is either 0 or 1 (avoids vanishing gradient)
+- Sparse activation (many neurons output 0)
+
+**Drawback**: "Dying ReLU" problem - neurons can get stuck outputting 0.
 ---
 card_id: FbTVAB1c
 ---
@@ -238,15 +243,6 @@ $$\sigma = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2}$$
 - $N$: population size
 - $x_i$: individual value
 - $\mu$: population mean
----
-card_id: GElEOTLZ
----
-What do **learning curves** look like for a **high variance** (overfitting) model?
----
-**Training error** is **low**, but **validation error** is **much higher** with a **large gap** between them.
-
-As training data increases, the gap may decrease (more data helps overfitting), but validation error starts high.
----
 card_id: GXeoR8nY
 ---
 How does **sample size** affect **standard error**?
@@ -259,17 +255,6 @@ How does **sample size** affect **standard error**?
 - Confidence intervals narrow
 
 **Doubling sample size** reduces SE by factor of $\sqrt{2} \approx 1.41$ (not by factor of 2).
----
-card_id: HLLEiKXa
----
-What are solutions to fix a model with **99% training accuracy** but **60% test accuracy**?
----
-- Get more training data
-- Reduce model complexity (fewer layers/parameters)
-- Increase regularization (L1/L2, dropout)
-- Use early stopping
-- Apply data augmentation
----
 card_id: IEXXk7CH
 ---
 What does **standard error** measure?
@@ -518,15 +503,6 @@ $$R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{\sum(y_i - \hat{y}_i)^2}{\sum(
 - **Range**: 0 to 1 (can be negative for bad models)
 - **R² = 1**: Perfect predictions
 - **R² = 0**: Model no better than predicting the mean
----
-card_id: WVxXR9zM
----
-What do **learning curves** look like for a **high bias** (underfitting) model?
----
-Both **training error** and **validation error** are **high** and **plateau early** (converge to similar high values).
-
-Adding more training data doesn't help much - the model is too simple to capture the patterns.
----
 card_id: X03z1kIe
 ---
 What is the **total error decomposition** formula?
@@ -801,15 +777,6 @@ What happens when you **increase** the regularization parameter **λ**?
 - Moves toward underfitting
 
 Stronger penalty on large weights forces simpler models.
----
-card_id: mAJMglrV
----
-Model has **5% training error** and **40% validation error**. What's the diagnosis?
----
-**High variance / overfitting** - the large gap (35 percentage points) between training and validation error indicates the model memorizes training data but doesn't generalize.
-
-The model is too complex relative to the amount of training data available.
----
 card_id: mdlIumeg
 ---
 Why can **accuracy** be misleading?
@@ -884,19 +851,6 @@ In the dartboard analogy for machine learning, what does **bias** represent?
 **Bias** represents systematic aiming error - arrows consistently miss the center in the same direction.
 
 Just like a model with high bias systematically misses the true function, arrows with bias consistently miss the bullseye in one direction.
----
-card_id: qpfyIXC0
----
-Why is **ReLU** popular for neural networks?
----
-**Advantages**:
-- **Computationally efficient** (simple threshold operation)
-- **Avoids vanishing gradient problem** (gradient is either 0 or 1, not exponentially small)
-- **Sparse activation** (many neurons output 0, making networks more efficient)
-- Works well in practice for deep networks
-
-**Disadvantage**: "Dying ReLU" - neurons can get stuck always outputting 0.
----
 card_id: rA8ttBZx
 ---
 How does **dropout** help prevent overfitting?
@@ -987,13 +941,6 @@ When is **MSE/RMSE** preferred as a loss metric?
 - You want to penalize variance more heavily
 
 MSE penalizes large errors more: $(y - \hat{y})^2$
----
-card_id: w4s01U1i
----
-What are the solutions to fix a **high variance** (overfitting) problem?
----
-Collect more data, use a simpler model, or increase regularization.
----
 card_id: w7D9cEtd
 ---
 What is an **ROC curve**?
