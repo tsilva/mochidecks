@@ -723,6 +723,21 @@ What is **bias** in machine learning?
 ---
 The measure of how far the model's average predictions are from the true underlying function.
 ---
+card_id: null
+---
+What is the **bias formula** in machine learning?
+---
+$$\text{Bias}[\hat{f}(x)] = E[\hat{f}(x)] - f(x)$$
+
+or equivalently:
+
+$$\text{Bias} = E[\hat{y}] - y$$
+
+- $E[\hat{f}(x)]$: expected prediction of the model
+- $f(x)$: true function value
+- $E[\hat{y}]$: expected predicted value
+- $y$: true value
+---
 card_id: bOTPjqHx
 ---
 What is the **cross-entropy** formula for binary classification?
