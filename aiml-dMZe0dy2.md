@@ -965,7 +965,7 @@ What is the **mode**?
 ---
 The **mode** is the most frequently occurring value in a dataset.
 ---
-card_id: null
+card_id: wenO5IJa
 ---
 How many modes can a dataset have?
 ---
