@@ -1197,12 +1197,18 @@ card_id: dA69gJE7
 What does **Shannon entropy** measure about a distribution?
 ---
 **Entropy measures uncertainty or randomness** in a distribution.
-
-**High entropy**: Distribution is spread out, uncertain (e.g., uniform distribution - all outcomes equally likely)
-
-**Low entropy**: Distribution is concentrated, predictable (e.g., one outcome has probability ≈ 1)
-
-**Zero entropy**: Completely certain (one outcome has probability = 1)
+---
+card_id: null
+---
+What does **high entropy** indicate about a distribution?
+---
+Distribution is spread out and uncertain (e.g., uniform distribution where all outcomes are equally likely).
+---
+card_id: null
+---
+What does **low entropy** indicate about a distribution?
+---
+Distribution is concentrated and predictable (e.g., one outcome has probability ≈ 1).
 ---
 card_id: I10LiBvY
 ---
@@ -2146,30 +2152,11 @@ What are the benefits of **local connectivity** in convolutional layers?
 ---
 Captures local patterns efficiently and reduces computational cost.
 ---
----
-card_id: null
----
-What does **ReLU (Rectified Linear Unit)** output?
----
-Outputs the input if positive, zero otherwise.
----
 card_id: null
 ---
 What does **information gain** measure in decision trees?
 ---
 Measures the reduction in entropy after splitting on a feature.
----
-card_id: null
----
-What does **L1 regularization** (Lasso) do?
----
-Adds the **sum of absolute values** of weights to the loss. $\lambda$ controls regularization strength.
----
-card_id: null
----
-What does **L2 regularization** (Ridge) do?
----
-Adds the **sum of squared weights** to the loss. $\lambda$ controls regularization strength.
 ---
 card_id: null
 ---
