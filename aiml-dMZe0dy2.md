@@ -2041,3 +2041,126 @@ card_id: null
 What is **PPV (Positive Predictive Value)** also known as in AI/ML?
 ---
 **PPV (Positive Predictive Value)** is also known as **Precision**.
+What metric is best for detecting when a model is good for **cancer screening**, where missing a positive case could be life-threatening?
+---
+**Recall (Sensitivity)** - prioritizes catching all positive cases even if it means more false positives, since false negatives are unacceptable in this context.
+---
+card_id: null
+---
+What metric is best for detecting when a model is good for **spam email filtering**, where users find false positives (legitimate emails marked as spam) very annoying?
+---
+**Precision** - ensures that when emails are marked as spam, they are actually spam, minimizing the risk of missing important legitimate emails.
+---
+card_id: null
+---
+What metric is best for detecting when a model is good for **credit card fraud detection**, where both false positives (blocking legitimate transactions) and false negatives (missing fraud) have significant costs?
+---
+**F1-score** - provides a balanced measure between precision and recall, appropriate when both types of errors matter.
+---
+card_id: null
+---
+What metric is best for detecting when a model is good for **ranking search results**, where top results matter more than lower-ranked ones?
+---
+**NDCG (Normalized Discounted Cumulative Gain)** - accounts for both relevance and position, with higher weight on top-ranked results.
+---
+card_id: null
+---
+What metric is best for detecting when a **language model** produces coherent and accurate text?
+---
+**Perplexity** - measures how well the probability distribution predicts the sample, with lower values indicating better predictive performance.
+---
+card_id: null
+---
+What metric is best for detecting when a model is good for **medical screening** where false positives lead to expensive unnecessary follow-up procedures?
+---
+**Precision** - minimizes false positives to reduce unnecessary costly procedures while ensuring positive predictions are reliable.
+---
+card_id: null
+---
+What metric is best for detecting when a model is good for **image segmentation**, measuring how well predicted regions overlap with ground truth?
+---
+**IoU (Intersection over Union)** - measures the overlap between predicted and actual regions, ranging from 0 (no overlap) to 1 (perfect match).
+---
+card_id: null
+---
+What metric is best for detecting when a model is good for **predicting house prices** when you want the error in the original dollar units?
+---
+**RMSE (Root Mean Squared Error)** - provides error in the same units as the target variable (dollars), making it interpretable and emphasizing larger errors.
+---
+card_id: null
+---
+What metric is best for detecting when a model is good for **binary classification with severe class imbalance** (e.g., 99% negative, 1% positive)?
+---
+**MCC (Matthews Correlation Coefficient)** - ranges from -1 to +1 and provides a balanced measure even with extreme class imbalance, using all confusion matrix elements.
+---
+card_id: null
+---
+What metric is best for detecting when a model is good for **comparing classifier performance across different decision thresholds**?
+---
+**AUC-ROC (Area Under ROC Curve)** - threshold-independent metric that evaluates performance across all possible classification thresholds.
+---
+card_id: null
+---
+What metric is best for detecting when a model is good for **rare disease detection**, where correctly identifying healthy patients is important for resource allocation?
+---
+**Specificity (True Negative Rate)** - measures the model's ability to correctly identify negative cases, crucial when most cases are negative.
+---
+card_id: null
+---
+What metric is best for detecting when a model is good for **binary classification with imbalanced classes**, accounting for per-class accuracy?
+---
+**Balanced Accuracy** - averages recall across classes, giving equal weight to each class regardless of size.
+---
+card_id: null
+---
+What metric is best for detecting when a model is good for **probabilistic predictions**, where calibrated probabilities matter more than just class labels?
+---
+**Log Loss (Cross-Entropy)** - directly evaluates the quality of predicted probabilities, heavily penalizing confident wrong predictions.
+---
+card_id: null
+---
+What metric is best for detecting when a **machine translation model** produces quality translations?
+---
+**BLEU (Bilingual Evaluation Understudy)** - measures n-gram overlap between predicted and reference translations.
+---
+card_id: null
+---
+What metric is best for detecting when a model is good for **predicting house prices** when you want to be robust to outliers (extreme price anomalies)?
+---
+**MAE (Mean Absolute Error)** - treats all errors equally without squaring, making it less sensitive to outliers than MSE.
+---
+card_id: null
+---
+What metric is best for detecting when a model is good for **predicting stock prices** where large errors should be penalized more heavily than small ones?
+---
+**MSE (Mean Squared Error)** - squares the errors, giving disproportionately higher penalty to larger deviations.
+---
+card_id: null
+---
+What metric is best for detecting when a regression model is good for **explaining variance** in the target variable?
+---
+**R² (Coefficient of Determination)** - measures the proportion of variance explained by the model, ranging from 0 to 1.
+---
+card_id: null
+---
+What metric is best for detecting when a model is good for **object detection**, measuring bounding box prediction accuracy?
+---
+**IoU (Intersection over Union)** - computes overlap between predicted and ground truth bounding boxes, with threshold (e.g., IoU > 0.5) determining detection success.
+---
+card_id: null
+---
+What metric is best for detecting when a model is good for **recommender system ranking**, where retrieving relevant items near the top matters?
+---
+**MAP (Mean Average Precision)** - averages precision at each relevant item position, emphasizing early retrieval of relevant items.
+---
+card_id: null
+---
+What metric is best for detecting when a model is good for **multi-class classification with balanced classes** and no differential cost between error types?
+---
+**Accuracy** - simple and interpretable proportion of correct predictions, appropriate when all classes have similar size and importance.
+---
+card_id: null
+---
+What metric is best for detecting when a model is good for **anomaly detection in network security**, where catching attacks is critical but normal traffic vastly outnumbers attacks?
+---
+**Recall** combined with **Precision-Recall AUC** - prioritizes catching attacks (high recall) while PR-AUC evaluates performance across thresholds for imbalanced data.
