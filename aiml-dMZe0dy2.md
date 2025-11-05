@@ -57,7 +57,6 @@ What are the characteristics of **L1 (Lasso) regularization**?
 - Produces **sparse models** (drives many weights to exactly zero)
 - Performs automatic **feature selection** (eliminates irrelevant features)
 - Less smooth optimization (not differentiable at zero)
-- Uses absolute value penalty: $\lambda \sum |w_i|$
 ---
 card_id: 2mOH3FWf
 ---
@@ -586,7 +585,6 @@ What are the characteristics of **L2 (Ridge) regularization**?
 - Produces **dense models** (shrinks all weights toward zero, but rarely to exactly zero)
 - Performs **feature shrinkage** (reduces impact of all features proportionally)
 - Smoother optimization (differentiable everywhere)
-- Uses squared penalty: $\lambda \sum w_i^2$
 ---
 card_id: YLooMKtq
 ---
@@ -638,8 +636,6 @@ card_id: ZxbODedV
 In the dartboard analogy for machine learning, what does **variance** represent?
 ---
 **Variance** represents the spread of arrows - how scattered the shots are around their average position.
-
-Just like a model with high variance has inconsistent predictions across different training sets, arrows with high variance are spread out widely.
 ---
 card_id: a2dKNgsc
 ---
@@ -700,7 +696,7 @@ What is the **tanh** activation function formula?
 ---
 $$\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}$$
 
-Outputs values in range **-1 to 1** (zero-centered, unlike sigmoid).
+Outputs values in range **-1 to 1** (zero-centered).
 ---
 card_id: IBx0F6J0
 ---
@@ -944,8 +940,6 @@ card_id: qo9zIkdR
 In the dartboard analogy for machine learning, what does **bias** represent?
 ---
 **Bias** represents systematic aiming error - arrows consistently miss the center in the same direction.
-
-Just like a model with high bias systematically misses the true function, arrows with bias consistently miss the bullseye in one direction.
 ---
 card_id: rA8ttBZx
 ---
@@ -1013,7 +1007,7 @@ What is the **sigmoid** activation function formula?
 ---
 $$\sigma(x) = \frac{1}{1 + e^{-x}}$$
 
-Outputs values between **0 and 1**, making it suitable for probability interpretation.
+Outputs values between **0 and 1**.
 ---
 card_id: xZvfKOc7
 ---
@@ -1043,8 +1037,6 @@ card_id: uXtcGBI0
 Given a model with **99% training accuracy** but **60% test accuracy**, what's the problem?
 ---
 **High variance / overfitting** - the model memorizes training data but doesn't generalize to new data.
-
-The large gap between training and test accuracy is the key indicator of overfitting.
 ---
 card_id: vWrhqLpm
 ---
@@ -1169,12 +1161,7 @@ card_id: KlEA3qfZ
 ---
 What is a **confusion matrix**?
 ---
-A **confusion matrix** is a table showing the four possible outcomes of binary classification:
-
-- **True Positive (TP)**: Correctly predicted positive
-- **False Positive (FP)**: Incorrectly predicted positive (Type I error)
-- **True Negative (TN)**: Correctly predicted negative
-- **False Negative (FN)**: Incorrectly predicted negative (Type II error)
+A **confusion matrix** is a table showing the four possible outcomes of binary classification: TP, FP, TN, and FN.
 ---
 card_id: yLulG0eu
 ---
@@ -1276,8 +1263,6 @@ What is the difference between **population** and **sample**?
 **Population**: The complete set of all items/observations you're interested in studying (often impossible to measure fully).
 
 **Sample**: A subset of the population actually observed/measured.
-
-We use sample statistics to **estimate** population parameters.
 ---
 card_id: MW5HaGms
 ---
@@ -1311,12 +1296,6 @@ card_id: OfGtTf7D
 What is **generalization** in machine learning?
 ---
 **Generalization** is the model's ability to perform well on new, unseen data - not just the training data.
-
-**Good generalization**: Model learns underlying patterns that transfer to new examples
-
-**Poor generalization**: Model memorizes training data (overfitting) and fails on new data
-
-The ultimate goal of machine learning is good generalization.
 ---
 card_id: 2GhxVoqI
 ---
