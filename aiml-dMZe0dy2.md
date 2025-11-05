@@ -94,7 +94,7 @@ The balance between two sources of error: **bias** (underfitting from overly sim
 ---
 card_id: 6JnCbrfd
 ---
-What is the **precision** formula?
+What is the **precision (PPV, Positive Predictive Value)** formula?
 ---
 $$\text{Precision} = \frac{TP}{TP + FP}$$
 
@@ -103,7 +103,7 @@ $$\text{Precision} = \frac{TP}{TP + FP}$$
 ---
 card_id: rTz7miPH
 ---
-What does **precision** measure in classification?
+What does **precision (PPV, Positive Predictive Value)** measure in classification?
 ---
 **Precision** measures the fraction of predicted positives that are actually positive.
 ---
@@ -464,7 +464,7 @@ Creates modified versions of training examples (e.g., rotated, flipped, or cropp
 ---
 card_id: OOPt9KXD
 ---
-When would you prioritize **recall** over **precision**?
+When would you prioritize **recall (Sensitivity)** over **precision (PPV)**?
 ---
 When the **cost of missing a positive case (false negative) is very high**.
 ---
@@ -832,7 +832,7 @@ Higher AUC means better separation between classes.
 ---
 card_id: hjBWXkj3
 ---
-When would you prioritize **precision** over **recall**?
+When would you prioritize **precision (PPV)** over **recall (Sensitivity)**?
 ---
 When the **cost of a false positive is high** or you have limited resources to handle positive predictions.
 ---
@@ -863,7 +863,7 @@ If dataset has class imbalance the model can have high global accuracy while com
 ---
 card_id: o2mCdan7
 ---
-What is the **recall** formula?
+What is the **recall (Sensitivity, True Positive Rate)** formula?
 ---
 $$\text{Recall} = \frac{TP}{TP + FN}$$
 
@@ -872,7 +872,7 @@ $$\text{Recall} = \frac{TP}{TP + FN}$$
 ---
 card_id: 8RwDlaTy
 ---
-What does **recall** measure in classification?
+What does **recall (Sensitivity, True Positive Rate)** measure in classification?
 ---
 **Recall** measures the fraction of actual positives that were correctly predicted.
 ---
@@ -1053,14 +1053,14 @@ card_id: uOGEawx7
 ---
 What is the **ROC curve**?
 ---
-**Receiver Operating Characteristic** curve plots **True Positive Rate (Recall)** vs **False Positive Rate** at various classification thresholds.
+**Receiver Operating Characteristic** curve plots **True Positive Rate (Recall, Sensitivity)** vs **False Positive Rate** at various classification thresholds.
 ---
 card_id: SJ62qEWG
 ---
 What are the axes of the **ROC curve**?
 ---
 - X-axis: False Positive Rate = $\frac{FP}{FP + TN}$
-- Y-axis: True Positive Rate = $\frac{TP}{TP + FN}$ (Recall)
+- Y-axis: True Positive Rate = $\frac{TP}{TP + FN}$ (Recall, Sensitivity)
 ---
 card_id: BKxniY3t
 ---
@@ -1070,7 +1070,7 @@ $$\text{Cov}(X, Y) = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})
 ---
 card_id: mSSyzDUL
 ---
-Given **80 true positives (TP)** and **20 false positives (FP)**, calculate **precision**.
+Given **80 true positives (TP)** and **20 false positives (FP)**, calculate **precision (PPV)**.
 ---
 $$\text{Precision} = \frac{TP}{TP + FP} = \frac{80}{80 + 20} = \frac{80}{100} = 0.80$$
 
@@ -2014,6 +2014,33 @@ Linear classifiers (like SVM) create hyperplane decision boundaries.
 ---
 card_id: null
 ---
+What is **Recall** also known as in AI/ML?
+---
+**Recall** is also known as **Sensitivity** or **True Positive Rate (TPR)**.
+---
+card_id: null
+---
+What is **Sensitivity** also known as in AI/ML?
+---
+**Sensitivity** is also known as **Recall** or **True Positive Rate (TPR)**.
+---
+card_id: null
+---
+What is **True Positive Rate (TPR)** also known as in AI/ML?
+---
+**True Positive Rate (TPR)** is also known as **Recall** or **Sensitivity**.
+---
+card_id: null
+---
+What is **Precision** also known as in AI/ML?
+---
+**Precision** is also known as **PPV (Positive Predictive Value)**.
+---
+card_id: null
+---
+What is **PPV (Positive Predictive Value)** also known as in AI/ML?
+---
+**PPV (Positive Predictive Value)** is also known as **Precision**.
 What metric is best for detecting when a model is good for **cancer screening**, where missing a positive case could be life-threatening?
 ---
 **Recall (Sensitivity)** - prioritizes catching all positive cases even if it means more false positives, since false negatives are unacceptable in this context.
