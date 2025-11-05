@@ -863,7 +863,7 @@ If dataset has class imbalance the model can have high global accuracy while com
 ---
 card_id: o2mCdan7
 ---
-What is the **recall** formula?
+What is the **recall (Sensitivity, True Positive Rate)** formula?
 ---
 $$\text{Recall} = \frac{TP}{TP + FN}$$
 
@@ -872,7 +872,7 @@ $$\text{Recall} = \frac{TP}{TP + FN}$$
 ---
 card_id: 8RwDlaTy
 ---
-What does **recall** measure in classification?
+What does **recall (Sensitivity, True Positive Rate)** measure in classification?
 ---
 **Recall** measures the fraction of actual positives that were correctly predicted.
 ---
@@ -1053,14 +1053,14 @@ card_id: uOGEawx7
 ---
 What is the **ROC curve**?
 ---
-**Receiver Operating Characteristic** curve plots **True Positive Rate (Recall)** vs **False Positive Rate** at various classification thresholds.
+**Receiver Operating Characteristic** curve plots **True Positive Rate (Recall, Sensitivity)** vs **False Positive Rate** at various classification thresholds.
 ---
 card_id: SJ62qEWG
 ---
 What are the axes of the **ROC curve**?
 ---
 - X-axis: False Positive Rate = $\frac{FP}{FP + TN}$
-- Y-axis: True Positive Rate = $\frac{TP}{TP + FN}$ (Recall)
+- Y-axis: True Positive Rate = $\frac{TP}{TP + FN}$ (Recall, Sensitivity)
 ---
 card_id: BKxniY3t
 ---
@@ -2011,3 +2011,21 @@ card_id: HNzOigX9
 How are **hyperplanes** used in machine learning?
 ---
 Linear classifiers (like SVM) create hyperplane decision boundaries.
+---
+card_id: null
+---
+What is **Recall** also known as in AI/ML?
+---
+**Recall** is also known as **Sensitivity** or **True Positive Rate (TPR)**.
+---
+card_id: null
+---
+What is **Sensitivity** also known as in AI/ML?
+---
+**Sensitivity** is also known as **Recall** or **True Positive Rate (TPR)**.
+---
+card_id: null
+---
+What is **True Positive Rate (TPR)** also known as in AI/ML?
+---
+**True Positive Rate (TPR)** is also known as **Recall** or **Sensitivity**.
