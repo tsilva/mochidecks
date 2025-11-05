@@ -2041,6 +2041,9 @@ card_id: null
 What is **PPV (Positive Predictive Value)** also known as in AI/ML?
 ---
 **PPV (Positive Predictive Value)** is also known as **Precision**.
+---
+card_id: null
+---
 What metric is best for detecting when a model is good for **cancer screening**, where missing a positive case could be life-threatening?
 ---
 **Recall (Sensitivity)** - prioritizes catching all positive cases even if it means more false positives, since false negatives are unacceptable in this context.
