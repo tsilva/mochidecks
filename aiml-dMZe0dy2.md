@@ -105,7 +105,7 @@ card_id: rTz7miPH
 ---
 What does **precision** measure in classification?
 ---
-**Precision** measures the fraction of predicted positives that are actually positive. It answers: "Of all the cases we predicted as positive, how many were actually positive?"
+**Precision** measures the fraction of predicted positives that are actually positive.
 ---
 card_id: 7rNOkySl
 ---
@@ -143,19 +143,19 @@ card_id: 96nV20bO
 ---
 How do **convolutional layers** contribute to translation invariance?
 ---
-Same filters (kernels) are applied across the entire image through **parameter sharing**. A filter that detects an edge at one location can detect it anywhere, making detection position-independent.
+Same filters (kernels) are applied across the entire image through **parameter sharing**. A filter that detects an edge at one location can detect it anywhere.
 ---
 card_id: LN4bCVK5
 ---
 How do **pooling layers** contribute to translation invariance?
 ---
-Downsampling creates tolerance to small spatial shifts. By summarizing regions (e.g., taking max or average), pooling makes the representation robust to minor position changes.
+By summarizing regions (e.g., taking max or average), pooling creates tolerance to small spatial shifts.
 ---
 card_id: Y1vuPj96
 ---
 How does **hierarchical architecture** contribute to translation invariance in CNNs?
 ---
-Learns features progressively from local patterns (edges, textures) to global structure (shapes, objects). This multi-level abstraction builds position-independent representations at each layer.
+Learns features progressively from local patterns (edges, textures) to global structure (shapes, objects), building position-independent representations at each layer.
 ---
 card_id: AY8mz6zj
 ---
@@ -177,19 +177,19 @@ card_id: Ap2G6Y1Z
 ---
 How does **batch normalization** enable faster training?
 ---
-Allows use of **higher learning rates** without diverging. By normalizing layer inputs, it prevents gradients from becoming too large or too small, enabling more aggressive optimization.
+Allows use of **higher learning rates** without diverging by preventing gradients from becoming too large or too small.
 ---
 card_id: w2knuDZX
 ---
 How does **batch normalization** act as regularization?
 ---
-Slight noise from using different batch statistics during training (each mini-batch has slightly different mean/variance) adds randomness that reduces overfitting, similar to dropout.
+Slight noise from using different batch statistics during training (each mini-batch has slightly different mean/variance) adds randomness that reduces overfitting.
 ---
 card_id: 1iXPivNz
 ---
 How does **batch normalization** reduce sensitivity to initialization?
 ---
-Makes the network less dependent on careful weight initialization. By normalizing layer inputs, even poor initial weights can be quickly adjusted during training.
+By normalizing layer inputs, even poor initial weights can be quickly adjusted during training.
 ---
 card_id: BMdy0vzZ
 ---
@@ -235,7 +235,7 @@ card_id: zicKRF6O
 ---
 What does the **F1 score** measure in classification?
 ---
-The **F1 score** is the harmonic mean of **precision** and **recall**. It answers: "What's the overall performance when both precision and recall matter equally?"
+The **F1 score** is the harmonic mean of **precision** and **recall**.
 ---
 card_id: DtODRtgY
 ---
@@ -442,19 +442,19 @@ card_id: BjC2X90B
 ---
 How can **more training data** help reduce overfitting?
 ---
-More diverse examples make it harder for the model to memorize individual cases. Forces the model to learn general patterns rather than specific training examples.
+More diverse examples make it harder for the model to memorize individual cases, forcing it to learn general patterns.
 ---
 card_id: I94brlLK
 ---
 How can **reducing model complexity** help with overfitting?
 ---
-Fewer parameters (layers, neurons, features) limit the model's capacity to memorize. Simpler models are forced to learn only the most important patterns, improving generalization.
+Fewer parameters (layers, neurons, features) limit the model's capacity to memorize, forcing it to learn only the most important patterns.
 ---
 card_id: XPmZv2Tq
 ---
 How does **early stopping** prevent overfitting?
 ---
-Stop training when validation error starts increasing, even if training error is still decreasing. This catches the model before it starts memorizing training data.
+Stops training when validation error starts increasing, even if training error is still decreasing, catching the model before it memorizes training data.
 ---
 card_id: 8fkbFdoB
 ---
@@ -874,7 +874,7 @@ card_id: 8RwDlaTy
 ---
 What does **recall** measure in classification?
 ---
-**Recall** measures the fraction of actual positives that were correctly predicted. It answers: "Of all the actual positive cases, how many did we find?"
+**Recall** measures the fraction of actual positives that were correctly predicted.
 ---
 card_id: oA6OP9w6
 ---
