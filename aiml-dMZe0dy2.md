@@ -65,7 +65,7 @@ What is the **KL divergence** formula?
 ---
 $$D_{KL}(P \| Q) = \sum_{i} p(x_i) \log \frac{p(x_i)}{q(x_i)}$$
 ---
-card_id: null
+card_id: wf5wpU98
 ---
 What does **KL divergence** measure?
 ---
@@ -102,7 +102,7 @@ $$\text{Precision} = \frac{TP}{TP + FP}$$
 - $TP$: true positives
 - $FP$: false positives
 ---
-card_id: null
+card_id: rTz7miPH
 ---
 What does **precision** measure in classification?
 ---
@@ -200,7 +200,7 @@ $$\text{Information Gain} = H(\text{parent}) - \sum_{children} \frac{n_{child}}{
 
 **Information gain** measures the reduction in entropy after splitting on a feature.
 ---
-card_id: null
+card_id: uTKVGbxs
 ---
 How is **information gain** used in decision trees?
 ---
@@ -232,7 +232,7 @@ $$F_1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \
 - $FP$: false positives
 - $FN$: false negatives
 ---
-card_id: null
+card_id: zicKRF6O
 ---
 What does the **F1 score** measure in classification?
 ---
@@ -291,7 +291,7 @@ How does **sample size** affect **standard error**?
 
 As sample size increases, standard error **decreases** (by factor of $\sqrt{n}$).
 ---
-card_id: null
+card_id: 2UUY5jSm
 ---
 What are the implications of increasing sample size?
 ---
@@ -383,7 +383,7 @@ $$\text{Specificity} = \frac{TN}{TN + FP}$$
 - $TN$: true negatives
 - $FP$: false positives
 ---
-card_id: null
+card_id: LdzlSXj1
 ---
 What does **specificity** measure?
 ---
@@ -655,7 +655,7 @@ What is **batch normalization**?
 ---
 **Batch normalization** normalizes layer inputs to have mean 0 and variance 1 within each mini-batch.
 ---
-card_id: null
+card_id: 8AeZNfcx
 ---
 What is the **batch normalization** formula?
 ---
@@ -743,7 +743,7 @@ What is the **cross-entropy** formula?
 ---
 $$H(p, q) = -\sum_{i} p(x_i) \log q(x_i)$$
 ---
-card_id: null
+card_id: mnAhXudy
 ---
 What is the **cross-entropy** formula for binary classification?
 ---
@@ -882,7 +882,7 @@ $$\text{Recall} = \frac{TP}{TP + FN}$$
 - $TP$: true positives
 - $FN$: false negatives
 ---
-card_id: null
+card_id: 8RwDlaTy
 ---
 What does **recall** measure in classification?
 ---
@@ -1064,7 +1064,7 @@ What is the **ROC curve**?
 ---
 **Receiver Operating Characteristic** curve plots **True Positive Rate (Recall)** vs **False Positive Rate** at various classification thresholds.
 ---
-card_id: null
+card_id: SJ62qEWG
 ---
 What are the axes of the **ROC curve**?
 ---
@@ -1138,7 +1138,7 @@ What is **overfitting**?
 ---
 **Overfitting** occurs when a model learns the training data too well, including noise and random fluctuations, rather than just the underlying patterns.
 ---
-card_id: null
+card_id: k4yrW9xb
 ---
 What are the characteristics of **overfitting**?
 ---
@@ -1152,7 +1152,7 @@ What is **underfitting**?
 ---
 **Underfitting** occurs when a model is too simple to capture the underlying patterns in the data.
 ---
-card_id: null
+card_id: ozCnitK8
 ---
 What are the characteristics of **underfitting**?
 ---
@@ -1234,7 +1234,7 @@ $$\text{FPR} = \frac{FP}{FP + TN} = \frac{FP}{\text{Total Actual Negatives}}$$
 - $FP$: false positives
 - $TN$: true negatives
 ---
-card_id: null
+card_id: gmpKQkfS
 ---
 What does **False Positive Rate** measure?
 ---
