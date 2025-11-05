@@ -36,6 +36,15 @@ Answer (markdown, LaTeX with $$...$$, code blocks)
 
 **Quality standards:**
 - **Atomic** - one question, one answer per card; no multi-part questions/answers
+  - **Answers must ONLY contain information that directly answers the question asked**
+  - Watch for answers with multiple distinct sections (definition + examples, definition + implications, definition + context, etc.)
+  - **Atomicity test**: Remove each section/paragraph from the answer. If the question is still fully answered after removing it, that section should be a separate card
+  - Common violations:
+    - Adding examples when the question asks "What is X?" (create separate card: "What are examples of X?")
+    - Adding use cases when the question asks for a definition (create separate card: "When to use X?")
+    - Adding implications/effects when the question asks for a definition (create separate card: "What does X affect?")
+    - Adding comparisons when the question asks about one concept (create separate card: "How does X compare to Y?")
+  - **The answer should stop as soon as the question is answered** - resist the urge to add helpful context
 - **Concise** - clear, focused questions and answers; use bullet lists instead of paragraphs when answers contain multiple facts
 - **Unique** - no duplicate cards within or across decks
 - **Unambiguous** - questions must have a single, clear interpretation with no ambiguity about what is being asked
