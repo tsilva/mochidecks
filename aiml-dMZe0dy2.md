@@ -143,13 +143,13 @@ card_id: 96nV20bO
 ---
 How do **convolutional layers** contribute to translation invariance?
 ---
-Same filters (kernels) are applied across the entire image through **parameter sharing**. A filter that detects an edge at one location can detect it anywhere.
+Same filters (kernels) are applied across the entire image through **parameter sharing**.
 ---
 card_id: LN4bCVK5
 ---
 How do **pooling layers** contribute to translation invariance?
 ---
-By summarizing regions (e.g., taking max or average), pooling creates tolerance to small spatial shifts.
+By summarizing regions, pooling creates tolerance to small spatial shifts.
 ---
 card_id: Y1vuPj96
 ---
@@ -193,11 +193,9 @@ By normalizing layer inputs, even poor initial weights can be quickly adjusted d
 ---
 card_id: BMdy0vzZ
 ---
-What is **information gain** in decision trees?
+What is the **information gain** formula?
 ---
 $$\text{Information Gain} = H(\text{parent}) - \sum_{children} \frac{n_{child}}{n_{parent}} H(\text{child})$$
-
-**Information gain** measures the reduction in entropy after splitting on a feature.
 ---
 card_id: uTKVGbxs
 ---
@@ -249,7 +247,7 @@ card_id: KOqfLBVF
 ---
 What are examples of data where **median** is preferred over **mean**?
 ---
-Income, house prices, response times - all typically have outliers or skewed distributions.
+Income, house prices, response times.
 ---
 card_id: E5FTs0pm
 ---
@@ -286,9 +284,7 @@ card_id: GXeoR8nY
 ---
 How does **sample size** affect **standard error**?
 ---
-**Inverse relationship**: $SE = \frac{\sigma}{\sqrt{n}}$
-
-As sample size increases, standard error **decreases** (by factor of $\sqrt{n}$).
+**Inverse relationship**: As sample size increases, standard error **decreases** (by factor of $\sqrt{n}$).
 ---
 card_id: 2UUY5jSm
 ---
@@ -308,8 +304,6 @@ card_id: IzHjvUzB
 What is the **median**?
 ---
 The **median** is the middle value when data is sorted (50th percentile).
-
-If there's an even number of values, it's the average of the two middle values.
 ---
 card_id: JEhEaCg0
 ---
@@ -357,7 +351,7 @@ card_id: M5ZWdgan
 ---
 What does **low precision, high recall** indicate about a classifier?
 ---
-The model is **aggressive** - it predicts positive liberally, catching most true positives but also generating many false positives.
+The model is **aggressive** - it predicts positive liberally.
 ---
 card_id: tvbpWodL
 ---
@@ -378,7 +372,7 @@ card_id: LdzlSXj1
 ---
 What does **specificity** measure?
 ---
-**Specificity** measures the fraction of actual negatives that were correctly predicted. It answers: "Of all the actual negative cases, how many did we correctly identify?"
+**Specificity** measures the fraction of actual negatives that were correctly predicted.
 ---
 card_id: N6uBJTZ0
 ---
@@ -424,7 +418,7 @@ card_id: NnZdkxpc
 ---
 What does **high precision, low recall** indicate about a classifier?
 ---
-The model is **conservative** - it only predicts positive when very confident, resulting in few false positives but missing many true positives (high false negatives).
+The model is **conservative** - it only predicts positive when very confident.
 ---
 card_id: Y5gL62EZ
 ---
@@ -492,11 +486,9 @@ How is **dropout** applied differently at test time vs training time?
 ---
 card_id: RiAIDyWx
 ---
-What is the **ReLU** activation function?
+What is the **ReLU** activation function formula?
 ---
 $$\text{ReLU}(x) = \max(0, x)$$
-
-**ReLU (Rectified Linear Unit)** outputs the input if positive, zero otherwise.
 ---
 card_id: RlsAv1wC
 ---
@@ -653,11 +645,9 @@ where $\mu_{batch}$ and $\sigma^2_{batch}$ are the mean and variance of the curr
 ---
 card_id: aEViSQBy
 ---
-What is **L1 regularization** (Lasso) and what's its formula?
+What is the **L1 regularization** (Lasso) formula?
 ---
 $$\text{Loss} = \text{Original Loss} + \lambda \sum_{i=1}^{n} |w_i|$$
-
-**L1 regularization** adds the **sum of absolute values** of weights to the loss. $\lambda$ controls regularization strength.
 ---
 card_id: jcGg9U6M
 ---
@@ -688,7 +678,7 @@ card_id: axqKSiqY
 ---
 When would you use the **tanh** activation function?
 ---
-**Hidden layers** when you need zero-centered outputs (range -1 to 1). Better than sigmoid for hidden layers because zero-centering helps with gradient flow.
+**Hidden layers** when you need zero-centered outputs (range -1 to 1).
 ---
 card_id: NiVGVF0v
 ---
@@ -844,17 +834,6 @@ What are examples where **precision** should be prioritized over **recall**?
 - Recommendation systems (bad recommendations hurt user experience)
 - Criminal justice (wrongly convicting innocent people)
 ---
-card_id: jFOdKDhb
----
-What happens when you **increase** the regularization parameter **λ**?
----
-**Increasing λ** (stronger regularization):
-- **Increases bias** (model becomes simpler, more constrained)
-- **Decreases variance** (less sensitive to training data)
-- Moves toward underfitting
-
-Stronger penalty on large weights forces simpler models.
----
 card_id: mdlIumeg
 ---
 Why can **accuracy** be misleading?
@@ -904,19 +883,19 @@ card_id: pfiGwlny
 ---
 What do **convolutional layers** do in a neural network?
 ---
-Apply learned filters (kernels) that slide across the input, detecting local patterns like edges, textures, and shapes. Fundamental building block of CNNs for image and spatial data.
+Apply learned filters (kernels) that slide across the input, detecting local patterns like edges, textures, and shapes.
 ---
 card_id: ZF2WFN9M
 ---
 What is **parameter sharing** in convolutional layers?
 ---
-The same filter is applied across all positions in the input. This dramatically reduces parameters compared to fully connected layers, while enabling position-independent feature detection.
+The same filter is applied across all positions in the input.
 ---
 card_id: NptxfSGz
 ---
 What is **local connectivity** in convolutional layers?
 ---
-Each neuron connects only to a small region of the input (receptive field) rather than the entire input. This captures local patterns efficiently and reduces computational cost.
+Each neuron connects only to a small region of the input (receptive field) rather than the entire input.
 ---
 card_id: qHMwoyDJ
 ---
@@ -1015,17 +994,6 @@ What is the **drawback** of using sigmoid in hidden layers?
 ---
 Suffers from **vanishing gradients** - gradients become very small for large positive or negative inputs, slowing or stopping learning in deep networks. Not recommended for hidden layers.
 ---
-card_id: tEJfmjf2
----
-How does **decreasing regularization** affect the bias-variance tradeoff?
----
-**Decreasing regularization**:
-- More model freedom → **decreases bias** (more flexible model)
-- More sensitivity to training data → **increases variance**
-- Moves away from underfitting, toward overfitting
-
-Less constraint allows the model to fit training data more closely.
----
 card_id: tNzp58NI
 ---
 What does **standard deviation** measure?
@@ -1091,11 +1059,9 @@ $$z = \frac{x - \mu}{\sigma}$$
 ---
 card_id: ANSlMJb3
 ---
-What is **L2 regularization** (Ridge) and what's its formula?
+What is the **L2 regularization** (Ridge) formula?
 ---
 $$\text{Loss} = \text{Original Loss} + \lambda \sum_{i=1}^{n} w_i^2$$
-
-**L2 regularization** adds the **sum of squared weights** to the loss. $\lambda$ controls regularization strength.
 ---
 card_id: cuvmcyiq
 ---
@@ -2167,3 +2133,53 @@ card_id: uw2701Cr
 What metric is best for detecting when a model is good for **anomaly detection in network security**, where catching attacks is critical but normal traffic vastly outnumbers attacks?
 ---
 **Recall** combined with **Precision-Recall AUC** - prioritizes catching attacks (high recall) while PR-AUC evaluates performance across thresholds for imbalanced data.
+---
+card_id: null
+---
+What are the benefits of **parameter sharing** in convolutional layers?
+---
+Dramatically reduces parameters compared to fully connected layers, while enabling position-independent feature detection.
+---
+card_id: null
+---
+What are the benefits of **local connectivity** in convolutional layers?
+---
+Captures local patterns efficiently and reduces computational cost.
+---
+---
+card_id: null
+---
+What does **ReLU (Rectified Linear Unit)** output?
+---
+Outputs the input if positive, zero otherwise.
+---
+card_id: null
+---
+What does **information gain** measure in decision trees?
+---
+Measures the reduction in entropy after splitting on a feature.
+---
+card_id: null
+---
+What does **L1 regularization** (Lasso) do?
+---
+Adds the **sum of absolute values** of weights to the loss. $\lambda$ controls regularization strength.
+---
+card_id: null
+---
+What does **L2 regularization** (Ridge) do?
+---
+Adds the **sum of squared weights** to the loss. $\lambda$ controls regularization strength.
+---
+card_id: null
+---
+Why is **tanh** better than **sigmoid** for hidden layers?
+---
+Zero-centering helps with gradient flow.
+---
+card_id: null
+---
+What is an example of how **parameter sharing** enables translation invariance in CNNs?
+---
+A filter that detects an edge at one location can detect it anywhere in the image.
+---
