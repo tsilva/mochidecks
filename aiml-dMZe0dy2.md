@@ -304,14 +304,6 @@ Why does **cross-entropy** use logarithms like **Shannon entropy**?
 ---
 The log arises from **information theory**: unlikely events ($p \to 0$) carry more information.
 ---
-card_id: Io0WDLWv
----
-If **precision = 0.8** and **recall = 0.6**, what's the **F1 score**?
----
-$$F_1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}} = 2 \cdot \frac{0.8 \cdot 0.6}{0.8 + 0.6} = 2 \cdot \frac{0.48}{1.4} \approx 0.686$$
-
-**F1 ≈ 0.69**
----
 card_id: IzHjvUzB
 ---
 What is the **median**?
@@ -978,8 +970,15 @@ card_id: rEopJVIo
 What is the **mode**?
 ---
 The **mode** is the most frequently occurring value in a dataset.
-
-A dataset can have one mode (unimodal), two modes (bimodal), or multiple modes (multimodal).
+---
+card_id: null
+---
+How many modes can a dataset have?
+---
+A dataset can have:
+- **One mode** (unimodal)
+- **Two modes** (bimodal)
+- **Multiple modes** (multimodal)
 ---
 card_id: rSiF58qj
 ---
