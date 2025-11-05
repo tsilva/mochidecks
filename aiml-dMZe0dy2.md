@@ -8,8 +8,6 @@ $$CV = \frac{\sigma}{\mu}$$
 - $CV$: coefficient of variation
 - $\sigma$: standard deviation
 - $\mu$: mean
-
-Often expressed as a percentage by multiplying by 100.
 ---
 card_id: 0WTSpGKk
 ---
@@ -88,8 +86,6 @@ card_id: 4RyDdLRL
 What does the **bias-variance tradeoff** describe?
 ---
 The balance between two sources of error: **bias** (underfitting from overly simple models) and **variance** (overfitting from overly complex models).
-
-Increasing complexity lowers bias but raises variance, and vice versa. The goal is finding the sweet spot that minimizes total error on unseen data.
 ---
 card_id: 6JnCbrfd
 ---
@@ -121,8 +117,6 @@ Why use **k-fold cross-validation**?
 - Every sample used for both training and validation
 - Reduces variance from random splitting
 - Better utilizes limited data
-
-Especially valuable when you have a small dataset.
 ---
 card_id: 7wMm28H2
 ---
@@ -160,21 +154,15 @@ What is the formula for **standard error**?
 ---
 $$SE = \frac{\sigma}{\sqrt{n}}$$
 
-**Standard error** measures the variability of the **sample mean** across different samples from the population.
-
 - $SE$: standard error
 - $\sigma$: population standard deviation
 - $n$: sample size
-
-It decreases as sample size increases.
 ---
 card_id: AneKadwj
 ---
 In the bias-variance U-shaped error curve, what happens at **optimal complexity** (bottom of the U)?
 ---
 **Minimum total error** is achieved - the model has the right balance between bias and variance, neither underfitting nor overfitting.
-
-This is the sweet spot we aim for when tuning model complexity.
 ---
 card_id: Ap2G6Y1Z
 ---
@@ -291,8 +279,6 @@ How does **sample size** affect **standard error**?
 - Standard error **decreases** (by factor of $\sqrt{n}$)
 - Sample mean becomes more precise estimate of population mean
 - Confidence intervals narrow
-
-**Doubling sample size** reduces SE by factor of $\sqrt{2} \approx 1.41$ (not by factor of 2).
 ---
 card_id: IjY7uZyN
 ---
@@ -300,10 +286,7 @@ Why does **cross-entropy** use logarithms like **Shannon entropy**?
 ---
 Both measure **information content** and **uncertainty**.
 
-**Shannon entropy**: Measures expected information in a distribution
-**Cross-entropy**: Measures information when using predicted distribution $q$ to encode true distribution $p$
-
-The log arises from **information theory**: unlikely events ($p \to 0$) carry more information. Cross-entropy = entropy + KL divergence, so minimizing cross-entropy minimizes distribution mismatch.
+The log arises from **information theory**: unlikely events ($p \to 0$) carry more information.
 ---
 card_id: Io0WDLWv
 ---
@@ -312,8 +295,6 @@ If **precision = 0.8** and **recall = 0.6**, what's the **F1 score**?
 $$F_1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}} = 2 \cdot \frac{0.8 \cdot 0.6}{0.8 + 0.6} = 2 \cdot \frac{0.48}{1.4} \approx 0.686$$
 
 **F1 ≈ 0.69**
-
-The F1 score is closer to the lower value (recall) because it's the harmonic mean, which penalizes imbalanced precision and recall.
 ---
 card_id: IzHjvUzB
 ---
@@ -337,8 +318,6 @@ What metrics should you use instead of accuracy for **imbalanced datasets**?
 - **F1 score** (harmonic mean of precision and recall)
 - **AUC-ROC** or **AUC-PR** curves
 - **Confusion matrix** (reveals class-specific performance)
-
-These reveal whether the model actually learns to detect the minority class.
 ---
 card_id: IXlVHAM3
 ---
@@ -360,8 +339,6 @@ card_id: KWgsQacj
 What is **dropout** in neural networks?
 ---
 **Dropout** randomly deactivates neurons (sets outputs to zero) during training with probability $p$ (typically 0.5).
-
-Each training iteration uses a different random subset of neurons, creating many implicit sub-networks.
 ---
 card_id: KfXgBQCx
 ---
@@ -407,8 +384,6 @@ card_id: NFeLxVO1
 What is the formula for **RMSE** (root mean squared error)?
 ---
 $$\text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2} = \sqrt{\text{MSE}}$$
-
-Square root of MSE, bringing the error metric back to the **same units as the target variable** (more interpretable than MSE).
 ---
 card_id: u9dIC0m7
 ---
@@ -494,11 +469,7 @@ card_id: PcfSpiot
 ---
 Why is the **coefficient of variation** useful?
 ---
-It expresses variability **relative to the mean**, allowing comparison across datasets with different units or scales.
-
-**Example**: You can compare the variability of heights (cm) vs weights (kg) because CV is dimensionless.
-
-Useful when comparing datasets with different means or units.
+It expresses variability **relative to the mean**, allowing comparison across datasets with different units or scales (CV is dimensionless).
 ---
 card_id: PjCkzoUQ
 ---
@@ -507,8 +478,6 @@ How is **dropout** applied differently at test time vs training time?
 **Training time**: Neurons randomly dropped with probability $p$
 
 **Test time**: All neurons active, but outputs scaled by $(1-p)$ to account for more neurons being active than during training.
-
-This ensures expected outputs remain consistent between training and testing.
 ---
 card_id: RiAIDyWx
 ---
@@ -517,8 +486,6 @@ What is the **ReLU** activation function?
 $$\text{ReLU}(x) = \max(0, x)$$
 
 **ReLU (Rectified Linear Unit)** outputs the input if positive, zero otherwise.
-
-Simple piecewise linear function: outputs $x$ when $x > 0$, and $0$ when $x \leq 0$.
 ---
 card_id: RlsAv1wC
 ---
@@ -589,12 +556,6 @@ card_id: WQLc1i5o
 What is the formula for **R-squared** (coefficient of determination)?
 ---
 $$R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{\sum(y_i - \hat{y}_i)^2}{\sum(y_i - \bar{y})^2}$$
-
-**R²** measures the **proportion of variance in the target explained by the model**.
-
-- **Range**: 0 to 1 (can be negative for bad models)
-- **R² = 1**: Perfect predictions
-- **R² = 0**: Model no better than predicting the mean
 ---
 card_id: X03z1kIe
 ---
@@ -605,8 +566,6 @@ $$\text{Expected Error} = \text{Bias}^2 + \text{Variance} + \text{Irreducible Er
 - **Bias²**: Error from wrong model assumptions
 - **Variance**: Error from sensitivity to training data
 - **Irreducible Error**: Noise in the data that cannot be eliminated
-
-The bias-variance tradeoff manages the first two terms.
 ---
 card_id: XBOtRLIg
 ---
@@ -625,8 +584,6 @@ How does **increasing regularization** affect the bias-variance tradeoff?
 - Constrains the model → **increases bias** (simpler, more constrained model)
 - Reduces sensitivity to training data → **decreases variance**
 - Moves away from overfitting, toward underfitting
-
-Stronger regularization penalties force simpler models.
 ---
 card_id: YXfbAA9Q
 ---
@@ -662,9 +619,7 @@ card_id: ZKmDv1w2
 ---
 A linear model struggles to fit quadratic data, achieving only 70% accuracy on both train and test sets. What's the issue?
 ---
-**Problem**: **High bias / underfitting** - the model is too simple (linear) to capture the true pattern (quadratic).
-
-**Solution**: Use a more complex model (polynomial, neural network, etc.) that can represent curved decision boundaries.
+**High bias / underfitting** - the model is too simple (linear) to capture the true pattern (quadratic).
 ---
 card_id: ZxbODedV
 ---
@@ -706,8 +661,6 @@ When is the **mode** useful?
 - **Categorical data** (where mean/median don't make sense)
 - **Multimodal distributions** (reveals multiple peaks in the data)
 - Finding the most common category/value
-
-**Examples**: Most popular product, most common error type, most frequent customer segment.
 ---
 card_id: aKE7NdOT
 ---
@@ -769,8 +722,6 @@ $$H(p, q) = -\sum_{i} p(x_i) \log q(x_i)$$
 For binary classification:
 $$\text{CE} = -[y \log(\hat{y}) + (1-y) \log(1-\hat{y})]$$
 
-**Cross-entropy** measures how well predicted probabilities $q$ match true distribution $p$. Commonly used as a loss function for classification.
-
 - $y$: true label (0 or 1)
 - $\hat{y}$: predicted probability
 ---
@@ -782,8 +733,6 @@ Entropy is **maximized** when the distribution is **uniform** (all outcomes equa
 
 For $n$ equally likely outcomes:
 $$H_{max} = \log_2(n)$$
-
-**Intuition**: Maximum uncertainty occurs when you have no information to favor any outcome over another.
 ---
 card_id: bg0wcNu3
 ---
@@ -803,8 +752,6 @@ What is **k-fold cross-validation**?
 Split data into $k$ equal folds. Train on $k-1$ folds, validate on the remaining fold. Repeat $k$ times, each fold used as validation once.
 
 Average the $k$ validation scores for final performance estimate.
-
-**Common choices**: $k = 5$ or $k = 10$
 ---
 card_id: dEESfLjT
 ---
@@ -830,8 +777,6 @@ Why use a **train/validation/test** split (three sets)?
 - **Training set**: Train the model
 - **Validation set**: Tune hyperparameters and select models (used repeatedly during development)
 - **Test set**: Final evaluation only (used once, never for training decisions)
-
-**Without separate test set**: Validation performance becomes optimistic due to indirect overfitting through hyperparameter tuning.
 ---
 card_id: fv6KTOih
 ---
@@ -845,26 +790,25 @@ How does **MSE** relate to **bias and variance**?
 ---
 $$\text{MSE} = \text{Bias}^2 + \text{Variance}$$
 
-For a model's predictions:
 - **Bias²**: How far the average prediction is from the true value
 - **Variance**: How much predictions fluctuate across different training sets
-
-MSE decomposes into these two fundamental sources of error.
 ---
 card_id: hMnubTjV
 ---
 What is **data leakage**?
 ---
 **Data leakage** occurs when information from outside the training set is used during training, leading to overly optimistic performance that doesn't generalize.
-
-The model learns from information it shouldn't have access to, causing inflated performance metrics.
 ---
 card_id: hYt9lPto
 ---
-What is **AUC** and how is it interpreted?
+What is **AUC** (Area Under the ROC Curve)?
 ---
-**Area Under the ROC Curve** - a single metric summarizing classifier performance across all thresholds.
-
+**AUC** is the area under the ROC curve - a single metric summarizing classifier performance across all thresholds.
+---
+card_id: null
+---
+How is **AUC** interpreted?
+---
 - **AUC = 1.0**: Perfect classifier
 - **AUC = 0.5**: Random guessing (diagonal line)
 - **AUC < 0.5**: Worse than random (predictions are inverted)
@@ -1015,8 +959,6 @@ $$r = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y}$$
 - $r$: Pearson correlation coefficient
 - $\text{Cov}(X, Y)$: covariance between X and Y
 - $\sigma_X$, $\sigma_Y$: standard deviations of X and Y
-
-Unlike covariance, it's **normalized** to range from -1 to +1.
 ---
 card_id: sXQ5x8Ri
 ---
@@ -1033,7 +975,7 @@ card_id: t5IIfe3T
 ---
 When would you use the **sigmoid** activation function?
 ---
-**Output layer** for **binary classification** - it outputs probabilities between 0 and 1 that can be directly interpreted as class probabilities.
+**Output layer** for **binary classification**.
 ---
 card_id: dBiU2RDW
 ---
@@ -1065,8 +1007,6 @@ card_id: tNzp58NI
 What does **standard deviation** measure?
 ---
 **Standard deviation** measures the **spread of individual data points** around the mean.
-
-It describes the variability in the data itself and does not change with sample size (for a given population).
 ---
 card_id: uXtcGBI0
 ---
@@ -1095,21 +1035,12 @@ What is the **ROC curve**?
 
 - X-axis: False Positive Rate = $\frac{FP}{FP + TN}$
 - Y-axis: True Positive Rate = $\frac{TP}{TP + FN}$ (Recall)
-
-Used to evaluate classifier performance across all thresholds, not just one.
 ---
 card_id: BKxniY3t
 ---
 What is the formula for **covariance**?
 ---
 $$\text{Cov}(X, Y) = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})$$
-
-**Covariance** measures how two variables change together:
-- **Positive**: Variables increase together
-- **Negative**: One increases as other decreases
-- **Zero**: No linear relationship
-
-Units depend on variable units, making interpretation difficult.
 ---
 card_id: mSSyzDUL
 ---
@@ -1165,8 +1096,6 @@ When should you use **stratified sampling**?
 - **Imbalanced classes** (e.g., 95% negative, 5% positive)
 - Small datasets (ensures each split has examples from all classes)
 - Rare categories that might be missed in random splits
-
-Prevents situations where a class might be missing from validation/test sets.
 ---
 card_id: MHu0Xv79
 ---
@@ -1195,10 +1124,6 @@ card_id: o6esIpT3
 What is **regularization** in machine learning?
 ---
 **Regularization** adds a penalty term to the loss function to constrain model complexity and prevent overfitting.
-
-**Purpose**: Discourage the model from fitting noise by penalizing large or complex parameter values.
-
-**Common types**: L1 (Lasso), L2 (Ridge), dropout, early stopping, data augmentation.
 ---
 card_id: KlEA3qfZ
 ---
@@ -1210,8 +1135,6 @@ A **confusion matrix** is a table showing the four possible outcomes of binary c
 - **False Positive (FP)**: Incorrectly predicted positive (Type I error)
 - **True Negative (TN)**: Correctly predicted negative
 - **False Negative (FN)**: Incorrectly predicted negative (Type II error)
-
-Shows where the model is making errors and what types of errors.
 ---
 card_id: yLulG0eu
 ---
@@ -1271,8 +1194,6 @@ $$\text{FPR} = \frac{FP}{FP + TN} = \frac{FP}{\text{Total Actual Negatives}}$$
 
 - $FP$: false positives
 - $TN$: true negatives
-
-Used as the x-axis in ROC curves.
 ---
 card_id: dA69gJE7
 ---
@@ -1303,12 +1224,6 @@ card_id: kwcpMBRY
 What is the **vanishing gradient problem**?
 ---
 **Vanishing gradients** occur when gradients become extremely small during backpropagation, making weights update very slowly or stop learning entirely.
-
-**Common causes**:
-- Activation functions like sigmoid/tanh that saturate (outputs flat for large inputs)
-- Very deep networks where gradients multiply through many layers
-
-**Consequence**: Lower layers in deep networks learn very slowly or not at all.
 ---
 card_id: zQXVOCyB
 ---
@@ -1366,8 +1281,6 @@ What is the difference between **parameters** and **hyperparameters**?
 **Parameters**: Learned by the model during training (e.g., weights, biases in neural networks).
 
 **Hyperparameters**: Set before training and control the learning process (e.g., learning rate, number of layers, regularization strength λ, number of trees in random forest).
-
-**Parameters** are optimized automatically; **hyperparameters** are tuned manually or via search.
 ---
 card_id: n5F6zJ00
 ---
@@ -1612,7 +1525,7 @@ card_id: UI9T8OSk
 ---
 When does **Shannon entropy** equal zero?
 ---
-Entropy equals **zero** when the distribution is **deterministic** - one outcome has probability 1, all others have probability 0. This means no uncertainty - you know exactly what will happen.
+Entropy equals **zero** when the distribution is **deterministic** - one outcome has probability 1, all others have probability 0.
 ---
 card_id: NfsaxG5y
 ---
@@ -1816,7 +1729,7 @@ card_id: BTfmEblr
 ---
 What is **one-hot encoding**?
 ---
-**One-hot encoding** converts categorical variables into binary vectors where only one element is 1 and the rest are 0. Allows machine learning models to work with categorical data.
+**One-hot encoding** converts categorical variables into binary vectors where only one element is 1 and the rest are 0.
 ---
 card_id: lvhkdPE5
 ---
@@ -1961,7 +1874,7 @@ card_id: p8NVrN3o
 ---
 What are **weights** in neural networks?
 ---
-**Weights** are learnable parameters that determine the strength of connections between neurons. Each connection between neurons has its own weight, adjusted during training via gradient descent to minimize loss.
+**Weights** are learnable parameters that determine the strength of connections between neurons.
 ---
 card_id: N4D5F4C9
 ---
@@ -2035,10 +1948,6 @@ What is **standardization** in feature scaling?
 $$x' = \frac{x - \mu}{\sigma}$$
 
 where $\mu$ is mean and $\sigma$ is standard deviation.
-
-**Use when**: Features have different units or scales, and you want to preserve outlier information.
-
-**Advantage**: Less sensitive to outliers than normalization.
 ---
 card_id: 9pCunREq
 ---
