@@ -61,11 +61,15 @@ What are the characteristics of **L1 (Lasso) regularization**?
 ---
 card_id: 2mOH3FWf
 ---
-What is **KL divergence** (Kullback-Leibler divergence)?
+What is the **KL divergence** formula?
 ---
 $$D_{KL}(P \| Q) = \sum_{i} p(x_i) \log \frac{p(x_i)}{q(x_i)}$$
-
-**KL divergence** measures how different probability distribution $Q$ is from reference distribution $P$.
+---
+card_id: null
+---
+What does **KL divergence** measure?
+---
+Measures how different probability distribution $Q$ is from reference distribution $P$.
 ---
 card_id: E2XqXHrR
 ---
@@ -79,7 +83,9 @@ card_id: MJFAqEXp
 ---
 How is **KL divergence** used in machine learning?
 ---
-Used to measure distribution mismatch in ML.
+- **Loss function component** (e.g., in VAEs, measuring latent distribution vs prior)
+- **Comparing model outputs** to target distributions (related to cross-entropy)
+- **Model evaluation** and distribution alignment
 ---
 card_id: 4RyDdLRL
 ---
@@ -89,14 +95,18 @@ The balance between two sources of error: **bias** (underfitting from overly sim
 ---
 card_id: 6JnCbrfd
 ---
-What does **precision** measure in classification?
+What is the **precision** formula?
 ---
 $$\text{Precision} = \frac{TP}{TP + FP}$$
 
-**Precision** measures the fraction of predicted positives that are actually positive. It answers: "Of all the cases we predicted as positive, how many were actually positive?"
-
 - $TP$: true positives
 - $FP$: false positives
+---
+card_id: null
+---
+What does **precision** measure in classification?
+---
+**Precision** measures the fraction of predicted positives that are actually positive. It answers: "Of all the cases we predicted as positive, how many were actually positive?"
 ---
 card_id: 7rNOkySl
 ---
@@ -184,23 +194,23 @@ Makes the network less dependent on careful weight initialization. By normalizin
 ---
 card_id: BMdy0vzZ
 ---
-How is **information gain** used in decision trees?
+What is **information gain** in decision trees?
 ---
 $$\text{Information Gain} = H(\text{parent}) - \sum_{children} \frac{n_{child}}{n_{parent}} H(\text{child})$$
 
 **Information gain** measures the reduction in entropy after splitting on a feature.
-
+---
+card_id: null
+---
+How is **information gain** used in decision trees?
+---
 Decision trees choose splits that **maximize information gain** - i.e., create the most "pure" child nodes with lowest entropy.
 ---
 card_id: BWXw16o8
 ---
 Why does sample variance use **n-1** instead of **n** (Bessel's correction)?
 ---
-Using $n$ would systematically **underestimate** the true population variance (biased estimator).
-
-**Reason**: The sample mean $\bar{x}$ is calculated from the same data, making deviations $(x_i - \bar{x})$ artificially smaller than deviations from true mean $\mu$.
-
-Dividing by $n-1$ corrects this bias, producing an **unbiased estimator** of population variance.
+Using $n$ would systematically underestimate the population variance because the sample mean $\bar{x}$ is calculated from the same data, making deviations artificially smaller. Dividing by $n-1$ corrects this bias, producing an unbiased estimator.
 ---
 card_id: BwTjPP18
 ---
@@ -214,15 +224,19 @@ $$\mu = \frac{1}{N} \sum_{i=1}^{N} x_i$$
 ---
 card_id: CJntZtqj
 ---
-What does the **F1 score** measure in classification?
+What is the **F1 score** formula?
 ---
 $$F_1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}} = \frac{2TP}{2TP + FP + FN}$$
-
-The **F1 score** is the harmonic mean of **precision** and **recall**. It answers: "What's the overall performance when both precision and recall matter equally?"
 
 - $TP$: true positives
 - $FP$: false positives
 - $FN$: false negatives
+---
+card_id: null
+---
+What does the **F1 score** measure in classification?
+---
+The **F1 score** is the harmonic mean of **precision** and **recall**. It answers: "What's the overall performance when both precision and recall matter equally?"
 ---
 card_id: DtODRtgY
 ---
@@ -242,7 +256,7 @@ card_id: E5FTs0pm
 ---
 When would you use the **ReLU** activation function?
 ---
-**Default choice for hidden layers** in modern deep networks because it enables fast training, avoids vanishing gradients, and provides computational efficiency.
+**Default choice for hidden layers** in modern deep networks.
 ---
 card_id: otpBB2Jm
 ---
@@ -275,8 +289,12 @@ How does **sample size** affect **standard error**?
 ---
 **Inverse relationship**: $SE = \frac{\sigma}{\sqrt{n}}$
 
-**As sample size increases**:
-- Standard error **decreases** (by factor of $\sqrt{n}$)
+As sample size increases, standard error **decreases** (by factor of $\sqrt{n}$).
+---
+card_id: null
+---
+What are the implications of increasing sample size?
+---
 - Sample mean becomes more precise estimate of population mean
 - Confidence intervals narrow
 ---
@@ -284,8 +302,6 @@ card_id: IjY7uZyN
 ---
 Why does **cross-entropy** use logarithms like **Shannon entropy**?
 ---
-Both measure **information content** and **uncertainty**.
-
 The log arises from **information theory**: unlikely events ($p \to 0$) carry more information.
 ---
 card_id: Io0WDLWv
@@ -364,10 +380,14 @@ What is the formula for **specificity** (true negative rate)?
 ---
 $$\text{Specificity} = \frac{TN}{TN + FP}$$
 
-**Specificity** measures the fraction of actual negatives that were correctly predicted. It answers: "Of all the actual negative cases, how many did we correctly identify?"
-
 - $TN$: true negatives
 - $FP$: false positives
+---
+card_id: null
+---
+What does **specificity** measure?
+---
+**Specificity** measures the fraction of actual negatives that were correctly predicted. It answers: "Of all the actual negative cases, how many did we correctly identify?"
 ---
 card_id: N6uBJTZ0
 ---
@@ -634,7 +654,11 @@ card_id: a2dKNgsc
 What is **batch normalization**?
 ---
 **Batch normalization** normalizes layer inputs to have mean 0 and variance 1 within each mini-batch.
-
+---
+card_id: null
+---
+What is the **batch normalization** formula?
+---
 $$\hat{x} = \frac{x - \mu_{batch}}{\sqrt{\sigma^2_{batch} + \epsilon}}$$
 
 where $\mu_{batch}$ and $\sigma^2_{batch}$ are the mean and variance of the current mini-batch.
@@ -715,11 +739,14 @@ $$\text{Bias} = E[\hat{y}] - y$$
 ---
 card_id: bOTPjqHx
 ---
-What is the **cross-entropy** formula for binary classification?
+What is the **cross-entropy** formula?
 ---
 $$H(p, q) = -\sum_{i} p(x_i) \log q(x_i)$$
-
-For binary classification:
+---
+card_id: null
+---
+What is the **cross-entropy** formula for binary classification?
+---
 $$\text{CE} = -[y \log(\hat{y}) + (1-y) \log(1-\hat{y})]$$
 
 - $y$: true label (0 or 1)
@@ -848,14 +875,18 @@ If dataset has class imbalance the model can have high global accuracy while com
 ---
 card_id: o2mCdan7
 ---
-What does **recall** measure in classification?
+What is the **recall** formula?
 ---
 $$\text{Recall} = \frac{TP}{TP + FN}$$
 
-**Recall** measures the fraction of actual positives that were correctly predicted. It answers: "Of all the actual positive cases, how many did we find?"
-
 - $TP$: true positives
 - $FN$: false negatives
+---
+card_id: null
+---
+What does **recall** measure in classification?
+---
+**Recall** measures the fraction of actual positives that were correctly predicted. It answers: "Of all the actual positive cases, how many did we find?"
 ---
 card_id: oA6OP9w6
 ---
@@ -1032,7 +1063,11 @@ card_id: uOGEawx7
 What is the **ROC curve**?
 ---
 **Receiver Operating Characteristic** curve plots **True Positive Rate (Recall)** vs **False Positive Rate** at various classification thresholds.
-
+---
+card_id: null
+---
+What are the axes of the **ROC curve**?
+---
 - X-axis: False Positive Rate = $\frac{FP}{FP + TN}$
 - Y-axis: True Positive Rate = $\frac{TP}{TP + FN}$ (Recall)
 ---
@@ -1102,8 +1137,11 @@ card_id: MHu0Xv79
 What is **overfitting**?
 ---
 **Overfitting** occurs when a model learns the training data too well, including noise and random fluctuations, rather than just the underlying patterns.
-
-**Characteristics**:
+---
+card_id: null
+---
+What are the characteristics of **overfitting**?
+---
 - High performance on training data
 - Poor performance on new/test data
 - Model has memorized rather than learned general patterns
@@ -1113,8 +1151,11 @@ card_id: kbW0MgoN
 What is **underfitting**?
 ---
 **Underfitting** occurs when a model is too simple to capture the underlying patterns in the data.
-
-**Characteristics**:
+---
+card_id: null
+---
+What are the characteristics of **underfitting**?
+---
 - Poor performance on both training and test data
 - Model lacks the capacity to represent the true relationship
 - Systematic errors due to oversimplification
@@ -1190,10 +1231,14 @@ What is the **False Positive Rate** formula?
 ---
 $$\text{FPR} = \frac{FP}{FP + TN} = \frac{FP}{\text{Total Actual Negatives}}$$
 
-**False Positive Rate** measures the fraction of actual negatives that were incorrectly predicted as positive.
-
 - $FP$: false positives
 - $TN$: true negatives
+---
+card_id: null
+---
+What does **False Positive Rate** measure?
+---
+**False Positive Rate** measures the fraction of actual negatives that were incorrectly predicted as positive.
 ---
 card_id: dA69gJE7
 ---
@@ -1310,12 +1355,7 @@ $$H(p, q) = H(p) + D_{KL}(p \| q)$$
 
 **Cross-entropy** = **Shannon entropy** + **KL divergence**
 
-where:
-- $H(p, q)$: cross-entropy between true distribution $p$ and predicted distribution $q$
-- $H(p)$: entropy of true distribution (constant during training)
-- $D_{KL}(p \| q)$: KL divergence measuring distribution mismatch
-
-**Minimizing cross-entropy** ≡ **minimizing KL divergence** (since $H(p)$ is constant).
+**Minimizing cross-entropy** ≡ **minimizing KL divergence** (since $H(p)$ is constant during training).
 ---
 card_id: OY9wn6JJ
 ---
