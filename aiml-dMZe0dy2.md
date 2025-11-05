@@ -57,7 +57,6 @@ What are the characteristics of **L1 (Lasso) regularization**?
 - Produces **sparse models** (drives many weights to exactly zero)
 - Performs automatic **feature selection** (eliminates irrelevant features)
 - Less smooth optimization (not differentiable at zero)
-- Uses absolute value penalty: $\lambda \sum |w_i|$
 ---
 card_id: 2mOH3FWf
 ---
@@ -106,7 +105,7 @@ card_id: rTz7miPH
 ---
 What does **precision** measure in classification?
 ---
-**Precision** measures the fraction of predicted positives that are actually positive. It answers: "Of all the cases we predicted as positive, how many were actually positive?"
+**Precision** measures the fraction of predicted positives that are actually positive.
 ---
 card_id: 7rNOkySl
 ---
@@ -144,19 +143,19 @@ card_id: 96nV20bO
 ---
 How do **convolutional layers** contribute to translation invariance?
 ---
-Same filters (kernels) are applied across the entire image through **parameter sharing**. A filter that detects an edge at one location can detect it anywhere, making detection position-independent.
+Same filters (kernels) are applied across the entire image through **parameter sharing**. A filter that detects an edge at one location can detect it anywhere.
 ---
 card_id: LN4bCVK5
 ---
 How do **pooling layers** contribute to translation invariance?
 ---
-Downsampling creates tolerance to small spatial shifts. By summarizing regions (e.g., taking max or average), pooling makes the representation robust to minor position changes.
+By summarizing regions (e.g., taking max or average), pooling creates tolerance to small spatial shifts.
 ---
 card_id: Y1vuPj96
 ---
 How does **hierarchical architecture** contribute to translation invariance in CNNs?
 ---
-Learns features progressively from local patterns (edges, textures) to global structure (shapes, objects). This multi-level abstraction builds position-independent representations at each layer.
+Learns features progressively from local patterns (edges, textures) to global structure (shapes, objects), building position-independent representations at each layer.
 ---
 card_id: AY8mz6zj
 ---
@@ -178,19 +177,19 @@ card_id: Ap2G6Y1Z
 ---
 How does **batch normalization** enable faster training?
 ---
-Allows use of **higher learning rates** without diverging. By normalizing layer inputs, it prevents gradients from becoming too large or too small, enabling more aggressive optimization.
+Allows use of **higher learning rates** without diverging by preventing gradients from becoming too large or too small.
 ---
 card_id: w2knuDZX
 ---
 How does **batch normalization** act as regularization?
 ---
-Slight noise from using different batch statistics during training (each mini-batch has slightly different mean/variance) adds randomness that reduces overfitting, similar to dropout.
+Slight noise from using different batch statistics during training (each mini-batch has slightly different mean/variance) adds randomness that reduces overfitting.
 ---
 card_id: 1iXPivNz
 ---
 How does **batch normalization** reduce sensitivity to initialization?
 ---
-Makes the network less dependent on careful weight initialization. By normalizing layer inputs, even poor initial weights can be quickly adjusted during training.
+By normalizing layer inputs, even poor initial weights can be quickly adjusted during training.
 ---
 card_id: BMdy0vzZ
 ---
@@ -236,7 +235,7 @@ card_id: zicKRF6O
 ---
 What does the **F1 score** measure in classification?
 ---
-The **F1 score** is the harmonic mean of **precision** and **recall**. It answers: "What's the overall performance when both precision and recall matter equally?"
+The **F1 score** is the harmonic mean of **precision** and **recall**.
 ---
 card_id: DtODRtgY
 ---
@@ -303,14 +302,6 @@ card_id: IjY7uZyN
 Why does **cross-entropy** use logarithms like **Shannon entropy**?
 ---
 The log arises from **information theory**: unlikely events ($p \to 0$) carry more information.
----
-card_id: Io0WDLWv
----
-If **precision = 0.8** and **recall = 0.6**, what's the **F1 score**?
----
-$$F_1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}} = 2 \cdot \frac{0.8 \cdot 0.6}{0.8 + 0.6} = 2 \cdot \frac{0.48}{1.4} \approx 0.686$$
-
-**F1 ≈ 0.69**
 ---
 card_id: IzHjvUzB
 ---
@@ -451,19 +442,19 @@ card_id: BjC2X90B
 ---
 How can **more training data** help reduce overfitting?
 ---
-More diverse examples make it harder for the model to memorize individual cases. Forces the model to learn general patterns rather than specific training examples.
+More diverse examples make it harder for the model to memorize individual cases, forcing it to learn general patterns.
 ---
 card_id: I94brlLK
 ---
 How can **reducing model complexity** help with overfitting?
 ---
-Fewer parameters (layers, neurons, features) limit the model's capacity to memorize. Simpler models are forced to learn only the most important patterns, improving generalization.
+Fewer parameters (layers, neurons, features) limit the model's capacity to memorize, forcing it to learn only the most important patterns.
 ---
 card_id: XPmZv2Tq
 ---
 How does **early stopping** prevent overfitting?
 ---
-Stop training when validation error starts increasing, even if training error is still decreasing. This catches the model before it starts memorizing training data.
+Stops training when validation error starts increasing, even if training error is still decreasing, catching the model before it memorizes training data.
 ---
 card_id: 8fkbFdoB
 ---
@@ -594,7 +585,6 @@ What are the characteristics of **L2 (Ridge) regularization**?
 - Produces **dense models** (shrinks all weights toward zero, but rarely to exactly zero)
 - Performs **feature shrinkage** (reduces impact of all features proportionally)
 - Smoother optimization (differentiable everywhere)
-- Uses squared penalty: $\lambda \sum w_i^2$
 ---
 card_id: YLooMKtq
 ---
@@ -646,8 +636,6 @@ card_id: ZxbODedV
 In the dartboard analogy for machine learning, what does **variance** represent?
 ---
 **Variance** represents the spread of arrows - how scattered the shots are around their average position.
-
-Just like a model with high variance has inconsistent predictions across different training sets, arrows with high variance are spread out widely.
 ---
 card_id: a2dKNgsc
 ---
@@ -708,7 +696,7 @@ What is the **tanh** activation function formula?
 ---
 $$\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}$$
 
-Outputs values in range **-1 to 1** (zero-centered, unlike sigmoid).
+Outputs values in range **-1 to 1** (zero-centered).
 ---
 card_id: IBx0F6J0
 ---
@@ -886,7 +874,7 @@ card_id: 8RwDlaTy
 ---
 What does **recall** measure in classification?
 ---
-**Recall** measures the fraction of actual positives that were correctly predicted. It answers: "Of all the actual positive cases, how many did we find?"
+**Recall** measures the fraction of actual positives that were correctly predicted.
 ---
 card_id: oA6OP9w6
 ---
@@ -952,8 +940,6 @@ card_id: qo9zIkdR
 In the dartboard analogy for machine learning, what does **bias** represent?
 ---
 **Bias** represents systematic aiming error - arrows consistently miss the center in the same direction.
-
-Just like a model with high bias systematically misses the true function, arrows with bias consistently miss the bullseye in one direction.
 ---
 card_id: rA8ttBZx
 ---
@@ -978,8 +964,15 @@ card_id: rEopJVIo
 What is the **mode**?
 ---
 The **mode** is the most frequently occurring value in a dataset.
-
-A dataset can have one mode (unimodal), two modes (bimodal), or multiple modes (multimodal).
+---
+card_id: null
+---
+How many modes can a dataset have?
+---
+A dataset can have:
+- **One mode** (unimodal)
+- **Two modes** (bimodal)
+- **Multiple modes** (multimodal)
 ---
 card_id: rSiF58qj
 ---
@@ -1014,7 +1007,7 @@ What is the **sigmoid** activation function formula?
 ---
 $$\sigma(x) = \frac{1}{1 + e^{-x}}$$
 
-Outputs values between **0 and 1**, making it suitable for probability interpretation.
+Outputs values between **0 and 1**.
 ---
 card_id: xZvfKOc7
 ---
@@ -1044,8 +1037,6 @@ card_id: uXtcGBI0
 Given a model with **99% training accuracy** but **60% test accuracy**, what's the problem?
 ---
 **High variance / overfitting** - the model memorizes training data but doesn't generalize to new data.
-
-The large gap between training and test accuracy is the key indicator of overfitting.
 ---
 card_id: vWrhqLpm
 ---
@@ -1170,12 +1161,7 @@ card_id: KlEA3qfZ
 ---
 What is a **confusion matrix**?
 ---
-A **confusion matrix** is a table showing the four possible outcomes of binary classification:
-
-- **True Positive (TP)**: Correctly predicted positive
-- **False Positive (FP)**: Incorrectly predicted positive (Type I error)
-- **True Negative (TN)**: Correctly predicted negative
-- **False Negative (FN)**: Incorrectly predicted negative (Type II error)
+A **confusion matrix** is a table showing the four possible outcomes of binary classification: TP, FP, TN, and FN.
 ---
 card_id: yLulG0eu
 ---
@@ -1277,8 +1263,6 @@ What is the difference between **population** and **sample**?
 **Population**: The complete set of all items/observations you're interested in studying (often impossible to measure fully).
 
 **Sample**: A subset of the population actually observed/measured.
-
-We use sample statistics to **estimate** population parameters.
 ---
 card_id: MW5HaGms
 ---
@@ -1312,12 +1296,6 @@ card_id: OfGtTf7D
 What is **generalization** in machine learning?
 ---
 **Generalization** is the model's ability to perform well on new, unseen data - not just the training data.
-
-**Good generalization**: Model learns underlying patterns that transfer to new examples
-
-**Poor generalization**: Model memorizes training data (overfitting) and fails on new data
-
-The ultimate goal of machine learning is good generalization.
 ---
 card_id: 2GhxVoqI
 ---
