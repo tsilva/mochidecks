@@ -805,7 +805,7 @@ What is **AUC** (Area Under the ROC Curve)?
 ---
 **AUC** is the area under the ROC curve - a single metric summarizing classifier performance across all thresholds.
 ---
-card_id: null
+card_id: 3WiiBpVX
 ---
 How is **AUC** interpreted?
 ---
