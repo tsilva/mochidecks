@@ -249,7 +249,7 @@ card_id: KOqfLBVF
 ---
 What are examples of data where **median** is preferred over **mean**?
 ---
-Income, house prices, response times - all typically have outliers or skewed distributions.
+Income, house prices, response times.
 ---
 card_id: E5FTs0pm
 ---
@@ -844,17 +844,6 @@ What are examples where **precision** should be prioritized over **recall**?
 - Recommendation systems (bad recommendations hurt user experience)
 - Criminal justice (wrongly convicting innocent people)
 ---
-card_id: jFOdKDhb
----
-What happens when you **increase** the regularization parameter **λ**?
----
-**Increasing λ** (stronger regularization):
-- **Increases bias** (model becomes simpler, more constrained)
-- **Decreases variance** (less sensitive to training data)
-- Moves toward underfitting
-
-Stronger penalty on large weights forces simpler models.
----
 card_id: mdlIumeg
 ---
 Why can **accuracy** be misleading?
@@ -904,19 +893,19 @@ card_id: pfiGwlny
 ---
 What do **convolutional layers** do in a neural network?
 ---
-Apply learned filters (kernels) that slide across the input, detecting local patterns like edges, textures, and shapes. Fundamental building block of CNNs for image and spatial data.
+Apply learned filters (kernels) that slide across the input, detecting local patterns like edges, textures, and shapes.
 ---
 card_id: ZF2WFN9M
 ---
 What is **parameter sharing** in convolutional layers?
 ---
-The same filter is applied across all positions in the input. This dramatically reduces parameters compared to fully connected layers, while enabling position-independent feature detection.
+The same filter is applied across all positions in the input.
 ---
 card_id: NptxfSGz
 ---
 What is **local connectivity** in convolutional layers?
 ---
-Each neuron connects only to a small region of the input (receptive field) rather than the entire input. This captures local patterns efficiently and reduces computational cost.
+Each neuron connects only to a small region of the input (receptive field) rather than the entire input.
 ---
 card_id: qHMwoyDJ
 ---
@@ -1014,17 +1003,6 @@ card_id: xZvfKOc7
 What is the **drawback** of using sigmoid in hidden layers?
 ---
 Suffers from **vanishing gradients** - gradients become very small for large positive or negative inputs, slowing or stopping learning in deep networks. Not recommended for hidden layers.
----
-card_id: tEJfmjf2
----
-How does **decreasing regularization** affect the bias-variance tradeoff?
----
-**Decreasing regularization**:
-- More model freedom → **decreases bias** (more flexible model)
-- More sensitivity to training data → **increases variance**
-- Moves away from underfitting, toward overfitting
-
-Less constraint allows the model to fit training data more closely.
 ---
 card_id: tNzp58NI
 ---
@@ -2167,3 +2145,16 @@ card_id: uw2701Cr
 What metric is best for detecting when a model is good for **anomaly detection in network security**, where catching attacks is critical but normal traffic vastly outnumbers attacks?
 ---
 **Recall** combined with **Precision-Recall AUC** - prioritizes catching attacks (high recall) while PR-AUC evaluates performance across thresholds for imbalanced data.
+---
+card_id: null
+---
+What are the benefits of **parameter sharing** in convolutional layers?
+---
+Dramatically reduces parameters compared to fully connected layers, while enabling position-independent feature detection.
+---
+card_id: null
+---
+What are the benefits of **local connectivity** in convolutional layers?
+---
+Captures local patterns efficiently and reduces computational cost.
+---
