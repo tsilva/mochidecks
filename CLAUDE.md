@@ -4,9 +4,11 @@ Instructions for Claude Code when working with flashcard decks for [mochi-mochi]
 
 ## File Format
 
-Deck files: `{topic}-{id}.md`
+**Deck naming:**
+- Existing decks: `deck-{topic}-{id}.md` (e.g., `deck-aiml-dMZe0dy2.md`)
+- New decks: `deck-{topic}.md` (NO ID suffix, e.g., `deck-aiml-fundamentals.md`)
 
-Card structure:
+**Card structure:**
 ```markdown
 ---
 card_id: unique_id
@@ -23,130 +25,77 @@ Answer
 ---
 ```
 
-**CRITICAL: Deck File Rules**
-- **NO headers** at the top of the file - start immediately with the first card
-- **NO blank lines** between cards - cards flow directly one after another
-- First line of file must be `---`
-- Last line of file must be `---`
+**CRITICAL Rules:**
+- First line: `---`, Last line: `---`
+- NO headers at top - start with first card
+- NO blank lines between cards
+- NO extra `---` between cards (after answer `---`, next line is `card_id:`)
+- Math: `$$...$$` for LaTeX
+- No tables in answers (use lists instead)
 
 **Card IDs:**
-- NEW cards: `card_id: null` (never generate IDs)
-- EXISTING cards: Keep alphanumeric ID (e.g., "00TVK0st")
-- RECONSTRUCTED content: `card_id: null` (new question/answer)
-- TYPO fixes: Keep existing ID
+- NEW decks or SPLIT decks: `card_id: null` (never generate IDs yourself)
+- EXISTING cards being edited: Keep original alphanumeric ID (e.g., "00TVK0st")
+- Content rewrites (new Q/A): `card_id: null`
+- Typo fixes only: Keep existing ID
 
-**Formatting:**
-- Delimiters: `---` separates card_id, question, answer
-- Math: `$$...$$` for LaTeX
-- No tables in answers (use lists)
+## Card Design
 
-## Creating New Decks
+**Five question types** (use multiple per concept):
+1. **DEFINITION** - "What is X?" → One sentence answer
+2. **RECOGNITION** - "What does X do/measure/solve?" → Purpose/function
+3. **APPLICATION** - "When/why use X?" → Conditions/scenarios
+4. **MECHANISM** - "How does X work?" → Internal process
+5. **COMPARISON** - "How does X differ from Y?" → Contrasts
 
-When creating NEW deck files (splitting existing decks, creating fresh content):
+**Cards per concept:**
+- Foundation concepts: 4-6 cards (bias-variance, regularization, precision/recall)
+- Supporting concepts: 2-3 cards (activation functions, pooling types)
+- Reference: 1 card (terminology, abbreviations)
 
-**Deck filename:** `deck-{topic}.md` (NO ID suffix)
-- ✅ Correct: `deck-aiml-fundamentals.md`
-- ❌ Wrong: `deck-aiml-fundamentals-dXYZ123.md`
-
-**Card IDs:** All cards in new decks must have `card_id: null`
-- When splitting an existing deck → set all cards to `card_id: null`
-- When creating new cards → use `card_id: null`
-- IDs are only preserved when modifying cards within the original deck file
-
-## Card Design Framework
-
-### Five Question Types
-
-Create cards across these dimensions for important concepts:
-
-1. **DEFINITION** - "What is X?" (one sentence)
-2. **RECOGNITION** - "What does X do/measure/solve?" (purpose/function)
-3. **APPLICATION** - "When/why use X?" (conditions/scenarios)
-4. **MECHANISM** - "How does X work?" (internal process)
-5. **COMPARISON** - "How does X differ from Y?" (contrasts)
-
-### Cards Per Concept
-
-- **Foundation** (4-6 cards): bias-variance, regularization, precision/recall, gradient descent
-- **Supporting** (2-3 cards): activation functions, pooling types, specific metrics
-- **Reference** (1 card): terminology, abbreviations
-
-### Scenario Questions (High Value)
-
-Create diagnostic questions requiring synthesis:
-- "Model has 5% training error, 40% validation error. What's the problem?"
-- "Dataset is 99% negative class. Model predicts all negative, 99% accuracy. What's wrong?"
-- "Training diverges (loss → NaN). What solutions?"
+**Scenario questions** (high value - create these):
+- "Model: 5% train error, 40% validation error. Problem?" → Overfitting
+- "99% negative class. Model predicts all negative, 99% accuracy. Problem?" → Imbalanced data
+- "Loss → NaN during training. Solutions?" → Learning rate/gradient issues
 
 ## Question Rules
 
 - Front-load key term: "What is **dropout**?" not "What is the technique called dropout?"
-- Bold the tested concept: "How does **batch normalization** reduce training time?"
+- Bold tested concept: "How does **batch normalization** reduce training time?"
 - Be specific: "What are advantages of ReLU?" not "What about ReLU?"
-- Use "What" over "Explain"
+- Prefer "What" over "Explain"
 
-## Answer Structure
+## Answer Patterns
 
 **Definitions:** One sentence, 10-20 words
-```
-Measures the fraction of predicted positives that are actually positive.
-```
+- *Example: "Measures the fraction of predicted positives that are actually positive."*
 
-**Formulas:** Formula + symbols only (no explanation)
-```
-$$\text{Precision} = \frac{TP}{TP + FP}$$
-
-- $TP$: true positives
-- $FP$: false positives
-```
+**Formulas:** Formula + symbol definitions only
+- *Example: `$$\text{Precision} = \frac{TP}{TP + FP}$$` with `$TP$: true positives`, `$FP$: false positives`*
 
 **Characteristics:** 3-5 bullets, parallel structure
-```
-- Produces sparse models
-- Performs automatic feature selection
-- Less smooth optimization
-```
+- *Example: "Produces sparse models", "Performs automatic feature selection"*
 
 **Procedures:** 3-5 numbered steps, start with verb
-```
-1. Split data into k folds
-2. Train on k-1 folds, validate on remaining
-3. Repeat k times, average scores
-```
+- *Example: "1. Split data into k folds 2. Train on k-1 folds..."*
 
 **Examples:** 1-2 instances, no explanation
-```
-Income, house prices, response times
-```
+- *Example: "Income, house prices, response times"*
 
-**Comparisons:** Parallel structure, 2-3 differences
-```
-**Bagging**: Models in parallel, reduces variance
-**Boosting**: Models sequential, reduces bias and variance
-```
+**Comparisons:** Parallel structure
+- *Example: "**Bagging**: Models in parallel, reduces variance / **Boosting**: Models sequential, reduces bias+variance"*
 
-**When to use:** Bulleted conditions
-```
-Choose L1 when:
-- Need feature selection
-- Many irrelevant features
-- Want sparse model
-```
+**Conditions:** Bulleted
+- *Example: "Choose L1 when: Need feature selection, Many irrelevant features"*
 
-## Atomicity Rules
+## Atomicity
 
-**One question, one answer.** Answer only what's asked.
+**One question, one answer.** If answer has multiple parts, split into separate cards:
+- "What is X?" + examples → 2 cards: definition + examples
+- "What is X?" + when to use → 2 cards: definition + application
+- Use the five question types to enforce atomicity
 
-Stop as soon as the question is answered. If the answer has multiple sections, split into separate cards:
-- "What is X?" + examples → two cards: definition card + example card
-- "What is X?" + when to use → two cards: definition card + application card
-- Definition + comparison → two cards: definition card + comparison card
+## Duplicates
 
-Use the five question types to naturally enforce atomicity.
-
-## Removing Duplicates
-
-- Remove: Identical questions or answers with no learning variation
-- Keep: Different questions about same concept ("What is X?" vs "When use X?")
-- When unsure: Keep separate
-
+- **Remove:** Identical questions/answers with no learning variation
+- **Keep:** Different questions about same concept ("What is X?" vs "When use X?")
