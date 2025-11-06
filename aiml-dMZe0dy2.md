@@ -121,11 +121,7 @@ card_id: 7tn65klh
 ---
 Why use **k-fold cross-validation**?
 ---
-**Benefits**:
-- More reliable performance estimate than single train/test split
-- Every sample used for both training and validation
-- Reduces variance from random splitting
-- Better utilizes limited data
+Provides more reliable performance estimates than single train/test split by reducing variance from random splitting and utilizing all data for both training and validation.
 ---
 card_id: 7wMm28H2
 ---
@@ -290,8 +286,7 @@ card_id: 2UUY5jSm
 ---
 What are the implications of increasing sample size?
 ---
-- Sample mean becomes more precise estimate of population mean
-- Confidence intervals narrow
+Estimates become more precise - the sample mean approaches the population mean and confidence intervals narrow.
 ---
 card_id: IjY7uZyN
 ---
@@ -345,7 +340,9 @@ card_id: KfXgBQCx
 ---
 What are the advantages of using **max pooling** layers?
 ---
-Reduces parameters, helps avoid overfitting, helps with translation invariance.
+- Reduces parameters
+- Helps avoid overfitting
+- Provides translation invariance
 ---
 card_id: M5ZWdgan
 ---
@@ -2139,34 +2136,4 @@ card_id: uw2701Cr
 What metric is best for detecting when a model is good for **anomaly detection in network security**, where catching attacks is critical but normal traffic vastly outnumbers attacks?
 ---
 **Recall** combined with **Precision-Recall AUC** - prioritizes catching attacks (high recall) while PR-AUC evaluates performance across thresholds for imbalanced data.
----
-card_id: null
----
-What are the benefits of **parameter sharing** in convolutional layers?
----
-Dramatically reduces parameters compared to fully connected layers, while enabling position-independent feature detection.
----
-card_id: null
----
-What are the benefits of **local connectivity** in convolutional layers?
----
-Captures local patterns efficiently and reduces computational cost.
----
-card_id: null
----
-What does **information gain** measure in decision trees?
----
-Measures the reduction in entropy after splitting on a feature.
----
-card_id: null
----
-Why is **tanh** better than **sigmoid** for hidden layers?
----
-Zero-centering helps with gradient flow.
----
-card_id: null
----
-What is an example of how **parameter sharing** enables translation invariance in CNNs?
----
-A filter that detects an edge at one location can detect it anywhere in the image.
 ---
