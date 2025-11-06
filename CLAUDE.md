@@ -40,6 +40,19 @@ Answer
 - Math: `$$...$$` for LaTeX
 - No tables in answers (use lists)
 
+## Creating New Decks
+
+When creating NEW deck files (splitting existing decks, creating fresh content):
+
+**Deck filename:** `deck-{topic}.md` (NO ID suffix)
+- ✅ Correct: `deck-aiml-fundamentals.md`
+- ❌ Wrong: `deck-aiml-fundamentals-dXYZ123.md`
+
+**Card IDs:** All cards in new decks must have `card_id: null`
+- When splitting an existing deck → set all cards to `card_id: null`
+- When creating new cards → use `card_id: null`
+- IDs are only preserved when modifying cards within the original deck file
+
 ## Card Design Framework
 
 ### Five Question Types
