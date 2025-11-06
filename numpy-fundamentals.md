@@ -56,7 +56,7 @@ Transforming array dimensions without changing the underlying data or element or
 ---
 card_id: null
 ---
-What does the `-1` parameter mean in `reshape()`?
+What does the `-1` parameter mean in **NumPy's** `reshape()`?
 ---
 Automatically infers that dimension size based on the total number of elements.
 ---
@@ -64,7 +64,7 @@ Automatically infers that dimension size based on the total number of elements.
 ---
 card_id: null
 ---
-What does `arr.reshape(2, -1)` do for a 12-element array?
+What does `arr.reshape(2, -1)` do for a 12-element **NumPy array**?
 ---
 Creates a 2×6 array (2 rows, 6 columns automatically inferred).
 ---
@@ -80,7 +80,7 @@ Accessing specific elements using integer positions or coordinates in multi-dime
 ---
 card_id: null
 ---
-How do you access the element at row 1, column 2 in a 2D array `arr`?
+How do you access the element at row 1, column 2 in a 2D **NumPy array** `arr`?
 ---
 ```python
 arr[1, 2]
@@ -98,7 +98,7 @@ Extracting subarrays using `start:stop:step` notation without copying data.
 ---
 card_id: null
 ---
-What does `arr[::2]` do?
+What does `arr[::2]` do in **NumPy**?
 ---
 Selects every second element from the array (step of 2, starting at 0).
 ---
@@ -106,7 +106,7 @@ Selects every second element from the array (step of 2, starting at 0).
 ---
 card_id: null
 ---
-What does `arr[:, 1]` do for a 2D array?
+What does `arr[:, 1]` do for a 2D **NumPy array**?
 ---
 Selects all rows from column 1 (extracts the second column).
 ---
@@ -122,7 +122,7 @@ Selecting array elements using a boolean array as a filter condition.
 ---
 card_id: null
 ---
-What does `arr[arr > 5]` do?
+What does `arr[arr > 5]` do in **NumPy**?
 ---
 Returns a new array containing only elements from `arr` that are greater than 5.
 ---
@@ -138,7 +138,7 @@ Selecting array elements using integer arrays to specify multiple positions simu
 ---
 card_id: null
 ---
-What does `arr[[0, 2, 4]]` do?
+What does `arr[[0, 2, 4]]` do in **NumPy**?
 ---
 Returns a new array with elements at indices 0, 2, and 4.
 ---
@@ -200,7 +200,7 @@ What common **aggregation functions** does NumPy provide?
 ---
 card_id: null
 ---
-What does the `axis` parameter control in aggregation functions?
+What does the `axis` parameter control in **NumPy** aggregation functions?
 ---
 Which dimension to reduce: `axis=0` for columns, `axis=1` for rows in 2D arrays.
 ---
@@ -208,7 +208,7 @@ Which dimension to reduce: `axis=0` for columns, `axis=1` for rows in 2D arrays.
 ---
 card_id: null
 ---
-What does `arr.sum(axis=0)` do for a 2D array?
+What does `arr.sum(axis=0)` do for a 2D **NumPy array**?
 ---
 Sums down columns, returning a 1D array with one sum per column.
 ---
@@ -216,7 +216,7 @@ Sums down columns, returning a 1D array with one sum per column.
 ---
 card_id: null
 ---
-What does `arr.sum(axis=1)` do for a 2D array?
+What does `arr.sum(axis=1)` do for a 2D **NumPy array**?
 ---
 Sums across rows, returning a 1D array with one sum per row.
 ---
@@ -267,7 +267,7 @@ What are the **broadcasting rules** in NumPy?
 ---
 card_id: null
 ---
-Why is **broadcasting** important for neural networks?
+Why is **NumPy broadcasting** important for neural networks?
 ---
 Enables efficient batch operations and parameter updates without explicit loops or memory duplication.
 ---
@@ -300,7 +300,7 @@ Returns the transpose of the array (rows become columns, columns become rows).
 ---
 card_id: null
 ---
-What is the shape of `arr.T` if `arr.shape` is `(3, 4)`?
+What is the shape of `arr.T` if `arr.shape` is `(3, 4)` in **NumPy**?
 ---
 `(4, 3)`
 ---
@@ -348,7 +348,7 @@ Broadcasting: add the 1D bias vector to the 2D matrix directly.
 ---
 card_id: null
 ---
-You have shape (100, 64) batch and shape (64,) bias. What happens with `batch + bias`?
+You have shape (100, 64) batch and shape (64,) bias in **NumPy**. What happens with `batch + bias`?
 ---
 Broadcasting expands bias to (1, 64), then to (100, 64), adding bias to each row.
 ---
