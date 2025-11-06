@@ -15,7 +15,19 @@ Question (markdown, LaTeX with $$...$$, code blocks)
 ---
 Answer (markdown, LaTeX with $$...$$, code blocks)
 ---
+card_id: next_id
+---
+Question
+---
+Answer
+---
 ```
+
+**CRITICAL: Deck File Rules**
+- **NO headers** at the top of the file - start immediately with the first card
+- **NO blank lines** between cards - cards flow directly one after another
+- First line of file must be `---`
+- Last line of file must be `---`
 
 **Card IDs:**
 - NEW cards: `card_id: null` (never generate IDs)
