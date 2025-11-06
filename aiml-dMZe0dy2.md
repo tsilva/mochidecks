@@ -310,19 +310,13 @@ card_id: 5zcoLyjx
 ---
 What metrics should you use instead of accuracy for **imbalanced datasets**?
 ---
-- **Precision/Recall** for the minority class
-- **F1 score** (harmonic mean of precision and recall)
-- **AUC-ROC** or **AUC-PR** curves
-- **Confusion matrix** (reveals class-specific performance)
+Use class-specific metrics (precision, recall, F1 score) or threshold-independent metrics (AUC-ROC, AUC-PR) that account for per-class performance rather than overall accuracy.
 ---
 card_id: IXlVHAM3
 ---
 What are solutions for training models on **imbalanced datasets**?
 ---
-- **Resampling**: Oversample minority class or undersample majority class
-- **Class weights**: Penalize minority class errors more heavily
-- **Cost-sensitive learning**: Assign different misclassification costs
-- **Synthetic data**: Generate synthetic minority examples (e.g., SMOTE)
+Use resampling techniques (oversampling minority/undersampling majority), assign higher class weights to minority class errors, or generate synthetic examples (e.g., SMOTE).
 ---
 card_id: KG5Xunz3
 ---
@@ -772,14 +766,6 @@ How do **training error** and **validation error** look in a well-tuned model?
 ---
 Both are **low** with a **small gap** between them.
 ---
-card_id: f0s3zz8E
----
-Why use a **train/validation/test** split (three sets)?
----
-- **Training set**: Train the model
-- **Validation set**: Tune hyperparameters and select models (used repeatedly during development)
-- **Test set**: Final evaluation only (used once, never for training decisions)
----
 card_id: fv6KTOih
 ---
 What are the **bias-variance** characteristics of **low-complexity** models?
@@ -1194,18 +1180,6 @@ card_id: dA69gJE7
 What does **Shannon entropy** measure about a distribution?
 ---
 **Entropy measures uncertainty or randomness** in a distribution.
----
-card_id: null
----
-What does **high entropy** indicate about a distribution?
----
-Distribution is spread out and uncertain (e.g., uniform distribution where all outcomes are equally likely).
----
-card_id: null
----
-What does **low entropy** indicate about a distribution?
----
-Distribution is concentrated and predictable (e.g., one outcome has probability ≈ 1).
 ---
 card_id: I10LiBvY
 ---
@@ -1897,8 +1871,7 @@ card_id: exsTnOs7
 ---
 What are common **feature scaling** methods?
 ---
-- **Normalization**: Scale to [0, 1] → $x' = \frac{x - x_{min}}{x_{max} - x_{min}}$
-- **Standardization**: Scale to mean=0, std=1 → $x' = \frac{x - \mu}{\sigma}$
+Normalization (Min-Max scaling) and Standardization (Z-score normalization).
 ---
 card_id: Wj8qng64
 ---
@@ -2010,18 +1983,6 @@ card_id: b5SI03Z6
 What is **PPV (Positive Predictive Value)** also known as in AI/ML?
 ---
 **PPV (Positive Predictive Value)** is also known as **Precision**.
----
-card_id: LNzkOomz
----
-What metric is best for detecting when a model is good for **cancer screening**, where missing a positive case could be life-threatening?
----
-**Recall (Sensitivity)** - prioritizes catching all positive cases even if it means more false positives, since false negatives are unacceptable in this context.
----
-card_id: 2ksRExBn
----
-What metric is best for detecting when a model is good for **spam email filtering**, where users find false positives (legitimate emails marked as spam) very annoying?
----
-**Precision** - ensures that when emails are marked as spam, they are actually spam, minimizing the risk of missing important legitimate emails.
 ---
 card_id: frs3nlIG
 ---
