@@ -220,12 +220,6 @@ In **NumPy**, what is the shape of `arr.T` if `arr.shape` is `(3, 4)`?
 ---
 `(4, 3)`
 ---
-card_id: TMhrgUpr
----
-Why learn **NumPy** for deep learning?
----
-PyTorch tensors behave similarly to NumPy arrays, making NumPy fundamental for scientific Python.
----
 card_id: jgk91JHn
 ---
 What does `np.eye(n)` create?
