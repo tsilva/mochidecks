@@ -32,7 +32,7 @@ What methods create **NumPy arrays** from scratch?
 ---
 card_id: null
 ---
-What does `np.arange(start, stop, step)` do?
+In **NumPy**, what does `np.arange(start, stop, step)` do?
 ---
 Creates an array with values from start to stop (exclusive) with specified step size.
 ---
@@ -40,7 +40,7 @@ Creates an array with values from start to stop (exclusive) with specified step 
 ---
 card_id: null
 ---
-What does `np.linspace(start, stop, num)` do?
+In **NumPy**, what does `np.linspace(start, stop, num)` do?
 ---
 Creates an array with num evenly spaced values between start and stop (inclusive).
 ---
@@ -154,14 +154,6 @@ Arithmetic operations applied simultaneously to all array elements using vectori
 ---
 card_id: null
 ---
-What does `arr1 + arr2` do for NumPy arrays?
----
-Adds corresponding elements from both arrays, returning a new array of sums.
----
-
----
-card_id: null
----
 What are **universal functions (ufuncs)** in NumPy?
 ---
 Pre-optimized functions that operate element-wise on arrays with vectorized C implementations.
@@ -227,14 +219,6 @@ card_id: null
 What is **broadcasting** in NumPy?
 ---
 Automatic alignment of arrays with different dimensions during arithmetic operations without copying data.
----
-
----
-card_id: null
----
-What does **broadcasting** enable in NumPy operations?
----
-Performing operations between arrays of different shapes by automatically expanding dimensions.
 ---
 
 ---
@@ -332,15 +316,15 @@ Replacing explicit Python loops with array operations that execute in optimized 
 ---
 card_id: null
 ---
-Model trains slowly using Python loops for array operations. What solution?
+In **NumPy**, model trains slowly using Python loops for array operations. What solution?
 ---
-Use NumPy vectorized operations to replace loops with element-wise array operations.
+Use vectorized operations to replace loops with element-wise array operations.
 ---
 
 ---
 card_id: null
 ---
-You need to add a bias vector to each row of a batch matrix. What NumPy feature?
+In **NumPy**, you need to add a bias vector to each row of a batch matrix. What feature enables this?
 ---
 Broadcasting: add the 1D bias vector to the 2D matrix directly.
 ---
