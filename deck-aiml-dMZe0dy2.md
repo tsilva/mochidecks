@@ -2098,13 +2098,13 @@ What metric is best for detecting when a model is good for **anomaly detection i
 ---
 **Recall** combined with **Precision-Recall AUC** - prioritizes catching attacks (high recall) while PR-AUC evaluates performance across thresholds for imbalanced data.
 ---
-card_id: null
+card_id: 6FnoQTcG
 ---
 What does **covariance** measure?
 ---
 Measures how two variables change together - whether they increase/decrease in tandem (positive covariance) or opposite directions (negative covariance).
 ---
-card_id: null
+card_id: j6PIg78N
 ---
 How does **covariance** differ from **correlation**?
 ---
@@ -2112,13 +2112,13 @@ How does **covariance** differ from **correlation**?
 
 **Correlation**: Scale-independent (normalized covariance), dimensionless, range -1 to +1
 ---
-card_id: null
+card_id: PkpGz6fh
 ---
 What does **standard error** measure?
 ---
 Measures the variability of the **sample mean** - how much sample means would vary if you repeatedly sampled from the same population.
 ---
-card_id: null
+card_id: V3WPCUOB
 ---
 How does **standard error** differ from **standard deviation**?
 ---
@@ -2126,13 +2126,13 @@ How does **standard error** differ from **standard deviation**?
 
 **Standard error**: Measures precision of the sample mean estimate
 ---
-card_id: null
+card_id: KDnFOba5
 ---
 What does **R-squared** measure in regression?
 ---
 Measures the proportion of variance in the target variable explained by the model.
 ---
-card_id: null
+card_id: UmHtIgEm
 ---
 How is **R-squared** interpreted?
 ---
@@ -2142,13 +2142,13 @@ How is **R-squared** interpreted?
 
 Higher R² indicates better fit.
 ---
-card_id: null
+card_id: ldCT7lDi
 ---
 What is **harmonic mean**?
 ---
 The **harmonic mean** is the reciprocal of the arithmetic mean of reciprocals, giving more weight to smaller values.
 ---
-card_id: null
+card_id: 33n5fG7G
 ---
 When should you use **dropout**?
 ---
@@ -2158,7 +2158,7 @@ Use **dropout** when:
 - You have limited training data
 - Training ensemble-like behavior is desired
 ---
-card_id: null
+card_id: 9dJ3I9aI
 ---
 When should you use **batch normalization**?
 ---
@@ -2168,7 +2168,7 @@ Use **batch normalization** when:
 - Experiencing internal covariate shift
 - Need some regularization effect
 ---
-card_id: null
+card_id: FV2Pn2Kh
 ---
 How is **batch normalization** applied differently at test time vs training time?
 ---
@@ -2176,7 +2176,7 @@ How is **batch normalization** applied differently at test time vs training time
 
 **Test**: Uses running averages of mean and variance computed during training (fixed statistics)
 ---
-card_id: null
+card_id: 2hIwt9d2
 ---
 How does **max pooling** work step-by-step?
 ---
@@ -2184,7 +2184,7 @@ How does **max pooling** work step-by-step?
 2. Take the maximum value from each region
 3. Output the max values, reducing spatial dimensions
 ---
-card_id: null
+card_id: Xvi9k4mM
 ---
 When should you use **max pooling** vs **average pooling**?
 ---
@@ -2192,13 +2192,13 @@ When should you use **max pooling** vs **average pooling**?
 
 **Average pooling**: When you want to preserve overall information and reduce noise
 ---
-card_id: null
+card_id: dRyvIBOR
 ---
 What is a **kernel (filter)** in convolutional layers?
 ---
 A **kernel** is a small learnable weight matrix (e.g., 3×3) that slides across the input to detect specific patterns like edges, textures, or shapes.
 ---
-card_id: null
+card_id: naEM7AaV
 ---
 How does a **convolutional filter** process an image?
 ---
@@ -2208,13 +2208,13 @@ How does a **convolutional filter** process an image?
 4. Slide filter right by stride (e.g., 1 pixel), repeat
 5. Continue until entire image is covered
 ---
-card_id: null
+card_id: FhreUGhm
 ---
 What is **information gain**?
 ---
 **Information gain** measures the reduction in entropy (uncertainty) achieved by splitting data on a particular feature.
 ---
-card_id: null
+card_id: CbV3ociH
 ---
 Training **loss becomes NaN** during training. What are possible causes and solutions?
 ---
@@ -2224,61 +2224,61 @@ Training **loss becomes NaN** during training. What are possible causes and solu
 - **Poor weight initialization** → Use Xavier/He initialization
 - **Numerical instability** → Add batch normalization or check for division by zero
 ---
-card_id: null
+card_id: kqu7riud
 ---
 **Validation loss** stops decreasing at epoch 5 but **training loss** keeps dropping. What should you do?
 ---
 **Overfitting detected** - use early stopping to stop training around epoch 5, or add regularization (dropout, L1/L2, data augmentation) and retrain.
 ---
-card_id: null
+card_id: la8zY9yL
 ---
 **Training loss** oscillates wildly and never converges. What's the likely cause?
 ---
 **Learning rate is too high** - the optimizer overshoots the minimum with each step. Solution: Reduce learning rate by 10x (e.g., 0.1 → 0.01).
 ---
-card_id: null
+card_id: qYAfqnzI
 ---
 **Training loss** decreases extremely slowly (0.001 per epoch). What's likely wrong?
 ---
 **Learning rate is too low** - steps are too small to reach the minimum efficiently. Solution: Increase learning rate by 10x.
 ---
-card_id: null
+card_id: tXoAhkAl
 ---
 You have 1000 features but suspect only 50 are relevant. Should you use **L1** or **L2 regularization**?
 ---
 **Use L1 (Lasso)** - it performs automatic feature selection by driving irrelevant feature weights to exactly zero, creating a sparse model with ~50 non-zero weights.
 ---
-card_id: null
+card_id: YpXEpl2q
 ---
 Your binary classifier has 90% **precision** but 20% **recall**. What does this mean about the model's behavior?
 ---
 The model is **extremely conservative** - it only predicts positive when very confident (high precision), but misses most positive cases (low recall). It's producing very few positive predictions.
 ---
-card_id: null
+card_id: qvG1VoHc
 ---
 **Accuracy** is 95% but **F1 score** is 0.30. What does this tell you about your dataset?
 ---
 **Severe class imbalance** - the model is likely predicting the majority class for almost everything, achieving high accuracy but performing poorly on the minority class (low F1).
 ---
-card_id: null
+card_id: vs8j84yd
 ---
 What is the tradeoff between **precision** and **recall**?
 ---
 **Precision-Recall Tradeoff**: Lowering the classification threshold increases recall (catches more positives) but decreases precision (more false alarms). They move inversely.
 ---
-card_id: null
+card_id: i4YfDU8Q
 ---
 Why does **L1 regularization** drive weights to exactly zero while **L2** does not?
 ---
 L1 uses absolute value $|w|$ which has constant gradient (±1), pushing weights by fixed amounts toward zero regardless of size. L2 uses $w^2$ with gradient proportional to $w$, so penalty weakens as weights approach zero.
 ---
-card_id: null
+card_id: 3FMKUz7B
 ---
 What is **data augmentation**?
 ---
 **Data augmentation** creates modified versions of training examples through transformations (rotation, flipping, cropping, color shifts) to artificially expand dataset size.
 ---
-card_id: null
+card_id: o9sVPuyT
 ---
 What are common **data augmentation** techniques for images?
 ---
@@ -2287,7 +2287,7 @@ What are common **data augmentation** techniques for images?
 - Noise: adding Gaussian noise, blur
 - Advanced: cutout, mixup
 ---
-card_id: null
+card_id: ryru7Jwu
 ---
 When is **data augmentation** most effective?
 ---
@@ -2297,13 +2297,13 @@ Most effective when:
 - Training data doesn't cover all variations (e.g., rotations, lighting conditions)
 - Domain allows realistic transformations
 ---
-card_id: null
+card_id: ZH3j98Ju
 ---
 What is **early stopping**?
 ---
 **Early stopping** is a regularization technique that stops training when validation performance stops improving, preventing overfitting.
 ---
-card_id: null
+card_id: wc8hG4Al
 ---
 How do you implement **early stopping**?
 ---
@@ -2313,7 +2313,7 @@ How do you implement **early stopping**?
 4. Stop if validation loss doesn't improve for **patience** epochs
 5. Restore weights from best epoch
 ---
-card_id: null
+card_id: ytrYDXIz
 ---
 When should you use **normalization** vs **standardization**?
 ---
@@ -2321,7 +2321,7 @@ When should you use **normalization** vs **standardization**?
 
 **Standardization (Z-score)**: When features have different units/scales and you want zero-centered data (more robust to outliers)
 ---
-card_id: null
+card_id: 6acnMN4c
 ---
 Why is **ReLU** preferred over **sigmoid/tanh** for hidden layers?
 ---
@@ -2332,7 +2332,7 @@ Why is **ReLU** preferred over **sigmoid/tanh** for hidden layers?
 
 **Sigmoid/tanh problems**: Gradients vanish for large |x|, slowing learning in deep networks.
 ---
-card_id: null
+card_id: znraY4zM
 ---
 What are the tradeoffs between **batch**, **stochastic**, and **mini-batch gradient descent**?
 ---
@@ -2342,13 +2342,13 @@ What are the tradeoffs between **batch**, **stochastic**, and **mini-batch gradi
 
 **Mini-batch GD**: Best balance - faster than batch, more stable than stochastic, efficient GPU usage
 ---
-card_id: null
+card_id: bo9ChDN9
 ---
 What is **model complexity**?
 ---
 **Model complexity** refers to the model's capacity to fit various functions - determined by number of parameters, depth, and flexibility.
 ---
-card_id: null
+card_id: 36vzVgEA
 ---
 What factors determine **model complexity**?
 ---
@@ -2358,7 +2358,7 @@ What factors determine **model complexity**?
 - Polynomial degree (for regression)
 - Tree depth (for decision trees)
 ---
-card_id: null
+card_id: 4ADzRBcr
 ---
 How is an **ROC curve** constructed?
 ---
@@ -2367,13 +2367,13 @@ How is an **ROC curve** constructed?
 3. At each threshold, compute TPR (y-axis) and FPR (x-axis)
 4. Plot points and connect them to form curve
 ---
-card_id: null
+card_id: kDzie0bq
 ---
 What is the tradeoff between **Type I** and **Type II errors**?
 ---
 **Type I vs Type II Tradeoff**: Reducing significance level $\alpha$ (stricter threshold) decreases Type I errors (false positives) but increases Type II errors (false negatives). More conservative tests catch fewer true effects.
 ---
-card_id: null
+card_id: iJ4AzCoM
 ---
 What are the symptoms of **high bias** vs **high variance**?
 ---
@@ -2386,4 +2386,3 @@ What are the symptoms of **high bias** vs **high variance**?
 - Low training error
 - High test error (large gap)
 - Model too complex
----
