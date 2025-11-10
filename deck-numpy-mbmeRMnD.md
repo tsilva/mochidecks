@@ -224,3 +224,102 @@ card_id: 5o1ztwck
 What's wrong with `arr[arr > 5 and arr < 10]` in NumPy?
 ---
 Cannot use `and`/`or` with arrays; use element-wise `&`/`|` with parentheses: `arr[(arr > 5) & (arr < 10)]`.
+---
+card_id: RhdqA0aE
+---
+In **NumPy**, what is the resulting shape of `arr1 + arr2` where `arr1.shape = (3, 4)` and `arr2` is a scalar?
+---
+`(3, 4)` - scalar broadcasts to all elements.
+---
+card_id: 9oaY3PYQ
+---
+In **NumPy**, what is the resulting shape of `arr1 + arr2` where `arr1.shape = (3, 4)` and `arr2.shape = (4,)`?
+---
+`(3, 4)` - the (4,) array broadcasts across rows.
+---
+card_id: imA0PuU8
+---
+In **NumPy**, what is the resulting shape of `arr1 + arr2` where `arr1.shape = (3, 4)` and `arr2.shape = (3, 1)`?
+---
+`(3, 4)` - the (3, 1) array broadcasts across columns.
+---
+card_id: o99cT9GG
+---
+In **NumPy**, what is the resulting shape of `arr1 * arr2` where `arr1.shape = (3, 1)` and `arr2.shape = (1, 4)`?
+---
+`(3, 4)` - both dimensions of size 1 stretch to create outer product structure.
+---
+card_id: X4oqL9pN
+---
+In **NumPy**, can you add `arr1` with `arr2` where `arr1.shape = (3, 4)` and `arr2.shape = (5,)`?
+---
+No - incompatible shapes. The (5,) doesn't match either dimension of (3, 4).
+---
+card_id: FGWQzVQj
+---
+In **NumPy**, can you add `arr1` with `arr2` where `arr1.shape = (3, 4)` and `arr2.shape = (3,)`?
+---
+Yes - the (3,) broadcasts to (3, 1) then to (3, 4) matching rows.
+---
+card_id: kwVIrGOB
+---
+In **NumPy**, what is the resulting shape of `arr1 + arr2` where `arr1.shape = (2, 3, 4)` and `arr2.shape = (3, 4)`?
+---
+`(2, 3, 4)` - the (3, 4) broadcasts across the first dimension.
+---
+card_id: OCTor9FO
+---
+In **NumPy**, what is the resulting shape of `arr1 + arr2` where `arr1.shape = (2, 3, 4)` and `arr2.shape = (4,)`?
+---
+`(2, 3, 4)` - the (4,) broadcasts across the first two dimensions.
+---
+card_id: Sf5pG9JY
+---
+In **NumPy**, what is the resulting shape of `arr1 + arr2` where `arr1.shape = (2, 1, 4)` and `arr2.shape = (1, 3, 1)`?
+---
+`(2, 3, 4)` - dimension 1 in arr1 and dimensions 0,2 in arr2 broadcast.
+---
+card_id: oySDoLbD
+---
+In **NumPy**, what is the resulting shape of `arr1 + arr2` where `arr1.shape = (5, 1, 3)` and `arr2.shape = (1, 4, 3)`?
+---
+`(5, 4, 3)` - second dimensions 1 in arr1 and first dimension 1 in arr2 broadcast.
+---
+card_id: CATNeqAR
+---
+Given **NumPy** arrays `a = np.array([[1], [2], [3]])` (shape 3,1) and `b = np.array([10, 20])` (shape 2,), what is `a + b`?
+---
+```python
+[[11, 21],
+ [12, 22],
+ [13, 23]]
+```
+Shape (3, 2).
+---
+card_id: UgMklXjz
+---
+Given **NumPy** arrays `a = np.ones((2, 3, 1))` and `b = np.ones((1, 1, 4))`, what is the shape of `a * b`?
+---
+`(2, 3, 4)` - all three dimensions broadcast.
+---
+card_id: w2ChrU8J
+---
+In **NumPy**, can you add `arr1` with `arr2` where `arr1.shape = (3, 4, 5)` and `arr2.shape = (4, 1)`?
+---
+Yes - arr2 broadcasts to (1, 4, 1) then to (3, 4, 5).
+---
+card_id: a8A7ketm
+---
+In **NumPy**, what happens with `arr1 + arr2` where `arr1.shape = (3, 4)` and `arr2.shape = (1,)`?
+---
+Result has shape (3, 4) - the (1,) broadcasts to all elements like a scalar.
+---
+card_id: ieKVAGGI
+---
+Given **NumPy** arrays `a = np.array([1, 2, 3])` (shape 3,) and `b = np.array([[10], [20]])` (shape 2,1), what is `a + b`?
+---
+```python
+[[11, 12, 13],
+ [21, 22, 23]]
+```
+Shape (2, 3).
