@@ -11,13 +11,13 @@ What is a **NumPy array**?
 ---
 A multi-dimensional container for homogeneous data with fixed size and type.
 ---
-card_id: null
+card_id: KkLDH6H1
 ---
 What advantage does **NumPy** provide over Python lists?
 ---
 Faster computation through vectorization and contiguous memory allocation for homogeneous data.
 ---
-card_id: null
+card_id: Qz8wmeHY
 ---
 When should you use **NumPy** over Python lists?
 ---
@@ -26,25 +26,25 @@ When should you use **NumPy** over Python lists?
 - Want vectorized operations without explicit loops
 - Need memory-efficient storage
 ---
-card_id: null
+card_id: AyRQ3fRl
 ---
 What does `np.array()` do?
 ---
 Creates a NumPy array from a Python list or tuple.
 ---
-card_id: null
+card_id: NycYZ0ku
 ---
 What does `np.zeros(shape)` create?
 ---
 An array of specified shape filled with zeros.
 ---
-card_id: null
+card_id: ioAroUxQ
 ---
 What does `np.ones(shape)` create?
 ---
 An array of specified shape filled with ones.
 ---
-card_id: null
+card_id: 5XMs8xXE
 ---
 What does `np.eye(n)` create?
 ---
@@ -62,7 +62,7 @@ In **NumPy**, what does `np.linspace(start, stop, num)` do?
 ---
 Creates an array with num evenly spaced values between start and stop (inclusive).
 ---
-card_id: null
+card_id: EPKOh7hT
 ---
 How do `np.arange()` and `np.linspace()` differ?
 ---
@@ -86,7 +86,7 @@ In **NumPy**, what does `arr.reshape(2, -1)` do for a 12-element array?
 ---
 Creates a 2×6 array (2 rows, 6 columns automatically inferred).
 ---
-card_id: null
+card_id: w4z0c3pG
 ---
 You have a 24-element 1D array. You call `arr.reshape(3, 3)`. What happens?
 ---
@@ -124,7 +124,7 @@ In **NumPy**, what does `arr[:, 1]` do for a 2D array?
 ---
 Selects all rows from column 1 (extracts the second column).
 ---
-card_id: null
+card_id: 7e1Eqduk
 ---
 How do **indexing** and **slicing** differ in NumPy?
 ---
@@ -160,7 +160,7 @@ In **NumPy**, what does `arr[[0, 2, 4]]` do?
 ---
 Returns a new array with elements at indices 0, 2, and 4.
 ---
-card_id: null
+card_id: aiHkZyXt
 ---
 How do **boolean masking** and **fancy indexing** differ?
 ---
@@ -172,13 +172,13 @@ What are **element-wise operations** in NumPy?
 ---
 Arithmetic operations applied simultaneously to all array elements using vectorization.
 ---
-card_id: null
+card_id: UT46paj8
 ---
 What does **vectorization** enable in NumPy?
 ---
 Applying operations to entire arrays without explicit Python loops for faster execution.
 ---
-card_id: null
+card_id: JAxL7sok
 ---
 When should you use **vectorization** in NumPy?
 ---
@@ -186,25 +186,25 @@ When should you use **vectorization** in NumPy?
 - Want to avoid explicit Python loops
 - Need performance improvement for numerical computations
 ---
-card_id: null
+card_id: aL1Bg9oN
 ---
 What is a **ufunc** in NumPy?
 ---
 A universal function that operates element-wise on arrays with broadcasting support.
 ---
-card_id: null
+card_id: h2GLjN0I
 ---
 What does `np.sin()` do?
 ---
 Computes sine of each element in the array.
 ---
-card_id: null
+card_id: pkrnNlp2
 ---
 What does `np.exp()` do?
 ---
 Computes exponential (e^x) of each element in the array.
 ---
-card_id: null
+card_id: KC7spGbD
 ---
 What does `np.sqrt()` do?
 ---
@@ -216,19 +216,19 @@ What are **aggregation functions** in NumPy?
 ---
 Operations that reduce arrays to summary statistics along specified axes or entire arrays.
 ---
-card_id: null
+card_id: 7Fmdf84L
 ---
 What does `np.sum()` compute?
 ---
 The total of all elements in the array or along specified axes.
 ---
-card_id: null
+card_id: yFRLBIOy
 ---
 What does `np.mean()` compute?
 ---
 The average value of array elements or along specified axes.
 ---
-card_id: null
+card_id: RiKJvYJB
 ---
 What does `np.std()` compute?
 ---
@@ -252,13 +252,13 @@ In **NumPy**, what does `arr.sum(axis=1)` do for a 2D array?
 ---
 Sums across rows, returning a 1D array with one sum per row.
 ---
-card_id: null
+card_id: iVDarG9b
 ---
 You have shape (10, 20) array. What shape results from `arr.sum(axis=0)`?
 ---
 `(20,)` - reduces the first dimension.
 ---
-card_id: null
+card_id: udThFceU
 ---
 You have shape (10, 20) array. What shape results from `arr.mean(axis=1)`?
 ---
@@ -270,7 +270,7 @@ What is **broadcasting** in NumPy?
 ---
 Automatic alignment of arrays with different dimensions during arithmetic operations without copying data.
 ---
-card_id: null
+card_id: 5czhkB67
 ---
 Why is **broadcasting** important in NumPy?
 ---
@@ -408,7 +408,7 @@ Why is **broadcasting** important for neural networks in **NumPy**?
 ---
 Enables efficient batch operations and parameter updates without explicit loops or memory duplication.
 ---
-card_id: null
+card_id: QV74RBJA
 ---
 You're adding bias to 1000 samples in a (1000, 512) batch. How does **broadcasting** help?
 ---
@@ -420,7 +420,7 @@ What operator performs **matrix multiplication** in NumPy?
 ---
 The `@` operator (e.g., `A @ B`).
 ---
-card_id: null
+card_id: ZJuu6k1d
 ---
 How does **matrix multiplication** (`@`) differ from element-wise multiplication (`*`)?
 ---
@@ -438,7 +438,7 @@ In **NumPy**, what is the shape of `arr.T` if `arr.shape` is `(3, 4)`?
 ---
 `(4, 3)`
 ---
-card_id: null
+card_id: Y8Ue3LVO
 ---
 Your code produces NaN values during array operations. What are likely causes?
 ---
@@ -447,7 +447,7 @@ Your code produces NaN values during array operations. What are likely causes?
 - Overflow from very large numbers
 - Invalid broadcasting creating unexpected shapes
 ---
-card_id: null
+card_id: DCuSsUCw
 ---
 You need to normalize each row of a (100, 10) array by its row sum. How?
 ---
@@ -456,13 +456,13 @@ row_sums = arr.sum(axis=1, keepdims=True)
 normalized = arr / row_sums
 ```
 ---
-card_id: null
+card_id: AL6hsAt2
 ---
 Why use `keepdims=True` in aggregation functions?
 ---
 Preserves dimensions as size 1 for correct broadcasting in subsequent operations.
 ---
-card_id: null
+card_id: la6RbJ6P
 ---
 Array operation is slow despite using NumPy. What might be wrong?
 ---
@@ -471,9 +471,8 @@ Array operation is slow despite using NumPy. What might be wrong?
 - Operations triggering type conversions
 - Not using in-place operations where appropriate
 ---
-card_id: null
+card_id: okNV61WZ
 ---
 When should you use `np.dot()` versus `@` in NumPy?
 ---
 Both do matrix multiplication; `@` is preferred for clarity and better follows mathematical notation.
----
