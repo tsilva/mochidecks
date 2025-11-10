@@ -17,7 +17,7 @@ What is a **vector** in linear algebra?
 ---
 An ordered list of numbers that can represent a point in space or direction with magnitude.
 ---
-card_id: null
+card_id: sUkgKo9K
 ---
 What operation implements a **neural network layer**?
 ---
@@ -327,7 +327,7 @@ What do **eigenvectors** reveal about a transformation?
 ---
 The natural directions that only get scaled, not rotated.
 ---
-card_id: null
+card_id: Mp0Mtz2t
 ---
 What are three applications of **eigenvectors** in ML?
 ---
@@ -486,7 +486,7 @@ What do the **attention weights** represent?
 ---
 How much each query attends to each key; each row sums to 1 after softmax.
 ---
-card_id: null
+card_id: wt8z6vN6
 ---
 Model: In attention, $\mathbf{QK}^T$ has very large values before softmax. What happens?
 ---
@@ -570,7 +570,7 @@ Model: Two vectors have dot product zero. Are they orthogonal?
 ---
 Yes - zero dot product means perpendicular (90° angle).
 ---
-card_id: null
+card_id: Bf413Wan
 ---
 Model: Word embeddings for "king" and "queen" have dot product 0.85. What does this indicate?
 ---
@@ -626,7 +626,7 @@ Model: Matrix has determinant = 0. Can you find its inverse?
 ---
 No - determinant = 0 means singular matrix with no inverse.
 ---
-card_id: null
+card_id: C560BntI
 ---
 Model: Solving $\mathbf{Ax} = \mathbf{b}$ but $\mathbf{A}$ has rank 3 with 5 columns. What's the issue?
 ---
@@ -649,4 +649,3 @@ card_id: WORTJHn8
 Why divide by $\sqrt{d_k}$ in **attention mechanism**?
 ---
 Prevents dot products from becoming too large (which would push softmax into extreme values), stabilizing gradients.
----
