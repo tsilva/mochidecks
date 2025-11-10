@@ -3,22 +3,25 @@ card_id: RxLVZ3ft
 ---
 What is **linear algebra**?
 ---
-The mathematical language for working with vectors, matrices, and linear transformations used throughout machine learning.
+The study of vectors, matrices, and linear transformations.
 ---
 card_id: l1ZyDLOb
 ---
-Why is **linear algebra** essential for machine learning?
+How is data structured in **machine learning**?
 ---
-- Data is represented as vectors and matrices
-- Neural network layers are matrix multiplications
-- Attention mechanisms are matrix operations
-- Enables efficient batch processing
+As vectors (samples/features) and matrices (datasets/transformations).
 ---
 card_id: KYP2Rcdb
 ---
 What is a **vector** in linear algebra?
 ---
 An ordered list of numbers that can represent a point in space or direction with magnitude.
+---
+card_id: null
+---
+What operation implements a **neural network layer**?
+---
+Matrix multiplication: weights transform input vectors to output vectors.
 ---
 card_id: CA7nlbE8
 ---
@@ -38,27 +41,27 @@ card_id: JSS0T54N
 ---
 What does **scalar multiplication** do to a vector?
 ---
-Scales the vector's length without changing direction (unless negative, which flips direction).
+Scales its length; negative scalars also reverse direction.
 ---
 card_id: fxId1pWl
 ---
 What is the **dot product** algebraically?
 ---
 $$\mathbf{a} \cdot \mathbf{b} = \sum_{i} a_i b_i$$
-Multiply corresponding elements and sum them.
+where $a_i$ and $b_i$ are corresponding elements.
 ---
 card_id: gsa5W107
 ---
 What is the **dot product** geometrically?
 ---
 $$\mathbf{a} \cdot \mathbf{b} = ||\mathbf{a}|| \, ||\mathbf{b}|| \cos(\theta)$$
-Product of magnitudes times cosine of angle between vectors.
+where $\theta$ is the angle between vectors.
 ---
 card_id: NY8CAtcF
 ---
 What does the **dot product** measure?
 ---
-How much two vectors point in the same direction; high positive means similar direction, zero means perpendicular, negative means opposite.
+Directional similarity: positive (same direction), zero (perpendicular), negative (opposite).
 ---
 card_id: xpBAo6Hr
 ---
@@ -71,28 +74,28 @@ card_id: mmRIlpED
 What is the **projection** of vector a onto vector b?
 ---
 $$\text{proj}_{\mathbf{b}}(\mathbf{a}) = \frac{\mathbf{a} \cdot \mathbf{b}}{||\mathbf{b}||^2} \mathbf{b}$$
-The component of a that lies along b direction.
+The component of $\mathbf{a}$ along $\mathbf{b}$ direction.
 ---
 card_id: f4pNM7JW
 ---
 What is the **L2 norm** (Euclidean norm)?
 ---
 $$||\mathbf{v}||_2 = \sqrt{\sum_{i} v_i^2}$$
-Square root of sum of squared components; straight-line distance.
+The straight-line distance from origin to point.
 ---
 card_id: rPgBRjLl
 ---
 What is the **L1 norm** (Manhattan norm)?
 ---
 $$||\mathbf{v}||_1 = \sum_{i} |v_i|$$
-Sum of absolute values; city-block distance.
+The sum of absolute values of components.
 ---
 card_id: ySJpR0t3
 ---
 What is the **L∞ norm** (max norm)?
 ---
 $$||\mathbf{v}||_\infty = \max_i |v_i|$$
-Largest absolute component value.
+The largest absolute value among all components.
 ---
 card_id: DZIYuTvD
 ---
@@ -128,14 +131,14 @@ card_id: xBs6PfE7
 ---
 What is a **unit vector**?
 ---
-A vector with length (norm) equal to 1, representing pure direction.
+A vector with norm equal to 1.
 ---
 card_id: Nfi6lpdO
 ---
 How do you **normalize** a vector?
 ---
 $$\mathbf{v}_{\text{normalized}} = \frac{\mathbf{v}}{||\mathbf{v}||}$$
-Divide by its norm to get unit vector.
+Divide by its norm.
 ---
 card_id: UVKoefOH
 ---
@@ -153,7 +156,7 @@ card_id: YEIMAZLY
 ---
 What is a **matrix** in linear algebra?
 ---
-A rectangular array of numbers organized in rows and columns that can represent data, transformations, or systems of equations.
+A rectangular array of numbers organized in rows and columns.
 ---
 card_id: ciP3fLTV
 ---
@@ -266,10 +269,7 @@ card_id: kz49mm7r
 ---
 What do **linear transformations** preserve?
 ---
-- Lines remain lines
-- Origin stays at origin
-- Parallel lines stay parallel
-- Grid structure maintained
+Lines remain lines, origin stays fixed, parallel lines stay parallel.
 ---
 card_id: CnoVXkGr
 ---
@@ -323,12 +323,15 @@ The scaling factor $\lambda$ by which an eigenvector is multiplied: $\mathbf{Av}
 ---
 card_id: aJbpNAUn
 ---
-Why are **eigenvectors** important?
+What do **eigenvectors** reveal about a transformation?
 ---
-- Reveal natural directions of transformation
-- Show which directions are stretched/compressed
-- Basis for PCA, PageRank, stability analysis
-- Simplify complex transformations
+The natural directions that only get scaled, not rotated.
+---
+card_id: null
+---
+What are three applications of **eigenvectors** in ML?
+---
+PCA (dimensionality reduction), PageRank (web ranking), stability analysis (dynamics).
 ---
 card_id: szw7l28k
 ---
@@ -346,7 +349,7 @@ card_id: fWe5we5B
 ---
 What is the **power iteration method**?
 ---
-Algorithm to find largest eigenvector: repeatedly apply matrix A to random vector and normalize; converges to dominant eigenvector.
+Repeatedly apply matrix and normalize to find the dominant eigenvector.
 ---
 card_id: gr42Q1p7
 ---
@@ -429,7 +432,7 @@ card_id: lirGn2dR
 ---
 What does the **Gram-Schmidt process** do?
 ---
-Converts any linearly independent vectors into an orthonormal basis.
+Converts linearly independent vectors into an orthonormal basis.
 ---
 card_id: ZdGFubOO
 ---
@@ -469,9 +472,7 @@ card_id: rla3KEtr
 ---
 What are **Q, K, V** in the attention mechanism?
 ---
-- Q (queries): what to look for
-- K (keys): what's available
-- V (values): what to return
+Q (queries): what to look for; K (keys): what's available; V (values): what to return.
 ---
 card_id: cbSsBjKu
 ---
@@ -485,14 +486,17 @@ What do the **attention weights** represent?
 ---
 How much each query attends to each key; each row sums to 1 after softmax.
 ---
+card_id: null
+---
+Model: In attention, $\mathbf{QK}^T$ has very large values before softmax. What happens?
+---
+Softmax saturates to near 0 or 1, losing gradients - that's why we divide by $\sqrt{d_k}$.
+---
 card_id: hRUSAR1u
 ---
 Why is **matrix multiplication** ubiquitous in ML?
 ---
-- Linear transformations (layers)
-- Batch processing (parallelism)
-- Attention (all-pairs relationships)
-- GPU optimization (hardware designed for it)
+Enables layers, batch processing, attention, and GPU acceleration.
 ---
 card_id: 8h1CKoTR
 ---
@@ -566,6 +570,12 @@ Model: Two vectors have dot product zero. Are they orthogonal?
 ---
 Yes - zero dot product means perpendicular (90° angle).
 ---
+card_id: null
+---
+Model: Word embeddings for "king" and "queen" have dot product 0.85. What does this indicate?
+---
+High similarity - they point in nearly the same semantic direction.
+---
 card_id: z21uxY7i
 ---
 When does repeated **matrix multiplication** make eigenvector direction dominate?
@@ -616,6 +626,12 @@ Model: Matrix has determinant = 0. Can you find its inverse?
 ---
 No - determinant = 0 means singular matrix with no inverse.
 ---
+card_id: null
+---
+Model: Solving $\mathbf{Ax} = \mathbf{b}$ but $\mathbf{A}$ has rank 3 with 5 columns. What's the issue?
+---
+System is underdetermined - infinite solutions exist due to redundant features.
+---
 card_id: kmlMo8qe
 ---
 What property connects **determinant** and **matrix invertibility**?
@@ -633,3 +649,4 @@ card_id: WORTJHn8
 Why divide by $\sqrt{d_k}$ in **attention mechanism**?
 ---
 Prevents dot products from becoming too large (which would push softmax into extreme values), stabilizing gradients.
+---
