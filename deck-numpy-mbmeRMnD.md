@@ -114,12 +114,6 @@ What are **element-wise operations** in NumPy?
 ---
 Arithmetic operations applied simultaneously to all array elements using vectorization.
 ---
-card_id: jrjVzXUY
----
-What are **universal functions (ufuncs)** in NumPy?
----
-Pre-optimized functions that operate element-wise on arrays with vectorized C implementations.
----
 card_id: jsyyVJYa
 ---
 What common **ufuncs** does NumPy provide?
@@ -201,13 +195,6 @@ What operator performs **matrix multiplication** in NumPy?
 ---
 The `@` operator (e.g., `A @ B`).
 ---
-card_id: LBCf2X8j
----
-How does **matrix multiplication** (`@`) differ from element-wise multiplication (`*`) in NumPy?
----
-**Matrix multiplication (`@`)**: Dot product of rows and columns per linear algebra
-**Element-wise (`*`)**: Multiplies corresponding elements directly
----
 card_id: IejhuLmF
 ---
 What does `arr.T` do in NumPy?
@@ -225,24 +212,6 @@ card_id: jgk91JHn
 What does `np.eye(n)` create?
 ---
 An n×n identity matrix with ones on the diagonal and zeros elsewhere.
----
-card_id: gZKTYkza
----
-What is **vectorization** in NumPy?
----
-Replacing explicit Python loops with array operations that execute in optimized C code.
----
-card_id: uc1Hl8Jr
----
-In **NumPy**, model trains slowly using Python loops for array operations. What solution?
----
-Use vectorized operations to replace loops with element-wise array operations.
----
-card_id: RQEGjlzC
----
-In **NumPy**, you need to add a bias vector to each row of a batch matrix. What feature enables this?
----
-Broadcasting: add the 1D bias vector to the 2D matrix directly.
 ---
 card_id: MWhNe67M
 ---
