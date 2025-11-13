@@ -27,9 +27,18 @@ Answer content
 - Existing cards: Keep the original Mochi ID
 - New cards: Use `card_id: null` to create new cards on push
 
-## Current Decks
+## Deck Glossary
 
-- `aiml-dMZe0dy2.md` - AI/ML concepts and fundamentals
+### AI/ML
+- **deck-aiml-dMZe0dy2.md** - Core AI/ML concepts including bias-variance tradeoff, correlation analysis, statistical measures, and sampling techniques
+- **deck-aiml-fundamentals-kflWEgVw.md** - Foundational AI/ML concepts covering statistical analysis, model complexity, and data sampling methods
+- **deck-aiml-neural-networks-gkIM7hjD.md** - Neural network concepts including regularization (L1/L2), CNNs, batch normalization, activation functions, and translation invariance
+
+### Data Science
+- **deck-numpy-mbmeRMnD.md** - NumPy operations covering broadcasting rules, array indexing, array creation functions, and common operations
+
+### Mathematics
+- **deck-linear-algebra-4x2I7duf.md** - Linear algebra fundamentals including vectors, matrices, dot products, transformations, and ML applications
 
 ## Workflow
 
