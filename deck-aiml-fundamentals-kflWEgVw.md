@@ -1558,3 +1558,35 @@ What are the symptoms of **high bias** vs **high variance**?
 - Low training error
 - High test error (large gap)
 - Model too complex
+---
+card_id: HyWCzclb
+---
+What is **perplexity**?
+---
+A measure of how well a probability model predicts a sample, indicating the uncertainty or "surprise" of the model when encountering new data.
+---
+card_id: qyMo90XM
+---
+What does **perplexity** measure in language models?
+---
+How surprised or uncertain the model is when predicting the next word - lower perplexity indicates better predictive performance and more confident predictions.
+---
+card_id: DHzSbycX
+---
+What is the formula for **perplexity**?
+---
+$$\text{Perplexity} = 2^{H(p)}$$
+
+- $H(p)$: cross-entropy of the probability distribution
+- Alternatively: $$\text{Perplexity} = \exp\left(\frac{1}{N}\sum_{i=1}^{N} -\log p(x_i)\right)$$
+- $N$: number of tokens
+- $p(x_i)$: predicted probability of token $x_i$
+---
+card_id: CR5Bs599
+---
+How does **perplexity** relate to **cross-entropy**?
+---
+Perplexity is the exponential of cross-entropy: $\text{Perplexity} = 2^{\text{Cross-Entropy}}$
+
+- **Lower cross-entropy** → **Lower perplexity** → **Better model**
+- Perplexity makes cross-entropy more interpretable (represents average branching factor)

@@ -426,3 +426,47 @@ card_id: tooNqMAU
 Autoencoder reconstructs training images perfectly but test images poorly. Problem?
 ---
 Overfitting - the model memorized training examples. Solutions: increase latent bottleneck compression, add regularization, or use dropout.
+---
+card_id: Fz0UdhyJ
+---
+Why do **Variational Autoencoder (VAE)** reconstructions tend to be blurry?
+---
+- Gaussian likelihood with MSE averages over plausible outputs
+- KL divergence smooths latent space, losing high-frequency detail
+- Reparameterization noise forces decoder to produce averaged outputs
+- Simple pixel-wise decoders cannot model complex multimodal distributions
+---
+card_id: MbDfqjTb
+---
+How does **Gaussian likelihood** encourage blur in VAEs?
+---
+VAEs assume $$p(x|z) = \mathcal{N}(x; \hat{x}(z), \sigma^2 I)$$, equivalent to MSE loss. MSE rewards averaging over plausible outputs, producing smooth blurry reconstructions instead of sharp alternatives.
+---
+card_id: HSEeL1iC
+---
+How does **KL divergence** contribute to VAE blurriness?
+---
+The term $$D_{KL}(q(z|x) \| p(z))$$ forces latent representations to be smooth and continuous, reducing capacity to encode precise pixel-level information like edges and textures.
+---
+card_id: gxnQ11Ho
+---
+How does the **reparameterization trick** promote blur in VAEs?
+---
+The trick injects noise: $$z = \mu + \sigma \odot \epsilon$$ where $$\epsilon$$ is random. Because of this randomness, the decoder learns to reconstruct well on average, promoting blurred outputs.
+---
+card_id: uJC0HAK5
+---
+Why can't standard **VAE decoders** produce sharp images?
+---
+Most VAEs use simple pixel-wise Gaussian decoders that cannot model complex, multimodal pixel distributions, so they average outputs and produce blur.
+---
+card_id: 5JWFbZBZ
+---
+How can you reduce **blurriness in VAE reconstructions**?
+---
+- VQ-VAE / VQ-VAE-2 (discrete latents)
+- β-VAE with tuned β parameter
+- Hierarchical VAEs
+- Hybrid VAE-GAN models
+- Autoregressive decoders (PixelCNN)
+- Diffusion-VAE hybrids
