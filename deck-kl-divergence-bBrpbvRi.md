@@ -375,3 +375,27 @@ card_id: Qw8SIwrX
 Why can't we compute **$$D_{KL}(P \| Q)$$** directly in VAEs?
 ---
 Because the true posterior $$P(z|x)$$ is intractable. We use reverse KL $$D_{KL}(Q \| P)$$ which only requires evaluating Q and the prior P.
+---
+card_id: QLjS4pXE
+---
+Rewrite **entropy** $$H(P) = -\sum_{x} p(x) \log p(x)$$ without the negative sign.
+---
+$$H(P) = \sum_{x} p(x) \log \frac{1}{p(x)}$$
+---
+card_id: pkEZh2TH
+---
+Rewrite **entropy** $$H(P) = \sum_{x} p(x) \log \frac{1}{p(x)}$$ using a negative sign.
+---
+$$H(P) = -\sum_{x} p(x) \log p(x)$$
+---
+card_id: Lpi55Oc1
+---
+Express **entropy** $$H(P) = -\sum_{x} p(x) \log p(x)$$ using expectation notation.
+---
+$$H(P) = \mathbb{E}_{x \sim P}[-\log p(x)]$$ or $$\mathbb{E}[\log \frac{1}{p(x)}]$$
+---
+card_id: AuA49JzG
+---
+Expand **entropy** $$H(P) = \mathbb{E}[-\log p(x)]$$ as a summation formula.
+---
+$$H(P) = -\sum_{x} p(x) \log p(x)$$ or $$\sum_{x} p(x) \log \frac{1}{p(x)}$$
