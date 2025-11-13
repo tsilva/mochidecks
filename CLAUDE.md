@@ -32,6 +32,7 @@ Answer
 - NO extra `---` between cards (after answer `---`, next line is `card_id:`)
 - Math: `$$...$$` for LaTeX
 - No tables in answers (use lists instead)
+- **ALL new cards must be added at the END of the deck** (before the final `---`)
 
 **Card IDs:**
 - NEW decks or SPLIT decks: `card_id: null` (never generate IDs yourself)
