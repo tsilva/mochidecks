@@ -125,7 +125,7 @@ card_id: PiypMEWT
 ---
 Why does L2 regularization shrink all weights proportionally towards zero?
 ---
-The L2 penalty term penalizes the square of the magnitude of weights, encouraging them to be small but rarely exactly zero.
+The L2 penalty term adds the sum of squared weights to the loss, causing larger weights to incur a disproportionately higher penalty and thus shrink more, but never exactly to zero.
 ---
 card_id: xBs6PfE7
 ---
@@ -293,9 +293,9 @@ Counterclockwise rotation.
 ---
 card_id: w7wud9Oj
 ---
-Why does the **rotation matrix** have its specific form?
+Why does the 2D rotation matrix around the origin have its specific form?
 ---
-Its columns represent the transformed basis vectors: $[1,0] \to [\cos\theta, \sin\theta]$ and $[0,1] \to [-\sin\theta, \cos\theta]$.
+Its columns are the transformed standard basis vectors: $[1,0]$ becomes $[\cos\theta, \sin\theta]$ and $[0,1]$ becomes $[-\sin\theta, \cos\theta]$.
 ---
 card_id: QrHg8rb7
 ---

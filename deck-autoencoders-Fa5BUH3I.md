@@ -438,7 +438,7 @@ The term $$D_{KL}(q(z|x) \| p(z))$$ forces latent representations to be smooth a
 ---
 card_id: gxnQ11Ho
 ---
-In Variational Autoencoders (VAEs), how does the reparameterization trick, which samples latent variable $z = \mu + \sigma \odot \epsilon$ with $\epsilon$ as random noise, promote blurred reconstructions?
+In Variational Autoencoders (VAEs), how does the reparameterization trick ($z = \mu + \sigma \odot \epsilon$) promote blurred reconstructions?
 ---
 The injected noise forces the decoder to average over multiple possible latent representations for a given input, leading to blurred outputs.
 ---

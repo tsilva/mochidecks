@@ -226,9 +226,9 @@ Estimates become more precise - the sample mean approaches the population mean a
 ---
 card_id: wjIHGhBf
 ---
-Why does cross-entropy use logarithms, similar to Shannon entropy?
+Why does cross-entropy use logarithms?
 ---
-Logarithms quantify information such that less probable events, having higher information content, contribute more to the total.
+Logarithms quantify information, making less probable events contribute more.
 ---
 card_id: wF7RfoNZ
 ---

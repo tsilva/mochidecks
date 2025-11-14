@@ -27,9 +27,9 @@ What are the three components of **VQ-VAE architecture**?
 ---
 card_id: JOEVdSvo
 ---
-What is the VQ-VAE loss function when using Exponential Moving Average (EMA) for codebook updates?
+What is the VQ-VAE loss function when codebook updates are handled by Exponential Moving Average (EMA)?
 ---
-$$\mathcal{L} = \|x - \hat{x}\|_2^2 + \beta \|z_e - \text{sg}[e]\|_2^2$$
+$$\mathcal{L} = \|x - \hat{x}\|_2^2 + \|z_e - \text{sg}[e]\|_2^2 + \beta \|\text{sg}[z_e] - e\|_2^2$$
 ---
 card_id: ZRKMy9a4
 ---
@@ -109,9 +109,9 @@ When only a small subset of codebook vectors are used, wasting most of the codeb
 ---
 card_id: vLP9KJT1
 ---
-When should a smaller codebook be used in VQ-VAE?
+When should a smaller codebook be used in a Vector Quantized Variational Autoencoder (VQ-VAE)?
 ---
-Simple architectures, limited data, better code utilization (e.g., with EMA), faster convergence
+Simple architectures, limited data, better code utilization, faster convergence
 ---
 card_id: 0BDRmc5L
 ---
@@ -193,7 +193,7 @@ Yes, perplexity of 480 is problematic.
 ---
 card_id: FBO0bonS
 ---
-What problem is indicated by a VQ-VAE model with a 128 codebook size and a perplexity of 15?
+In a VQ-VAE with a 128-entry codebook, what problem does a perplexity of 15 indicate, given that perplexity measures the effective number of used codebook entries?
 ---
 Severe codebook collapse
 ---
