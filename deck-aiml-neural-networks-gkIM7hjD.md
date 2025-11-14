@@ -419,7 +419,7 @@ card_id: D5jCtumO
 ---
 What are common initial learning rates in deep learning?
 ---
-0.001, 0.01, 0.1
+0.0001, 0.001, 0.01, 0.1
 ---
 card_id: oWyJrOZ2
 ---

@@ -109,9 +109,9 @@ When only a small subset of codebook vectors are used, wasting most of the codeb
 ---
 card_id: vLP9KJT1
 ---
-When should a smaller codebook be used in a Vector Quantized Variational Autoencoder (VQ-VAE)?
+When should a smaller codebook be used in a VQ-VAE?
 ---
-Simple architectures, limited data, better code utilization, faster convergence
+Simple architectures, limited data, improved code utilization, faster convergence
 ---
 card_id: 0BDRmc5L
 ---

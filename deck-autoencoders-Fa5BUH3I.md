@@ -440,7 +440,7 @@ card_id: gxnQ11Ho
 ---
 In Variational Autoencoders (VAEs), how does the reparameterization trick ($z = \mu + \sigma \odot \epsilon$) promote blurred reconstructions?
 ---
-The injected noise forces the decoder to average over multiple possible latent representations for a given input, leading to blurred outputs.
+The injected noise forces the decoder to average over multiple possible latent representations.
 ---
 card_id: uJC0HAK5
 ---
