@@ -427,15 +427,6 @@ Autoencoder reconstructs training images perfectly but test images poorly. Probl
 ---
 Overfitting - the model memorized training examples. Solutions: increase latent bottleneck compression, add regularization, or use dropout.
 ---
-card_id: Fz0UdhyJ
----
-Why do **Variational Autoencoder (VAE)** reconstructions tend to be blurry?
----
-- Gaussian likelihood with MSE averages over plausible outputs
-- KL divergence smooths latent space, losing high-frequency detail
-- Reparameterization noise forces decoder to produce averaged outputs
-- Simple pixel-wise decoders cannot model complex multimodal distributions
----
 card_id: MbDfqjTb
 ---
 How does **Gaussian likelihood** encourage blur in VAEs?
@@ -470,3 +461,4 @@ How can you reduce **blurriness in VAE reconstructions**?
 - Hybrid VAE-GAN models
 - Autoregressive decoders (PixelCNN)
 - Diffusion-VAE hybrids
+---

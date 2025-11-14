@@ -169,15 +169,6 @@ What does **KL divergence** represent in terms of compression?
 ---
 The extra storage cost (in bits) when using a suboptimal compression scheme Q instead of the optimal scheme P.
 ---
-card_id: 3s0CJLx8
----
-What are the four key properties of **KL divergence**?
----
-- Non-negative: $$D_{KL}(P \| Q) \geq 0$$
-- Zero iff $$P = Q$$
-- Asymmetric: $$D_{KL}(P \| Q) \neq D_{KL}(Q \| P)$$
-- Not a distance metric (fails triangle inequality)
----
 card_id: xjLECWXC
 ---
 Model predicts [0.9, 0.05, 0.05] for true label [1, 0, 0]. Is **cross-entropy** low or high?
@@ -399,3 +390,4 @@ card_id: AuA49JzG
 Expand **entropy** $$H(P) = \mathbb{E}[-\log p(x)]$$ as a summation formula.
 ---
 $$H(P) = -\sum_{x} p(x) \log p(x)$$ or $$\sum_{x} p(x) \log \frac{1}{p(x)}$$
+---

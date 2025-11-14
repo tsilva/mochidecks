@@ -1185,13 +1185,7 @@ card_id: I10LiBvY
 ---
 Why does the **F1 score** use the **harmonic mean** instead of arithmetic mean?
 ---
-The **harmonic mean penalizes extreme imbalances** between precision and recall.
-
-**Example**: If precision = 1.0 and recall = 0.1:
-- Arithmetic mean: (1.0 + 0.1) / 2 = 0.55 (misleadingly high)
-- Harmonic mean: 2 × (1.0 × 0.1) / (1.0 + 0.1) ≈ 0.18 (correctly low)
-
-The harmonic mean is always ≤ arithmetic mean, and only equals it when values are identical.
+The harmonic mean penalizes extreme imbalances between precision and recall.
 ---
 card_id: kwcpMBRY
 ---
@@ -2386,3 +2380,4 @@ What are the symptoms of **high bias** vs **high variance**?
 - Low training error
 - High test error (large gap)
 - Model too complex
+---

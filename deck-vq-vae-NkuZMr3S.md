@@ -373,3 +373,4 @@ card_id: CLCvrrY8
 What is the **commitment cost** typically set to in VQ-VAE?
 ---
 0.25 (beta = 0.25) is a standard value that balances encoder flexibility and codebook alignment.
+---

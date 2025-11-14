@@ -159,7 +159,7 @@ card_id: 8T8efIJb
 ---
 Why does sample variance use **n-1** instead of **n** (Bessel's correction)?
 ---
-Using $n$ would systematically underestimate the population variance because the sample mean $\bar{x}$ is calculated from the same data, making deviations artificially smaller. Dividing by $n-1$ corrects this bias, producing an unbiased estimator.
+Corrects bias from using the sample mean instead of the true population mean, producing an unbiased estimator.
 ---
 card_id: BAJvjVeK
 ---
@@ -924,13 +924,7 @@ card_id: UBIZpErY
 ---
 Why does the **F1 score** use the **harmonic mean** instead of arithmetic mean?
 ---
-The **harmonic mean penalizes extreme imbalances** between precision and recall.
-
-**Example**: If precision = 1.0 and recall = 0.1:
-- Arithmetic mean: (1.0 + 0.1) / 2 = 0.55 (misleadingly high)
-- Harmonic mean: 2 × (1.0 × 0.1) / (1.0 + 0.1) ≈ 0.18 (correctly low)
-
-The harmonic mean is always ≤ arithmetic mean, and only equals it when values are identical.
+The harmonic mean penalizes extreme imbalances between precision and recall.
 ---
 card_id: bIuQMGgV
 ---
@@ -1590,3 +1584,4 @@ Perplexity is the exponential of cross-entropy: $\text{Perplexity} = 2^{\text{Cr
 
 - **Lower cross-entropy** → **Lower perplexity** → **Better model**
 - Perplexity makes cross-entropy more interpretable (represents average branching factor)
+---

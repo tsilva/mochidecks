@@ -649,3 +649,4 @@ card_id: WORTJHn8
 Why divide by $\sqrt{d_k}$ in **attention mechanism**?
 ---
 Prevents dot products from becoming too large (which would push softmax into extreme values), stabilizing gradients.
+---

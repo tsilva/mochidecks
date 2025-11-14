@@ -476,3 +476,4 @@ card_id: zFYHBaSh
 When does **broadcasting** apply in NumPy?
 ---
 When operating on arrays with different shapes where dimensions are compatible or equal to 1.
+---
