@@ -417,7 +417,7 @@ What happens with **too high** vs **too low** learning rates?
 ---
 card_id: D5jCtumO
 ---
-What are common **learning rate** values?
+What are common initial learning rates in deep learning?
 ---
 0.001, 0.01, 0.1
 ---
@@ -513,14 +513,9 @@ What are the steps in a **forward pass** through a neural network?
 ---
 card_id: lqXeihx3
 ---
-What is the **chain rule** in backpropagation?
+How does the chain rule apply to backpropagation in neural networks?
 ---
-The **chain rule** from calculus allows computing gradients through composed functions.
-
-**For neural networks**:
-$$\frac{\partial L}{\partial w_1} = \frac{\partial L}{\partial y} \cdot \frac{\partial y}{\partial z} \cdot \frac{\partial z}{\partial w_1}$$
-
-Enables computing gradients by multiplying partial derivatives backward through layers.
+It enables computing gradients by multiplying partial derivatives backward through layers, such as $\frac{\partial L}{\partial w_1} = \frac{\partial L}{\partial y} \cdot \frac{\partial y}{\partial z} \cdot \frac{\partial z}{\partial w_1}$.
 ---
 card_id: RzxtFO8M
 ---
@@ -656,9 +651,9 @@ Same word, completely different meanings - context determines which one is meant
 ---
 card_id: oDvMlJB4
 ---
-When should you use **normalization** (Min-Max scaling)?
+When is Min-Max scaling particularly useful for machine learning models?
 ---
-You need bounded values (e.g., for neural networks with sigmoid/tanh).
+When models require bounded input values (e.g., neural networks with sigmoid/tanh activation).
 ---
 card_id: ane3AE8n
 ---

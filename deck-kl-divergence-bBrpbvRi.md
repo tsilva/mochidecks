@@ -123,9 +123,9 @@ Yes. $$D_{KL}(P \| Q) \geq 0$$ for all distributions P and Q, with equality only
 ---
 card_id: 4P6uqdEB
 ---
-What's the difference between **$$D_{KL}(P \| Q)$$** and **$$D_{KL}(Q \| P)$$**?
+What is the difference between $$D_{KL}(P \| Q)$$ and $$D_{KL}(Q \| P)$$?
 ---
-$$D_{KL}(P \| Q)$$: Extra bits when Q encodes events from P. $$D_{KL}(Q \| P)$$: Extra bits when P encodes events from Q.
+$$D_{KL}(P \| Q)$$ is the average extra bits to encode samples from P using a code optimized for Q. $$D_{KL}(Q \| P)$$ is the average extra bits to encode samples from Q using a code optimized for P.
 ---
 card_id: 5g04Ujgv
 ---

@@ -34,15 +34,15 @@ Only captures **linear** relationships. Can be zero or near-zero even when stron
 ---
 card_id: lE07XB4V
 ---
-What is **stratified sampling**?
+What is stratified sampling?
 ---
-**Stratified sampling** maintains the same class distribution in train/validation/test splits as in the original dataset.
+A sampling method that divides a population into homogeneous subgroups (strata) and then takes a proportional random sample from each stratum.
 ---
 card_id: 5PTT9829
 ---
 What is an example of **stratified sampling**?
 ---
-If the full dataset is 80% class A and 20% class B, each split will also be 80% class A and 20% class B.
+Surveying 10% of men and 10% of women from a population to ensure gender representation.
 ---
 card_id: LlRFFm0C
 ---
@@ -226,9 +226,9 @@ Estimates become more precise - the sample mean approaches the population mean a
 ---
 card_id: wjIHGhBf
 ---
-Why does **cross-entropy** use logarithms like **Shannon entropy**?
+Why does cross-entropy use logarithms, similar to Shannon entropy?
 ---
-The log arises from **information theory**: unlikely events ($p \to 0$) carry more information.
+Logarithms quantify information such that less probable events, having higher information content, contribute more to the total.
 ---
 card_id: wF7RfoNZ
 ---
@@ -256,9 +256,9 @@ How do **training error** and **validation error** look in a **high variance** (
 ---
 card_id: CLi97bgg
 ---
-What does **low precision, high recall** indicate about a classifier?
+What does low precision, high recall indicate about a classifier?
 ---
-The model is **aggressive** - it predicts positive liberally.
+It predicts many positives, resulting in few false negatives but many false positives.
 ---
 card_id: Ojfncwhb
 ---
@@ -1584,9 +1584,6 @@ $$\text{Perplexity} = 2^{H(p)}$$
 ---
 card_id: CR5Bs599
 ---
-How does **perplexity** relate to **cross-entropy**?
+What is the mathematical relationship between perplexity and cross-entropy?
 ---
-Perplexity is the exponential of cross-entropy: $\text{Perplexity} = 2^{\text{Cross-Entropy}}$
-
-- **Lower cross-entropy** → **Lower perplexity** → **Better model**
-- Perplexity makes cross-entropy more interpretable (represents average branching factor)
+$\text{Perplexity} = 2^{\text{Cross-Entropy}}$

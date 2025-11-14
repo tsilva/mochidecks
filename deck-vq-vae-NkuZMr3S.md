@@ -27,11 +27,9 @@ What are the three components of **VQ-VAE architecture**?
 ---
 card_id: JOEVdSvo
 ---
-What is the **VQ-VAE loss function** with EMA updates?
+What is the VQ-VAE loss function when using Exponential Moving Average (EMA) for codebook updates?
 ---
 $$\mathcal{L} = \|x - \hat{x}\|_2^2 + \beta \|z_e - \text{sg}[e]\|_2^2$$
-
-Reconstruction loss + commitment loss (no codebook loss with EMA).
 ---
 card_id: ZRKMy9a4
 ---
@@ -41,17 +39,15 @@ Stop-gradient operator: prevents backpropagation through the codebook vectors in
 ---
 card_id: IwAOMrnL
 ---
-What is the **straight-through estimator** in VQ-VAE?
+In a VQ-VAE, what is the **straight-through estimator** used for, given that the quantization operation has a zero-gradient almost everywhere?
 ---
-A gradient trick that copies gradients from decoder directly to encoder: $$\frac{\partial \mathcal{L}}{\partial z_e} = \frac{\partial \mathcal{L}}{\partial z_q}$$
+It's a gradient trick that copies gradients from the decoder's input ($z_q$) directly to the encoder's output ($z_e$): $$\frac{\partial \mathcal{L}}{\partial z_e} = \frac{\partial \mathcal{L}}{\partial z_q}$$
 ---
 card_id: Bk2tfL48
 ---
-How is the straight-through estimator implemented in code?
+How is the straight-through estimator for a quantized variable `z_q` (derived from an unquantized variable `z_e`) implemented in code to enable gradient flow?
 ---
 `z_q = z_e + (z_q - z_e).detach()`
-
-This maintains discrete quantization while allowing gradient flow.
 ---
 card_id: UiQ4ALSn
 ---
@@ -61,9 +57,9 @@ Quantization (nearest neighbor selection) is not differentiable, so gradients ca
 ---
 card_id: RLicvhPf
 ---
-What does **commitment loss** encourage in VQ-VAE?
+In a VQ-VAE, what is the purpose of the commitment loss term?
 ---
-Encourages encoder outputs to stay close to their chosen codebook vectors: $$\|z_e - \text{sg}[e]\|_2^2$$
+It encourages the encoder's output to stay close to the chosen codebook vector.
 ---
 card_id: z7iP1qrg
 ---
@@ -101,9 +97,9 @@ Diverse codebook usage with many codes being actively used (healthy model).
 ---
 card_id: c5gng9CJ
 ---
-What does **low perplexity** indicate in VQ-VAE?
+What does low perplexity indicate in a VQ-VAE's codebook usage?
 ---
-Codebook collapse: only a few codes dominate while most remain unused.
+A small number of codes are being actively used.
 ---
 card_id: xfoKpMjf
 ---
@@ -113,21 +109,15 @@ When only a small subset of codebook vectors are used, wasting most of the codeb
 ---
 card_id: vLP9KJT1
 ---
-When should you use a **smaller codebook** in VQ-VAE?
+When should a smaller codebook be used in VQ-VAE?
 ---
-Simple architectures (e.g., MLPs)
-Limited training data
-Want better code utilization with EMA
-Faster training convergence
+Simple architectures, limited data, better code utilization (e.g., with EMA), faster convergence
 ---
 card_id: 0BDRmc5L
 ---
-When should you use a **larger codebook** in VQ-VAE?
+When is a larger codebook necessary in a VQ-VAE?
 ---
-Complex data with fine details
-Strong architectures (e.g., CNNs)
-High-dimensional latent spaces
-Need more expressive representations
+When the data's complexity requires more distinct representations.
 ---
 card_id: kmo0Gizv
 ---
@@ -179,9 +169,9 @@ Continuous interpolation in latent space averages out sharp features during reco
 ---
 card_id: cpdnfjyr
 ---
-How many codes should be used if perplexity is 64 in a 512-code VQ-VAE?
+What is the codebook utilization for a VQ-VAE with 512 codes and a perplexity of 64?
 ---
-Codebook utilization: $$64/512 = 12.5\%$$ - indicates severe codebook collapse.
+12.5%
 ---
 card_id: ffuCSmtx
 ---
@@ -197,15 +187,15 @@ What is minimum possible perplexity in VQ-VAE?
 ---
 card_id: BQjw0q7t
 ---
-Model: 512 codebook size, perplexity = 480. Problem?
+Is a perplexity of 480 problematic for a language model with a 512-entry codebook and 93.8% codebook utilization?
 ---
-Healthy model with excellent codebook utilization (93.8%).
+Yes, perplexity of 480 is problematic.
 ---
 card_id: FBO0bonS
 ---
-Model: 128 codebook size, perplexity = 15. Problem?
+What problem is indicated by a VQ-VAE model with a 128 codebook size and a perplexity of 15?
 ---
-Severe codebook collapse (11.7% utilization) - consider smaller codebook or more training.
+Severe codebook collapse
 ---
 card_id: nUckVUdu
 ---
@@ -259,11 +249,9 @@ Find nearest neighbor: $$k^* = \arg\min_k \|z_e - e_k\|_2$$ then set $$z_q = e_{
 ---
 card_id: BS9fVkA6
 ---
-How is distance to codebook vectors computed efficiently?
+How is the squared Euclidean distance between a vector $z_e$ and a codebook vector $e$ computed efficiently?
 ---
-$$\|z_e - e\|^2 = \|z_e\|^2 + \|e\|^2 - 2 z_e \cdot e$$
-
-Avoids explicit pairwise distance computation.
+$\|z_e\|^2 + \|e\|^2 - 2 z_e \cdot e$
 ---
 card_id: zoqvBWWU
 ---
@@ -298,9 +286,9 @@ Compare **VQ-VAE** and **standard autoencoder** latent representations.
 ---
 card_id: 9RvdGKql
 ---
-What training instability does EMA help prevent?
+What training instability does Exponential Moving Average (EMA) help prevent in vector quantization?
 ---
-Prevents dead codes (unused codebook vectors) and reduces codebook update variance compared to gradient-based updates.
+Dead codes (unused codebook vectors) and high codebook update variance.
 ---
 card_id: w1cLEBxg
 ---
@@ -322,9 +310,9 @@ Different codes can represent reusable parts/patterns that combine to form compl
 ---
 card_id: lX3EJxPf
 ---
-How do different digit classes use the codebook?
+How do different digit classes utilize a shared codebook?
 ---
-Each digit class uses a subset of codes; some codes are shared between similar digits, others are digit-specific.
+Each digit class uses a subset of codes; some codes are shared, others are digit-specific.
 ---
 card_id: 4LoTFp6S
 ---

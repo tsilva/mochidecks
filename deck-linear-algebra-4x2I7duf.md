@@ -33,9 +33,9 @@ How is data represented as **vectors** in ML?
 ---
 card_id: l1o1OaK1
 ---
-What is **vector addition** geometrically?
+Geometrically, how is vector addition performed using the head-to-tail method?
 ---
-Placing the tail of the second vector at the head of the first, forming a parallelogram.
+Place the tail of the second vector at the head of the first; the sum is the vector from the tail of the first to the head of the second.
 ---
 card_id: JSS0T54N
 ---
@@ -123,9 +123,9 @@ The diamond-shaped L1 unit ball has sharp corners at the axes, creating pressure
 ---
 card_id: PiypMEWT
 ---
-Why does **L2 regularization** produce dense models?
+Why does L2 regularization shrink all weights proportionally towards zero?
 ---
-The circular L2 unit ball is smooth and uniform, shrinking all weights proportionally without preference for zeros.
+The L2 penalty term penalizes the square of the magnitude of weights, encouraging them to be small but rarely exactly zero.
 ---
 card_id: xBs6PfE7
 ---
@@ -293,9 +293,9 @@ Counterclockwise rotation.
 ---
 card_id: w7wud9Oj
 ---
-Why does the **rotation matrix** have that specific form?
+Why does the **rotation matrix** have its specific form?
 ---
-Columns show where basis vectors go: $[1,0] \to [\cos\theta, \sin\theta]$ and $[0,1] \to [-\sin\theta, \cos\theta]$ (perpendicular on unit circle).
+Its columns represent the transformed basis vectors: $[1,0] \to [\cos\theta, \sin\theta]$ and $[0,1] \to [-\sin\theta, \cos\theta]$.
 ---
 card_id: QrHg8rb7
 ---
@@ -359,10 +359,9 @@ Each application stretches the largest eigenvalue direction more, making it domi
 ---
 card_id: Rxt7H3SR
 ---
-What is the **Rayleigh quotient** for computing eigenvalues?
+What is the Rayleigh quotient for a vector $\mathbf{v}$ and a matrix $\mathbf{A}$?
 ---
-$$\lambda = \mathbf{v}^T \mathbf{A} \mathbf{v}$$
-Given eigenvector v, computes corresponding eigenvalue.
+$R(\mathbf{A}, \mathbf{v}) = \frac{\mathbf{v}^T \mathbf{A} \mathbf{v}}{\mathbf{v}^T \mathbf{v}}$
 ---
 card_id: TxUAEILC
 ---
@@ -399,9 +398,9 @@ All possible linear combinations of those vectors; the "space" they can reach.
 ---
 card_id: uMgYamnB
 ---
-What does **linear independence** mean?
+What does linear independence mean?
 ---
-No vector can be written as a combination of the others; each adds a new direction.
+No vector can be written as a linear combination of the others.
 ---
 card_id: UDOlRQtk
 ---
@@ -443,10 +442,9 @@ How does **Gram-Schmidt** work?
 ---
 card_id: 9n7FYRGt
 ---
-What is the formula for **Gram-Schmidt** projection removal?
+What is the formula for the Gram-Schmidt orthogonalization process to find the $i$-th orthogonal vector $\mathbf{u}_i$?
 ---
-$$\mathbf{u}_i = \frac{\mathbf{v}_i - \sum_j (\mathbf{v}_i \cdot \mathbf{u}_j)\mathbf{u}_j}{||\mathbf{v}_i - \sum_j (\mathbf{v}_i \cdot \mathbf{u}_j)\mathbf{u}_j||}$$
-Subtract all projections to remove overlap.
+$$\mathbf{u}_i = \mathbf{v}_i - \sum_{j=1}^{i-1} \text{proj}_{\mathbf{u}_j} \mathbf{v}_i = \mathbf{v}_i - \sum_{j=1}^{i-1} \frac{\mathbf{v}_i \cdot \mathbf{u}_j}{\mathbf{u}_j \cdot \mathbf{u}_j}\mathbf{u}_j$$
 ---
 card_id: adHIpgtZ
 ---
@@ -628,9 +626,9 @@ No - determinant = 0 means singular matrix with no inverse.
 ---
 card_id: C560BntI
 ---
-Model: Solving $\mathbf{Ax} = \mathbf{b}$ but $\mathbf{A}$ has rank 3 with 5 columns. What's the issue?
+Model: Solving $\mathbf{Ax} = \mathbf{b}$ where $\mathbf{A}$ has rank 3 and 5 columns. What's the issue?
 ---
-System is underdetermined - infinite solutions exist due to redundant features.
+System is underdetermined, leading to infinite solutions.
 ---
 card_id: kmlMo8qe
 ---

@@ -73,9 +73,9 @@ Points in latent space can be smoothly interpolated to generate meaningful inter
 ---
 card_id: kKlTXUdv
 ---
-How does the **bottleneck** create structured latent space?
+In an autoencoder, how does the bottleneck create a structured latent space?
 ---
-To reconstruct similar inputs well, the encoder must map them to similar latent codes, forcing the network to organize the space by semantic similarity.
+To reconstruct similar inputs well, the encoder must map them to similar latent codes, organizing the space by semantic similarity.
 ---
 card_id: Af8yXyUW
 ---
@@ -93,9 +93,9 @@ where $x_i$ is the input and $\hat{x}_i$ is the reconstruction.
 ---
 card_id: AaOEagQE
 ---
-Which loss function works better for images with values in [0,1]?
+Which loss function is often preferred for images with pixel values in [0,1]?
 ---
-Binary Cross-Entropy (BCE) often works better because it treats each pixel as a probability.
+Binary Cross-Entropy (BCE)
 ---
 card_id: 2WppLAhp
 ---
@@ -438,9 +438,9 @@ The term $$D_{KL}(q(z|x) \| p(z))$$ forces latent representations to be smooth a
 ---
 card_id: gxnQ11Ho
 ---
-How does the **reparameterization trick** promote blur in VAEs?
+In Variational Autoencoders (VAEs), how does the reparameterization trick, which samples latent variable $z = \mu + \sigma \odot \epsilon$ with $\epsilon$ as random noise, promote blurred reconstructions?
 ---
-The trick injects noise: $$z = \mu + \sigma \odot \epsilon$$ where $$\epsilon$$ is random. Because of this randomness, the decoder learns to reconstruct well on average, promoting blurred outputs.
+The injected noise forces the decoder to average over multiple possible latent representations for a given input, leading to blurred outputs.
 ---
 card_id: uJC0HAK5
 ---
