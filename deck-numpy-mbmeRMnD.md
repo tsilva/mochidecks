@@ -52,9 +52,9 @@ The total of all elements in the array or along specified axes.
 ---
 card_id: 7e1Eqduk
 ---
-How do **indexing** and **slicing** differ in NumPy?
+How do NumPy array indexing and slicing differ?
 ---
-**Indexing**: Returns a single element / **Slicing**: Returns a view of multiple elements
+Indexing returns element(s); slicing returns a view of multiple elements.
 ---
 card_id: 8PehIcrK
 ---
