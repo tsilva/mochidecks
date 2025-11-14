@@ -91,12 +91,6 @@ What is **KL divergence** $$D_{KL}(P \| Q)$$?
 ---
 The extra bits needed when using distribution Q to encode events from distribution P, beyond the optimal encoding.
 ---
-card_id: fLSv9l4w
----
-What does **KL divergence** measure between two distributions?
----
-How different distribution Q is from distribution P, or the cost of using the wrong distribution.
----
 card_id: ls7v2wDf
 ---
 How is **KL divergence** $$D_{KL}(P \| Q)$$ calculated?
