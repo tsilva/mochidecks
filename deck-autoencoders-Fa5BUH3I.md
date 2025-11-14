@@ -5,12 +5,6 @@ What is an **autoencoder**?
 ---
 A neural network that learns to compress data into a compact representation and then reconstruct the original input.
 ---
-card_id: LDi20vSi
----
-What does an **autoencoder** learn to do?
----
-Compress input data into a smaller representation while preserving the information needed for reconstruction.
----
 card_id: 2Gh7KTVe
 ---
 When should you use **autoencoders**?
@@ -88,12 +82,6 @@ card_id: Af8yXyUW
 What is **reconstruction loss**?
 ---
 A measure of the difference between the original input and the autoencoder's reconstruction of that input.
----
-card_id: muGMAlwq
----
-What does **reconstruction loss** measure in autoencoders?
----
-How well the autoencoder can reconstruct the original input from its compressed latent representation.
 ---
 card_id: 4oeoUywD
 ---
