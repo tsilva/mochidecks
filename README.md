@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="logo.png" alt="mochi-decks" width="512"/>
+  <img src="logo.png" alt="mochidecks" width="512"/>
 
   [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
   [![Decks](https://img.shields.io/badge/Decks-19-purple)](.)
@@ -65,8 +65,8 @@ A collection of markdown-formatted flashcard decks designed for spaced repetitio
 pip install mochi-mochi
 
 # Clone this deck collection
-git clone https://github.com/tsilva/mochi-decks.git
-cd mochi-decks
+git clone https://github.com/tsilva/mochidecks.git
+cd mochidecks
 
 # Push a deck to your Mochi account
 mochi-mochi push deck-aiml-neural-networks-gkIM7hjD.md
