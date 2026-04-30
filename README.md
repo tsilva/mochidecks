@@ -1,111 +1,48 @@
 <div align="center">
-  <img src="logo.png" alt="mochidecks" width="512"/>
+  <img src="./logo.png" alt="mochidecks" width="512" />
 
-  [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-  [![Decks](https://img.shields.io/badge/Decks-19-purple)](.)
-  [![mochi-mochi](https://img.shields.io/badge/Sync%20with-mochi--mochi-orange)](https://github.com/tsilva/mochi-mochi)
-
-  **🧠 Curated flashcard decks for AI/ML, data science, and mathematics — ready to sync with [Mochi](https://mochi.cards) 🃏**
-
-  [mochi-mochi CLI](https://github.com/tsilva/mochi-mochi) · [Mochi App](https://mochi.cards)
+  **🧠 Curated Mochi flashcard decks for AI/ML, data science, and mathematics 🃏**
 </div>
 
-## Overview
+mochidecks is a Git-tracked collection of markdown flashcard decks for [Mochi](https://mochi.cards). The decks are written for spaced repetition and are designed to sync with the [mochi-mochi](https://github.com/tsilva/mochi-mochi) CLI.
 
-A collection of markdown-formatted flashcard decks designed for spaced repetition learning. Each deck follows a structured format optimized for retention, covering topics from neural networks to linear algebra.
+The repository currently contains 19 decks covering AI/ML fundamentals, neural networks, attention, GPT and BERT architecture, autoencoders, optimizers, gradient stability, KL divergence, linear algebra, and NumPy.
 
-## Features
-
-- **Atomic cards** — One concept per card for optimal recall
-- **Rich formatting** — LaTeX math, syntax-highlighted code, markdown
-- **Git-tracked** — Version control your learning progress
-- **Sync-ready** — Pull from and push to Mochi via [mochi-mochi](https://github.com/tsilva/mochi-mochi)
-
-## Available Decks
-
-### AI/ML
-| Deck | Topics |
-|------|--------|
-| `deck-aiml-fundamentals` | Statistical analysis, model complexity, data sampling |
-| `deck-aiml-neural-networks` | Regularization, CNNs, batch normalization, activation functions |
-| `deck-aiml-residual-connections` | Skip connections, gradient flow, deep network training |
-| `deck-aiml-bert-architecture` | BERT model, transformers, pre-training objectives |
-| `deck-aiml-autoencoders` | Encoder-decoder architecture, latent representations |
-| `deck-aiml-sparse-autoencoders` | Sparsity constraints, feature learning |
-| `deck-aiml-siamese-networks` | Similarity learning, contrastive loss |
-| `deck-neural-networks` | Fundamentals of neural network training |
-
-### Deep Learning Components
-| Deck | Topics |
-|------|--------|
-| `deck-attention-mechanisms` | Self-attention, cross-attention, scaled dot-product |
-| `deck-gpt-architecture` | GPT model structure, autoregressive generation |
-| `deck-layer-normalization` | LayerNorm vs BatchNorm, stabilization techniques |
-| `deck-gradient-stability` | Vanishing/exploding gradients, initialization |
-| `deck-learning-rate-schedules` | Warmup, decay strategies, cyclical learning rates |
-| `deck-optimizers` | SGD, Adam, AdamW, momentum |
-
-### Generative Models
-| Deck | Topics |
-|------|--------|
-| `deck-autoencoders` | VAE, reconstruction loss, latent space |
-| `deck-vq-vae` | Vector quantization, discrete latent codes |
-| `deck-kl-divergence` | KL divergence, ELBO, distribution matching |
-
-### Foundations
-| Deck | Topics |
-|------|--------|
-| `deck-linear-algebra` | Vectors, matrices, dot products, transformations |
-| `deck-numpy` | Broadcasting, indexing, array operations |
-
-## Quick Start
+## Install
 
 ```bash
-# Install the sync tool
 pip install mochi-mochi
-
-# Clone this deck collection
 git clone https://github.com/tsilva/mochidecks.git
 cd mochidecks
+```
 
-# Push a deck to your Mochi account
+Open any `deck-*.md` file in a text editor, or push a deck to Mochi:
+
+```bash
 mochi-mochi push deck-aiml-neural-networks-gkIM7hjD.md
 ```
 
-## Card Format
+## Commands
 
-Cards use a simple markdown structure with YAML frontmatter:
-
-```markdown
----
-card_id: unique_id
----
-What is **dropout**?
----
-A regularization technique that randomly sets neuron outputs to zero during training, preventing co-adaptation.
----
+```bash
+mochi-mochi pull <deck_id>        # download a deck from Mochi
+mochi-mochi push <deck-file.md>   # sync a local deck file to Mochi
+git status                        # review local deck edits
 ```
 
-**Supported content:**
-- Standard markdown formatting
-- LaTeX equations: `$$E = mc^2$$`
-- Code blocks with syntax highlighting
+## Notes
 
-## Workflow
+- Deck files use `deck-{topic}-{id}.md` naming when they already exist in Mochi.
+- New deck files should use `deck-{topic}.md` until Mochi assigns an ID.
+- Cards use `---` separators, a `card_id` field, one question, and one answer.
+- New cards belong at the end of a deck before the final `---`.
+- Keep `card_id: null` for new cards; preserve existing IDs for typo-only edits.
+- Use `$$...$$` for LaTeX and avoid tables in answers.
+- This repository has no app build step or package manifest; the workflow is editing markdown and syncing decks.
 
-1. **Pull** — Download decks from Mochi: `mochi-mochi pull <deck_id>`
-2. **Edit** — Modify markdown files locally
-3. **Commit** — Track changes with Git
-4. **Push** — Sync back to Mochi: `mochi-mochi push <filename>`
+## Architecture
 
-## Contributing
-
-Contributions welcome. When adding or editing cards:
-
-- Follow the one-concept-per-card principle
-- Use the five question types: definition, recognition, application, mechanism, comparison
-- Bold the key concept being tested
-- Keep answers concise (definitions: 10-20 words)
+![mochidecks architecture diagram](./architecture.png)
 
 ## License
 
