@@ -1,8 +1,10 @@
-<div align="center">
+<p align="center">
   <img src="./logo.png" alt="mochidecks" width="512" />
-
-  **🧠 Curated Mochi flashcard decks for AI/ML, data science, and mathematics 🃏**
-</div>
+  <br />
+  <!-- repo-tagline:start -->
+  <strong>🧠 Curated Mochi flashcard decks for AI/ML, data science, and mathematics 🃏</strong>
+  <!-- repo-tagline:end -->
+</p>
 
 mochidecks is a Git-tracked collection of markdown flashcard decks for [Mochi](https://mochi.cards). The decks are written for spaced repetition and are designed to sync with the [mochi-mochi](https://github.com/tsilva/mochi-mochi) CLI.
 
